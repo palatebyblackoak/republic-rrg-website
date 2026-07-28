@@ -5,8 +5,19 @@ import {
   FacebookIcon,
   InstagramIcon,
   TwitterIcon,
+  GoogleIcon,
   TripAdvisorIcon,
+  YelpIcon,
 } from "./Icons";
+
+const socialLinks = [
+  { href: site.social.facebook, label: "Facebook", Icon: FacebookIcon },
+  { href: site.social.instagram, label: "Instagram", Icon: InstagramIcon },
+  { href: site.social.twitter, label: "X", Icon: TwitterIcon },
+  { href: site.social.google, label: "Google", Icon: GoogleIcon },
+  { href: site.social.tripadvisor, label: "TripAdvisor", Icon: TripAdvisorIcon },
+  { href: site.social.yelp, label: "Yelp", Icon: YelpIcon },
+];
 
 const footerNav = [
   { label: "Home", href: "/" },
@@ -66,18 +77,18 @@ export default function Footer() {
             </li>
           </ul>
           <div className="mt-8 flex items-center gap-4 text-muted">
-            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent transition-colors">
-              <FacebookIcon />
-            </a>
-            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent transition-colors">
-              <InstagramIcon />
-            </a>
-            <a href={site.social.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-accent transition-colors">
-              <TwitterIcon />
-            </a>
-            <a href={site.social.tripadvisor} target="_blank" rel="noopener noreferrer" aria-label="TripAdvisor" className="hover:text-accent transition-colors">
-              <TripAdvisorIcon />
-            </a>
+            {socialLinks.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="hover:text-accent transition-colors"
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
 

@@ -11,8 +11,8 @@ import {
 
 const socialLinks = [
   { href: site.social.facebook, label: "Facebook", Icon: FacebookIcon },
-  { href: site.social.twitter, label: "Twitter", Icon: TwitterIcon },
   { href: site.social.instagram, label: "Instagram", Icon: InstagramIcon },
+  { href: site.social.twitter, label: "X", Icon: TwitterIcon },
   { href: site.social.google, label: "Google", Icon: GoogleIcon },
   { href: site.social.tripadvisor, label: "TripAdvisor", Icon: TripAdvisorIcon },
   { href: site.social.yelp, label: "Yelp", Icon: YelpIcon },
