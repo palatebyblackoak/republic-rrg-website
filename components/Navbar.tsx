@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav, site } from "@/lib/site";
@@ -34,14 +35,15 @@ export default function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex flex-col leading-none group">
-            <span className="font-serif text-[22px] text-cream tracking-wide">
-              <span className="text-accent">★</span> REPUBLIC{" "}
-              <span className="text-accent">★</span>
-            </span>
-            <span className="mt-1 font-sans text-[9px] uppercase tracking-widest-3 text-muted">
-              of the Rio Grande
-            </span>
+          <Link href="/" className="flex items-center" aria-label="Republic of the Rio Grande — Home">
+            <Image
+              src="/images/logo-nav.png"
+              alt="Republic of the Rio Grande"
+              width={400}
+              height={100}
+              priority
+              className="h-10 md:h-12 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-7">

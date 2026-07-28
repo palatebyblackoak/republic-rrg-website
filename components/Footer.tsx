@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import {
@@ -21,16 +22,19 @@ export default function Footer() {
     <footer className="bg-bg border-t-2 border-accent">
       <div className="max-w-[1400px] mx-auto px-6 py-20 grid gap-14 md:grid-cols-3">
         <div className="flex flex-col items-start">
-          <div className="w-24 h-24 rounded-full border-2 border-gold/40 bg-surface flex items-center justify-center">
-            <span className="font-serif text-4xl text-gold">R</span>
-          </div>
+          <Image
+            src="/images/logo-footer.png"
+            alt="Republic of the Rio Grande — Revolución!"
+            width={300}
+            height={500}
+            className="w-40 md:w-48 h-auto"
+          />
           <p className="font-serif italic text-[18px] text-muted mt-5">
             Grill &amp; Cantina
           </p>
           <div className="mt-4 space-y-1 text-[10px] uppercase tracking-widest-2 text-muted leading-relaxed">
             <p>Brick Oven · Steaks</p>
             <p>Seafood · Cantina</p>
-            <p>Revolución!</p>
           </div>
         </div>
 
