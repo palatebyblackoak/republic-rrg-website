@@ -40,11 +40,21 @@ const config: Config = {
           "50%": { transform: "scale(1.15) translate3d(2%, 0, 0)" },
           "100%": { transform: "scale(1.15) translate3d(-2%, 0, 0)" },
         },
+        marqueeLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        marqueeRight: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out forwards",
         "scroll-line": "scrollLine 2s ease-in-out infinite",
         "slow-pan": "slowPan 30s ease-in-out infinite",
+        "marquee-left": "marqueeLeft 60s linear infinite",
+        "marquee-right": "marqueeRight 70s linear infinite",
       },
     },
   },

@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { img } from "@/lib/images";
-import DishCard from "@/components/DishCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import EClubSection from "@/components/EClubSection";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import StoryCard from "@/components/StoryCard";
+import FoodMarquee from "@/components/FoodMarquee";
 import { ArrowRight } from "@/components/Icons";
 
 const heroSlides = [
@@ -44,51 +44,6 @@ const heroSlides = [
   {
     src: img.cantinaCocktail,
     alt: "Pomegranate-blackberry cantina cocktail with dried chiles on the bar",
-  },
-];
-
-const dishes = [
-  {
-    name: "Stuffed Bacon Wrapped Quail",
-    description:
-      "Anaheim peppers, cream cheese, grill veggies, loaded mashed potatoes, port reduction.",
-    price: "$20",
-    image: img.quail,
-  },
-  {
-    name: "Grilled Ribeye",
-    description:
-      "12 oz ribeye, potato au-gratin, bacon wrapped jalapeño, seasonal vegetables.",
-    price: "$34",
-    image: img.steakPlated,
-  },
-  {
-    name: "Ahi Tuna Ceviche",
-    description:
-      "Ahi tuna, jicama, avocado, serrano peppers, ginger vinaigrette, tortilla chips.",
-    price: "$19",
-    image: img.ceviche,
-  },
-  {
-    name: "Avocado Salmon",
-    description:
-      "Grilled salmon fillet, creamy avocado sauce, parmesan, cilantro rice, seasonal vegetables.",
-    price: "$25",
-    image: img.salmon,
-  },
-  {
-    name: "Texas Filet",
-    description:
-      "8 oz filet, epazote butter, creamy potato au-gratin, port sauce, grilled asparagus.",
-    price: "$36",
-    image: img.filetTexas,
-  },
-  {
-    name: "Chimichurri Steak Salad",
-    description:
-      "Fajita, chimichurri sauce, mixed lettuce, asparagus, portobello mushrooms, avocado.",
-    price: "$19",
-    image: img.steakSalad,
   },
 ];
 
@@ -264,30 +219,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED DISHES */}
-      <section className="bg-bg py-16 md:py-28">
+      {/* GALLERY */}
+      <section className="bg-bg py-16 md:py-28 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6">
           <FadeIn className="text-center flex flex-col items-center">
-            <SectionLabel label="Most Ordered" centered />
+            <SectionLabel label="Gallery" centered />
             <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
-              The dishes people come back for.
+              This is why they keep
+              <br />
+              coming back.
             </h2>
           </FadeIn>
-          <div className="mt-10 md:mt-16 grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {dishes.map((d, i) => (
-              <FadeIn key={d.name} delay={i * 80}>
-                <DishCard {...d} />
-              </FadeIn>
-            ))}
-          </div>
-          <div className="mt-16 text-center">
-            <Link
-              href="/menu"
-              className="inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
-            >
-              Explore the Full Menu <ArrowRight />
-            </Link>
-          </div>
+        </div>
+        <div className="mt-10 md:mt-16">
+          <FoodMarquee />
+        </div>
+        <div className="max-w-[1400px] mx-auto px-6 mt-12 md:mt-16 text-center">
+          <Link
+            href="/menu"
+            className="inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
+          >
+            Explore the Full Menu <ArrowRight />
+          </Link>
         </div>
       </section>
 
