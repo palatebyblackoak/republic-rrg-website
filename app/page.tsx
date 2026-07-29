@@ -198,7 +198,7 @@ export default function HomePage() {
                 eyebrow="Fire-Crafted"
                 title="The Kitchen"
                 href="/menu"
-                image={img.pizzaOven}
+                image={img.pizzaBrickOven}
                 imageAlt="Brick-oven pizza"
               />
             </FadeIn>
