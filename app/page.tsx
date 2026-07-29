@@ -14,6 +14,10 @@ import { ArrowRight } from "@/components/Icons";
 const heroSlides = [
   { src: img.heroPatio, alt: "Republic of the Rio Grande patio at night" },
   {
+    src: img.steakPlated,
+    alt: "Grilled ribeye with shishito peppers, corn, and mashed potatoes",
+  },
+  {
     src: img.pizzaOven,
     alt: "Wood-fired Republic pizza on branded stone at the brick oven",
   },
@@ -36,7 +40,7 @@ const dishes = [
     description:
       "12 oz ribeye, potato au-gratin, bacon wrapped jalapeño, seasonal vegetables.",
     price: "$34",
-    image: img.ribeye,
+    image: img.steakPlated,
   },
   {
     name: "Ahi Tuna Ceviche",
