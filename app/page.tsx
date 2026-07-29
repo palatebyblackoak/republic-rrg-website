@@ -225,9 +225,7 @@ export default function HomePage() {
           <FadeIn className="text-center flex flex-col items-center">
             <SectionLabel label="Gallery" centered />
             <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
-              This is why they keep
-              <br />
-              coming back.
+              A table worth returning to.
             </h2>
           </FadeIn>
         </div>
