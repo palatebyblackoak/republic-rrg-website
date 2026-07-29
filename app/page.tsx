@@ -258,10 +258,10 @@ export default function HomePage() {
               built for the way McAllen celebrates. Come thirsty. Stay a while.
             </p>
             <Link
-              href="/menu"
+              href="/reservations"
               className="inline-block mt-8 text-[13px] uppercase tracking-[0.15em] text-accent hover:underline"
             >
-              See the Menu <ArrowRight />
+              Reserve a Table <ArrowRight />
             </Link>
           </FadeIn>
         </div>
