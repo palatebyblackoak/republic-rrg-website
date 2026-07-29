@@ -206,7 +206,8 @@ export default function HomePage() {
               <StoryCard
                 eyebrow="After Dark"
                 title="The Cantina"
-                href="/menu"
+                href="/reservations"
+                cta="Reserve a Table"
                 image={img.cantinaCocktail}
                 imageAlt="Cantina cocktail"
               />
