@@ -4,18 +4,15 @@ export const img = {
   cantinaCocktail: "/images/cantina-cocktail.jpg",
   steakPlated: "/images/steak-plated.jpg",
   filetTexas: "/images/filet-texas.jpg",
-  patioNight:
-    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=80",
-  patioLights:
-    "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=2000&q=80",
+  patioNight: "/images/patio-firepit.jpg",
+  patioLights: "/images/patio-firepit.jpg",
   interior:
     "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=1600&q=80",
   experience:
     "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80",
   menuHero:
     "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80",
-  aboutHero:
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80",
+  aboutHero: "/images/patio-firepit.jpg",
   reservationsHero:
     "https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=2000&q=80",
   eventsHero:
