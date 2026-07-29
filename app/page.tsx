@@ -35,7 +35,7 @@ const heroSlides = [
   },
   {
     src: img.cantinaCocktail,
-    alt: "Tropical cantina cocktail with pomegranate, chiles, and pineapple",
+    alt: "Pomegranate-blackberry cantina cocktail with dried chiles on the bar",
   },
 ];
 
@@ -308,7 +308,7 @@ export default function HomePage() {
         <div className="relative min-h-[380px] md:min-h-full order-1 md:order-2">
           <Image
             src={img.cantinaCocktail}
-            alt="Tropical cantina cocktail with pomegranate, chiles, and pineapple"
+            alt="Pomegranate-blackberry cantina cocktail with dried chiles on the bar"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
