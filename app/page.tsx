@@ -304,25 +304,27 @@ export default function HomePage() {
       </section>
 
       {/* THE PATIO */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        <Image
-          src={img.patioLights}
-          alt="Outdoor covered patio with warm string lights"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-bg/55" />
-        <div className="relative z-10 text-center px-6 max-w-3xl">
+      <section className="relative h-screen min-h-[600px] flex items-end justify-center overflow-hidden">
+        <div className="absolute inset-0 animate-slow-pan">
+          <Image
+            src={img.patioLights}
+            alt="Outdoor covered patio with warm string lights"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/70 via-40% to-transparent" />
+        <div className="relative z-10 text-center px-6 max-w-3xl pb-16 md:pb-24">
           <div className="flex flex-col items-center">
             <SectionLabel label="The Patio" centered />
           </div>
-          <h2 className="font-serif text-cream text-[42px] md:text-[64px] leading-[1.05]">
+          <h2 className="font-serif text-cream text-[42px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.6)]">
             McAllen&apos;s Most Beloved
             <br />
             Outdoor Dining Experience.
           </h2>
-          <p className="mt-8 text-muted text-[16px] md:text-[18px] leading-[1.8] max-w-xl mx-auto">
+          <p className="mt-8 text-cream/85 text-[16px] md:text-[18px] leading-[1.8] max-w-xl mx-auto drop-shadow-[0_1px_10px_rgba(0,0,0,0.7)]">
             Our covered patio has hosted countless anniversaries, celebrations,
             and late nights under the Texas sky. Come for the food. Stay for
             the atmosphere.

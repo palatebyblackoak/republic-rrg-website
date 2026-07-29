@@ -35,10 +35,16 @@ const config: Config = {
           "51%": { transform: "scaleY(1)", transformOrigin: "bottom" },
           "100%": { transform: "scaleY(0)", transformOrigin: "bottom" },
         },
+        slowPan: {
+          "0%": { transform: "scale(1.15) translate3d(-2%, 0, 0)" },
+          "50%": { transform: "scale(1.15) translate3d(2%, 0, 0)" },
+          "100%": { transform: "scale(1.15) translate3d(-2%, 0, 0)" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out forwards",
         "scroll-line": "scrollLine 2s ease-in-out infinite",
+        "slow-pan": "slowPan 30s ease-in-out infinite",
       },
     },
   },
