@@ -100,6 +100,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* GALLERY */}
+      <section className="bg-bg py-16 md:py-28 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <FadeIn className="text-center flex flex-col items-center">
+            <SectionLabel label="Gallery" centered />
+            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
+              A table worth returning to.
+            </h2>
+          </FadeIn>
+        </div>
+        <div className="mt-10 md:mt-16">
+          <FoodMarquee />
+        </div>
+        <div className="max-w-[1400px] mx-auto px-6 mt-12 md:mt-16 text-center">
+          <Link
+            href="/menu"
+            className="inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
+          >
+            Explore the Full Menu <ArrowRight />
+          </Link>
+        </div>
+      </section>
+
       {/* THE STORY */}
       <section className="bg-bg py-16 md:py-32">
         <div className="max-w-[1400px] mx-auto px-6">
@@ -182,64 +205,6 @@ export default function HomePage() {
               />
             </FadeIn>
           </div>
-        </div>
-      </section>
-
-      {/* EXPERIENCE */}
-      <section className="grid md:grid-cols-2 min-h-[600px]">
-        <div className="relative min-h-[400px] md:min-h-full">
-          <Image
-            src={img.pizzaOven}
-            alt="Wood-fired Republic pizza fresh from the brick oven"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="bg-bg flex items-center px-6 md:px-20 py-20">
-          <FadeIn>
-            <SectionLabel label="The Experience" />
-            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
-              Where McAllen comes
-              <br />
-              to celebrate.
-            </h2>
-            <p className="mt-8 text-muted text-[17px] leading-[1.8] max-w-lg">
-              For over 27 years, Republic of the Rio Grande has been the table
-              where McAllen&apos;s most memorable moments happen. From our
-              fire-crafted steaks to our legendary covered patio, every detail
-              is designed to make you linger a little longer.
-            </p>
-            <Link
-              href="/about"
-              className="inline-block mt-8 text-[13px] uppercase tracking-[0.15em] text-accent hover:underline"
-            >
-              Our Story <ArrowRight />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section className="bg-bg py-16 md:py-28 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <FadeIn className="text-center flex flex-col items-center">
-            <SectionLabel label="Gallery" centered />
-            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
-              A table worth returning to.
-            </h2>
-          </FadeIn>
-        </div>
-        <div className="mt-10 md:mt-16">
-          <FoodMarquee />
-        </div>
-        <div className="max-w-[1400px] mx-auto px-6 mt-12 md:mt-16 text-center">
-          <Link
-            href="/menu"
-            className="inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
-          >
-            Explore the Full Menu <ArrowRight />
-          </Link>
         </div>
       </section>
 
