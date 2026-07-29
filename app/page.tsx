@@ -17,6 +17,10 @@ const heroSlides = [
     src: img.pizzaOven,
     alt: "Wood-fired Republic pizza on branded stone at the brick oven",
   },
+  {
+    src: img.cantinaCocktail,
+    alt: "Tropical cantina cocktail with pomegranate, chiles, and pineapple",
+  },
   { src: img.patioLights, alt: "Covered patio under string lights" },
 ];
 

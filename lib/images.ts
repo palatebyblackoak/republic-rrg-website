@@ -1,6 +1,7 @@
 export const img = {
   heroPatio: "/images/hero-patio.jpg",
   pizzaOven: "/images/pizza-brick-oven.jpg",
+  cantinaCocktail: "/images/cantina-cocktail.jpg",
   patioNight:
     "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=80",
   patioLights:
