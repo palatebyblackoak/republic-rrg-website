@@ -46,18 +46,10 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
         </div>
       ))}
 
-      {/* Base darken */}
-      <div className="absolute inset-0 bg-bg/55" />
-      {/* Vertical gradient for headline area readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-bg/40 via-bg/70 to-bg/85" />
-      {/* Radial focus — darker directly behind text */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0) 100%)",
-        }}
-      />
+      {/* Light base darken so photos remain vivid */}
+      <div className="absolute inset-0 bg-bg/25" />
+      {/* Bottom-weighted gradient to anchor buttons */}
+      <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-bg/10 to-bg/85" />
 
       {/* Slide indicators */}
       {images.length > 1 && (

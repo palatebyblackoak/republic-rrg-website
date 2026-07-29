@@ -93,7 +93,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-screen min-h-[560px] md:min-h-[640px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-24 md:pb-28">
         <HeroSlideshow images={heroSlides} />
         <div className="relative z-10 text-center px-6 w-full max-w-xl">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full">
@@ -113,7 +113,7 @@ export default function HomePage() {
             </a>
           </div>
           <p
-            className="mt-6 md:mt-8 text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/85"
+            className="mt-5 md:mt-6 text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/85"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
           >
             Open Mon–Sat · 11AM–Late · Closed Sunday
