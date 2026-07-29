@@ -10,7 +10,7 @@ type Props = {
 export default function DishCard({ name, description, price, image }: Props) {
   return (
     <div className="group bg-surface border-b-2 border-transparent hover:border-accent transition-colors">
-      <div className="relative w-full h-60 overflow-hidden">
+      <div className="relative w-full h-52 md:h-60 overflow-hidden">
         <Image
           src={image}
           alt={name}
@@ -20,7 +20,7 @@ export default function DishCard({ name, description, price, image }: Props) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-bg/0 to-bg/0" />
       </div>
-      <div className="p-6 md:p-8">
+      <div className="p-5 md:p-8">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="font-serif text-[22px] text-cream leading-tight">
             {name}

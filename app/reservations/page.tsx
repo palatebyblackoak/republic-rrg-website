@@ -24,7 +24,7 @@ export default function ReservationsPage() {
 
       <section className="bg-bg py-2">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-0.5">
-          <div className="bg-surface p-14 md:p-16 flex flex-col">
+          <div className="bg-surface p-10 sm:p-14 md:p-16 flex flex-col">
             <SectionLabel label="Reserve Online" />
             <p className="text-muted text-[16px] leading-[1.8] max-w-md">
               Book your table instantly through OpenTable.
@@ -41,13 +41,13 @@ export default function ReservationsPage() {
             </div>
           </div>
 
-          <div className="bg-surface p-14 md:p-16 flex flex-col">
+          <div className="bg-surface p-10 sm:p-14 md:p-16 flex flex-col">
             <SectionLabel label="Call to Reserve" />
             <p className="text-muted text-[16px] leading-[1.8] max-w-md">
               Prefer to speak with us directly? Give us a call — especially
               recommended for Friday and Saturday.
             </p>
-            <p className="mt-8 font-serif text-cream text-[36px]">
+            <p className="mt-8 font-serif text-cream text-[28px] sm:text-[36px]">
               {site.phone}
             </p>
             <div className="mt-auto pt-10">
@@ -62,7 +62,7 @@ export default function ReservationsPage() {
         </div>
       </section>
 
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 md:py-28">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col items-center">
           <SectionLabel label="Hours" centered />
           <ul className="space-y-3 text-[16px] w-full max-w-sm">
@@ -82,10 +82,10 @@ export default function ReservationsPage() {
         </div>
       </section>
 
-      <section className="bg-surface py-20 md:py-24">
+      <section className="bg-surface py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col items-center">
           <SectionLabel label="Gift Cards" centered />
-          <h2 className="font-serif text-cream text-[36px] md:text-[48px] leading-tight">
+          <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[48px] leading-tight">
             Give the Gift of Republic.
           </h2>
           <p className="mt-6 text-muted text-[16px] leading-[1.7] max-w-lg">

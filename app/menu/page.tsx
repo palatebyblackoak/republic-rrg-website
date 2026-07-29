@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function MenuPage() {
   return (
     <>
-      <section className="relative h-[55vh] min-h-[440px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[55svh] md:h-[55vh] min-h-[380px] md:min-h-[440px] flex items-center justify-center overflow-hidden">
         <Image
           src={img.menuHero}
           alt=""
@@ -26,10 +26,10 @@ export default function MenuPage() {
         />
         <div className="absolute inset-0 bg-bg/70" />
         <div className="relative z-10 text-center px-6">
-          <h1 className="font-serif text-cream text-[56px] md:text-[80px] leading-[1.05]">
+          <h1 className="font-serif text-cream text-[44px] sm:text-[56px] md:text-[80px] leading-[1.05]">
             The Menu
           </h1>
-          <p className="mt-6 text-muted text-[16px] md:text-[18px]">
+          <p className="mt-5 md:mt-6 text-muted text-[15px] sm:text-[16px] md:text-[18px]">
             Crafted with fire. Served with care.
           </p>
         </div>
@@ -41,12 +41,12 @@ export default function MenuPage() {
         <section
           key={section.id}
           id={section.id}
-          className={`${idx % 2 === 0 ? "bg-bg" : "bg-surface"} py-20 md:py-24 scroll-mt-32`}
+          className={`${idx % 2 === 0 ? "bg-bg" : "bg-surface"} py-14 md:py-24 scroll-mt-[9rem]`}
         >
           <div className="max-w-5xl mx-auto px-6">
             <FadeIn className="flex flex-col items-center text-center">
               <SectionLabel label={section.label} centered />
-              <h2 className="font-serif text-cream text-[36px] md:text-[44px] leading-tight">
+              <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-tight">
                 {section.title}
               </h2>
               {section.note && (
@@ -56,7 +56,7 @@ export default function MenuPage() {
               )}
             </FadeIn>
 
-            <div className="mt-14 grid gap-x-14 md:grid-cols-2">
+            <div className="mt-10 md:mt-14 grid gap-x-14 md:grid-cols-2">
               {section.items.map((item) => (
                 <div
                   key={item.name}

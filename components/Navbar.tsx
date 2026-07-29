@@ -34,7 +34,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center" aria-label="Republic of the Rio Grande — Home">
             <Image
               src="/images/logo-nav.png"

@@ -27,11 +27,11 @@ export default function EventsPage() {
         overlay={0.65}
       />
 
-      <section className="bg-surface py-20 md:py-24">
+      <section className="bg-surface py-16 md:py-24">
         <div className="max-w-[1400px] mx-auto px-6 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
           <div>
             <SectionLabel label="Private Dining" />
-            <h2 className="font-serif text-cream text-[36px] md:text-[48px] leading-tight">
+            <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[48px] leading-tight">
               Host your next celebration with us.
             </h2>
             <p className="mt-8 text-muted text-[17px] leading-[1.8]">
@@ -47,7 +47,7 @@ export default function EventsPage() {
               Call to Inquire — {site.phone}
             </a>
           </div>
-          <div className="relative w-full h-[440px]">
+          <div className="relative w-full h-[320px] md:h-[440px]">
             <Image
               src={img.interior}
               alt=""
@@ -59,10 +59,10 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 md:py-28">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col items-center">
           <SectionLabel label="Upcoming Events" centered />
-          <h2 className="font-serif text-cream text-[36px] md:text-[48px] leading-tight">
+          <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[48px] leading-tight">
             More events coming soon.
           </h2>
           <p className="mt-6 text-muted text-[17px] leading-[1.8] max-w-lg">

@@ -34,7 +34,7 @@ export default function MenuTabs() {
   };
 
   return (
-    <div className="sticky top-20 z-30 bg-surface border-y border-divider">
+    <div className="sticky top-16 md:top-20 z-30 bg-surface border-y border-divider">
       <div className="max-w-[1400px] mx-auto px-4 overflow-x-auto">
         <div className="flex gap-6 md:gap-10 py-4 min-w-max">
           {menu.map((s) => (

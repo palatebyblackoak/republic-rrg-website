@@ -105,7 +105,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-screen min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-24 md:pb-28">
+      <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-24 md:pb-28">
         <HeroSlideshow images={heroSlides} />
         <div className="relative z-10 text-center px-6 w-full max-w-xl">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full">
@@ -134,7 +134,7 @@ export default function HomePage() {
       </section>
 
       {/* THE STORY */}
-      <section className="bg-bg py-24 md:py-32">
+      <section className="bg-bg py-16 md:py-32">
         <div className="max-w-[1400px] mx-auto px-6">
           <FadeIn className="text-center max-w-2xl mx-auto">
             <p className="text-[11px] uppercase tracking-widest-3 text-accent font-medium">
@@ -148,13 +148,13 @@ export default function HomePage() {
           <div className="mt-14 md:mt-20 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <FadeIn className="text-center md:text-left">
               <h2 className="font-serif leading-[0.95]">
-                <span className="block text-accent text-[64px] sm:text-[80px] md:text-[104px] font-medium">
+                <span className="block text-accent text-[48px] sm:text-[72px] md:text-[104px] font-medium">
                   27 YEARS
                 </span>
-                <span className="block text-cream text-[64px] sm:text-[80px] md:text-[104px] font-medium mt-1">
+                <span className="block text-cream text-[48px] sm:text-[72px] md:text-[104px] font-medium mt-1">
                   IN McALLEN
                 </span>
-                <span className="block italic text-cream/85 text-[26px] md:text-[36px] mt-5">
+                <span className="block italic text-cream/85 text-[22px] sm:text-[28px] md:text-[36px] mt-4 md:mt-5">
                   of history &amp; hospitality
                 </span>
               </h2>
@@ -183,7 +183,7 @@ export default function HomePage() {
             </p>
           </FadeIn>
 
-          <div className="mt-16 md:mt-20 grid gap-4 md:gap-6 md:grid-cols-3">
+          <div className="mt-12 md:mt-20 grid gap-4 md:gap-6 md:grid-cols-3">
             <FadeIn delay={0}>
               <StoryCard
                 eyebrow="Under the Lights"
@@ -227,7 +227,7 @@ export default function HomePage() {
             className="object-cover"
           />
         </div>
-        <div className="bg-bg flex items-center px-8 md:px-20 py-20">
+        <div className="bg-bg flex items-center px-6 md:px-20 py-20">
           <FadeIn>
             <SectionLabel label="The Experience" />
             <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
@@ -252,15 +252,15 @@ export default function HomePage() {
       </section>
 
       {/* FEATURED DISHES */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6">
           <FadeIn className="text-center flex flex-col items-center">
             <SectionLabel label="Most Ordered" centered />
-            <h2 className="font-serif text-cream text-[40px] md:text-[52px] leading-[1.1]">
+            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
               The dishes people come back for.
             </h2>
           </FadeIn>
-          <div className="mt-16 grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 md:mt-16 grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {dishes.map((d, i) => (
               <FadeIn key={d.name} delay={i * 80}>
                 <DishCard {...d} />
@@ -280,7 +280,7 @@ export default function HomePage() {
 
       {/* THE CANTINA */}
       <section className="grid md:grid-cols-2 min-h-[600px]">
-        <div className="bg-surface flex items-center px-8 md:px-20 py-20 md:py-24 order-2 md:order-1">
+        <div className="bg-surface flex items-center px-6 md:px-20 py-20 md:py-24 order-2 md:order-1">
           <FadeIn>
             <SectionLabel label="The Cantina" />
             <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
@@ -313,7 +313,7 @@ export default function HomePage() {
       </section>
 
       {/* THE PATIO */}
-      <section className="relative h-screen min-h-[600px] flex items-end justify-center overflow-hidden">
+      <section className="relative h-[100svh] min-h-[540px] md:min-h-[600px] flex items-end justify-center overflow-hidden">
         <div className="absolute inset-0 animate-slow-pan">
           <Image
             src={img.patioLights}
@@ -328,7 +328,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center">
             <SectionLabel label="The Patio" centered />
           </div>
-          <h2 className="font-serif text-cream text-[42px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.6)]">
+          <h2 className="font-serif text-cream text-[34px] sm:text-[42px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.6)]">
             McAllen&apos;s Most Beloved
             <br />
             Outdoor Dining Experience.
@@ -342,10 +342,10 @@ export default function HomePage() {
       </section>
 
       {/* RESERVATION CTA */}
-      <section className="bg-surface py-24 md:py-28">
+      <section className="bg-surface py-16 md:py-28">
         <div className="max-w-3xl mx-auto px-6 text-center flex flex-col items-center">
           <SectionLabel label="Reservations" centered />
-          <h2 className="font-serif text-cream text-[40px] md:text-[56px] leading-[1.1]">
+          <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[56px] leading-[1.1]">
             Your table is waiting.
           </h2>
           <p className="mt-6 text-muted text-[17px] max-w-xl leading-[1.7]">
@@ -375,17 +375,17 @@ export default function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6">
           <FadeIn className="text-center flex flex-col items-center">
             <SectionLabel label="What Guests Are Saying" centered />
-            <h2 className="font-serif text-cream text-[38px] md:text-[48px] leading-[1.1]">
+            <h2 className="font-serif text-cream text-[30px] sm:text-[38px] md:text-[48px] leading-[1.1]">
               A McAllen institution
               <br />
               for a reason.
             </h2>
           </FadeIn>
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="mt-10 md:mt-16 grid gap-6 md:gap-8 md:grid-cols-3">
             {testimonials.map((t, i) => (
               <FadeIn key={t.quote} delay={i * 120}>
                 <TestimonialCard {...t} />

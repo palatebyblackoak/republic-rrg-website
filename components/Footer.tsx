@@ -31,7 +31,7 @@ const footerNav = [
 export default function Footer() {
   return (
     <footer className="bg-bg border-t-2 border-accent">
-      <div className="max-w-[1400px] mx-auto px-6 py-20 grid gap-14 md:grid-cols-3">
+      <div className="max-w-[1400px] mx-auto px-6 py-14 md:py-20 grid gap-10 md:gap-14 md:grid-cols-3">
         <div className="flex flex-col items-start">
           <Image
             src="/images/logo-footer.png"

@@ -22,7 +22,7 @@ export default function AboutPage() {
         overlay={0.6}
       />
 
-      <section className="bg-bg py-24 md:py-28">
+      <section className="bg-bg py-16 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 grid gap-14 md:grid-cols-2 md:gap-20 items-center">
           <FadeIn>
             <SectionLabel label="Since 1998" />
@@ -47,7 +47,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
           <FadeIn delay={120}>
-            <div className="relative w-full h-[520px]">
+            <div className="relative w-full h-[360px] md:h-[520px]">
               <Image
                 src={img.interior}
                 alt="Republic of the Rio Grande interior"
@@ -68,7 +68,7 @@ export default function AboutPage() {
         ]}
       />
 
-      <section className="relative h-[70vh] min-h-[520px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[65svh] md:h-[70vh] min-h-[440px] md:min-h-[520px] flex items-center justify-center overflow-hidden">
         <Image
           src={img.patioNight}
           alt=""
@@ -81,10 +81,10 @@ export default function AboutPage() {
           <div className="flex flex-col items-center">
             <SectionLabel label="The Patio" centered />
           </div>
-          <h2 className="font-serif text-cream text-[40px] md:text-[56px] leading-[1.1]">
+          <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[56px] leading-[1.1]">
             The heart of Republic.
           </h2>
-          <p className="mt-6 text-muted text-[17px] leading-[1.8] max-w-xl mx-auto">
+          <p className="mt-5 md:mt-6 text-muted text-[15px] sm:text-[17px] leading-[1.8] max-w-xl mx-auto">
             Our covered outdoor patio is the soul of the restaurant. Whether
             it&apos;s a quiet dinner for two or a celebration with the whole
             family — the patio is where Republic comes alive.
@@ -92,16 +92,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-surface py-24 md:py-28">
+      <section className="bg-surface py-16 md:py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="flex flex-col items-center">
             <SectionLabel label="Part of the Family" centered />
           </div>
-          <h2 className="font-serif text-cream text-[32px] md:text-[40px] leading-tight">
+          <h2 className="font-serif text-cream text-[26px] sm:text-[32px] md:text-[40px] leading-tight">
             A family of McAllen dining traditions.
           </h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <div className="bg-bg p-10 border border-divider">
+          <div className="mt-10 md:mt-12 grid gap-6 md:grid-cols-2">
+            <div className="bg-bg p-8 md:p-10 border border-divider">
               <p className="text-[11px] uppercase tracking-widest-2 text-accent">
                 Sister Restaurant
               </p>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 Santa Fe Steakhouse
               </h3>
             </div>
-            <div className="bg-bg p-10 border border-divider">
+            <div className="bg-bg p-8 md:p-10 border border-divider">
               <p className="text-[11px] uppercase tracking-widest-2 text-accent">
                 Sister Restaurant
               </p>

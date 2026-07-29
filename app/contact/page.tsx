@@ -32,7 +32,7 @@ export default function ContactPage() {
 
       <section className="bg-surface">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2">
-          <div className="p-12 md:p-16">
+          <div className="p-8 sm:p-12 md:p-16">
             <SectionLabel label="Republic of the Rio Grande" />
 
             <div className="space-y-8 text-[15px]">
@@ -137,7 +137,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="min-h-[420px] md:min-h-full relative bg-bg">
+          <div className="min-h-[340px] md:min-h-full relative bg-bg">
             <iframe
               title="Republic of the Rio Grande location map"
               src={mapEmbed}
