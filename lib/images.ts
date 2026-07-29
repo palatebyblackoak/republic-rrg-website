@@ -1,6 +1,5 @@
 export const img = {
-  heroPatio:
-    "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=2000&q=80",
+  heroPatio: "/images/hero-patio.jpg",
   patioNight:
     "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=80",
   patioLights:
