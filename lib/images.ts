@@ -1,6 +1,6 @@
 export const img = {
   heroPatio: "/images/hero-patio.jpg",
-  pizzaOven: "/images/pizza-brick-oven.jpg",
+  pizzaOven: "/images/pizza-margherita.jpg",
   cantinaCocktail: "/images/cantina-cocktail.jpg",
   steakPlated: "/images/steak-plated.jpg",
   filetTexas: "/images/filet-texas.jpg",

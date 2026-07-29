@@ -27,7 +27,7 @@ const heroSlides = [
   },
   {
     src: img.pizzaOven,
-    alt: "Wood-fired Republic pizza on branded stone at the brick oven",
+    alt: "Wood-fired Margherita pizza on the branded Republic pewter platter",
   },
   {
     src: img.cantinaCocktail,
