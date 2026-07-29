@@ -8,7 +8,7 @@ export default function TestimonialCard({ quote, reviewer, platform }: Props) {
   return (
     <div className="bg-surface p-10 border-l-2 border-accent h-full flex flex-col">
       <span
-        className="font-serif text-[80px] text-gold leading-none block h-8"
+        className="font-serif text-[80px] text-accent leading-none block h-8"
         aria-hidden
       >
         “

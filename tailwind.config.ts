@@ -8,14 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0d0d0d",
-        surface: "#1a1410",
-        cream: "#f5f0e8",
-        muted: "#9a8a7a",
+        bg: "#0a0a0a",
+        surface: "#141414",
+        cream: "#ffffff",
+        muted: "#a3a3a3",
         accent: "#8b1a1a",
         "accent-hover": "#6b1212",
-        gold: "#c9a84c",
-        divider: "#2a1a1a",
+        divider: "#262626",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],

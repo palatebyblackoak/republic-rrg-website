@@ -92,7 +92,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
-                    className="hover:text-gold transition-colors"
+                    className="hover:text-accent transition-colors"
                   >
                     <FacebookIcon className="w-5 h-5" />
                   </a>
@@ -101,7 +101,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="hover:text-gold transition-colors"
+                    className="hover:text-accent transition-colors"
                   >
                     <InstagramIcon className="w-5 h-5" />
                   </a>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter"
-                    className="hover:text-gold transition-colors"
+                    className="hover:text-accent transition-colors"
                   >
                     <TwitterIcon className="w-5 h-5" />
                   </a>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="TripAdvisor"
-                    className="hover:text-gold transition-colors"
+                    className="hover:text-accent transition-colors"
                   >
                     <TripAdvisorIcon className="w-5 h-5" />
                   </a>

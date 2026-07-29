@@ -50,10 +50,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-[11px] uppercase tracking-widest-2 text-gold">
+          <p className="text-[11px] uppercase tracking-widest-2 text-accent">
             Explore
           </p>
-          <div className="w-10 h-px bg-gold my-3" />
+          <div className="w-10 h-px bg-accent my-3" />
           <ul className="space-y-3">
             {footerNav.map((link) => (
               <li key={link.label}>
@@ -93,10 +93,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-[11px] uppercase tracking-widest-2 text-gold">
+          <p className="text-[11px] uppercase tracking-widest-2 text-accent">
             Hours
           </p>
-          <div className="w-10 h-px bg-gold my-3" />
+          <div className="w-10 h-px bg-accent my-3" />
           <ul className="space-y-2 text-[13px] text-muted">
             {site.hours.map((h) => (
               <li key={h.day} className="flex justify-between max-w-[240px]">
@@ -106,10 +106,10 @@ export default function Footer() {
             ))}
           </ul>
 
-          <p className="mt-8 text-[11px] uppercase tracking-widest-2 text-gold">
+          <p className="mt-8 text-[11px] uppercase tracking-widest-2 text-accent">
             Contact
           </p>
-          <div className="w-10 h-px bg-gold my-3" />
+          <div className="w-10 h-px bg-accent my-3" />
           <p className="text-[13px] text-muted">{site.address}</p>
           <a
             href={site.phoneHref}

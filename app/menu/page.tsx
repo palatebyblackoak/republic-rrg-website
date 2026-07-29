@@ -66,7 +66,7 @@ export default function MenuPage() {
                     <h3 className="font-serif font-semibold text-cream text-[20px]">
                       {item.name}
                     </h3>
-                    <span className="text-[14px] text-gold whitespace-nowrap">
+                    <span className="text-[14px] text-cream whitespace-nowrap">
                       {item.price}
                     </span>
                   </div>

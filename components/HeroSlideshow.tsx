@@ -69,7 +69,7 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
               aria-label={`Slide ${i + 1}`}
               onClick={() => setActive(i)}
               className={`h-[3px] transition-all duration-500 ${
-                i === active ? "w-10 bg-gold" : "w-6 bg-cream/40 hover:bg-cream/70"
+                i === active ? "w-10 bg-accent" : "w-6 bg-cream/40 hover:bg-cream/70"
               }`}
             />
           ))}

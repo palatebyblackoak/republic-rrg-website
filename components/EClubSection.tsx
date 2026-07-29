@@ -31,7 +31,7 @@ export default function EClubSection() {
         </ul>
 
         {submitted ? (
-          <p className="mt-10 text-gold text-[14px] uppercase tracking-widest-2">
+          <p className="mt-10 text-accent text-[14px] uppercase tracking-widest-2">
             Thanks — welcome to the Republic.
           </p>
         ) : (

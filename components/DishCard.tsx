@@ -25,7 +25,7 @@ export default function DishCard({ name, description, price, image }: Props) {
           <h3 className="font-serif text-[22px] text-cream leading-tight">
             {name}
           </h3>
-          <span className="font-sans text-[14px] text-gold whitespace-nowrap">
+          <span className="font-sans text-[14px] text-cream whitespace-nowrap">
             {price}
           </span>
         </div>

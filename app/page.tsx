@@ -97,7 +97,7 @@ export default function HomePage() {
         <HeroSlideshow images={heroSlides} />
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <p
-            className="text-[11px] uppercase tracking-widest-3 text-gold font-medium"
+            className="text-[11px] uppercase tracking-widest-3 text-accent font-medium"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7)" }}
           >
             Est. 1998 · McAllen, Texas
@@ -140,7 +140,7 @@ export default function HomePage() {
             Open Mon–Sat · 11AM–Late · Closed Sunday
           </p>
         </div>
-        <div className="hidden md:block absolute bottom-20 left-1/2 -translate-x-1/2 z-10 h-14 w-px bg-gold animate-scroll-line" />
+        <div className="hidden md:block absolute bottom-20 left-1/2 -translate-x-1/2 z-10 h-14 w-px bg-accent animate-scroll-line" />
       </section>
 
       {/* STATS */}
