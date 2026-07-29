@@ -8,7 +8,14 @@ import StatBar from "@/components/StatBar";
 import EClubSection from "@/components/EClubSection";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
+import HeroSlideshow from "@/components/HeroSlideshow";
 import { ArrowRight } from "@/components/Icons";
+
+const heroSlides = [
+  { src: img.heroPatio, alt: "Republic of the Rio Grande patio at night" },
+  { src: img.patioLights, alt: "Covered patio under string lights" },
+  { src: img.experience, alt: "Fire-crafted dish plated" },
+];
 
 const dishes = [
   {
@@ -80,50 +87,54 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-        <Image
-          src={img.heroPatio}
-          alt="Republic of the Rio Grande covered patio at night with warm string lights"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-bg/65" />
+      <section className="relative h-screen min-h-[640px] md:min-h-[720px] flex items-center justify-center overflow-hidden">
+        <HeroSlideshow images={heroSlides} />
         <div className="relative z-10 text-center px-6 max-w-4xl">
-          <p className="text-[11px] uppercase tracking-widest-3 text-gold font-medium">
+          <p
+            className="text-[11px] uppercase tracking-widest-3 text-gold font-medium"
+            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7)" }}
+          >
             Est. 1998 · McAllen, Texas
           </p>
-          <h1 className="mt-6 font-serif text-cream font-normal text-[56px] sm:text-[72px] md:text-[88px] leading-[1.02]">
+          <h1
+            className="mt-6 font-serif text-cream font-normal text-[44px] sm:text-[64px] md:text-[88px] leading-[1.05] md:leading-[1.02]"
+            style={{ textShadow: "0 4px 24px rgba(0,0,0,0.6)" }}
+          >
             Bask in the History
             <br />
             of the Republic.
           </h1>
-          <p className="mt-8 text-muted font-light text-[17px] md:text-[18px] max-w-xl mx-auto leading-[1.7]">
+          <p
+            className="mt-6 md:mt-8 text-cream/90 font-light text-[15px] md:text-[18px] max-w-xl mx-auto leading-[1.7]"
+            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85)" }}
+          >
             An iconic McAllen dining experience since 1998. Fire-crafted
             cuisine, a legendary covered patio, and a menu worth returning to.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full sm:w-auto max-w-sm sm:max-w-none mx-auto">
             <a
               href={site.reservation}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
+              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
             >
               Reserve a Table <ArrowRight />
             </a>
             <Link
               href="/menu"
-              className="border border-cream text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
+              className="border border-cream text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
             >
               View the Menu <ArrowRight />
             </Link>
           </div>
-          <p className="mt-10 text-[11px] uppercase tracking-widest-2 text-muted">
+          <p
+            className="mt-8 md:mt-10 text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/80"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
+          >
             Open Mon–Sat · 11AM–Late · Closed Sunday
           </p>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 h-14 w-px bg-gold animate-scroll-line" />
+        <div className="hidden md:block absolute bottom-20 left-1/2 -translate-x-1/2 z-10 h-14 w-px bg-gold animate-scroll-line" />
       </section>
 
       {/* STATS */}
@@ -150,7 +161,7 @@ export default function HomePage() {
         <div className="bg-bg flex items-center px-8 md:px-20 py-20">
           <FadeIn>
             <SectionLabel label="The Experience" />
-            <h2 className="font-serif text-cream text-[40px] md:text-[52px] leading-[1.1]">
+            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
               Where McAllen comes
               <br />
               to celebrate.
