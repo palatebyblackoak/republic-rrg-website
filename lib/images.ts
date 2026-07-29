@@ -5,7 +5,7 @@ export const img = {
   steakPlated: "/images/steak-plated.jpg",
   filetTexas: "/images/filet-texas.jpg",
   patioNight: "/images/patio-firepit.jpg",
-  patioLights: "/images/patio-firepit.jpg",
+  patioLights: "/images/patio-night.jpg",
   interior:
     "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=1600&q=80",
   experience:
