@@ -27,8 +27,8 @@ export const img = {
   ceviche: "/images/ahi-tuna-ceviche.jpg",
   salmon: "/images/avocado-salmon.jpg",
   salmonWide: "/images/avocado-salmon-wide.jpg",
-  chicken:
-    "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=1200&q=80",
+  chicken: "/images/chicken-plated.jpg",
+  pizzaSpecialty: "/images/pizza-specialty.jpg",
   steakSalad:
     "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80",
 };

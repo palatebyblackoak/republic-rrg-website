@@ -30,6 +30,10 @@ const heroSlides = [
     alt: "Wood-fired Margherita pizza on the branded Republic pewter platter",
   },
   {
+    src: img.pizzaSpecialty,
+    alt: "Specialty brick-oven pizza with avocado and fresh greens on the branded Republic platter",
+  },
+  {
     src: img.cantinaCocktail,
     alt: "Tropical cantina cocktail with pomegranate, chiles, and pineapple",
   },
