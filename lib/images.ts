@@ -23,8 +23,7 @@ export const img = {
     "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
   ribeye:
     "https://images.unsplash.com/photo-1546241072-48010ad2862c?auto=format&fit=crop&w=1200&q=80",
-  ceviche:
-    "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1200&q=80",
+  ceviche: "/images/ahi-tuna-ceviche.jpg",
   salmon:
     "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80",
   chicken:
