@@ -3,6 +3,7 @@ export const img = {
   pizzaOven: "/images/pizza-margherita.jpg",
   pizzaBrickOven: "/images/pizza-brick-oven.jpg",
   cantinaCocktail: "/images/cantina-pomegranate.jpg",
+  cantinaSangria: "/images/cantina-sangria.jpg",
   cantinaPineapple: "/images/cantina-cocktail.jpg",
   steakPlated: "/images/steak-plated.jpg",
   filetTexas: "/images/filet-texas-plated.jpg",
