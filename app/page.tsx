@@ -13,8 +13,11 @@ import { ArrowRight } from "@/components/Icons";
 
 const heroSlides = [
   { src: img.heroPatio, alt: "Republic of the Rio Grande patio at night" },
+  {
+    src: img.pizzaOven,
+    alt: "Wood-fired Republic pizza on branded stone at the brick oven",
+  },
   { src: img.patioLights, alt: "Covered patio under string lights" },
-  { src: img.experience, alt: "Fire-crafted dish plated" },
 ];
 
 const dishes = [
@@ -151,8 +154,8 @@ export default function HomePage() {
       <section className="grid md:grid-cols-2 min-h-[600px]">
         <div className="relative min-h-[400px] md:min-h-full">
           <Image
-            src={img.experience}
-            alt="Dark moody plated dish"
+            src={img.pizzaOven}
+            alt="Wood-fired Republic pizza fresh from the brick oven"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
