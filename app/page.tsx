@@ -162,7 +162,7 @@ export default function HomePage() {
             <FadeIn delay={120}>
               <div className="relative aspect-[4/3] md:aspect-square w-full overflow-hidden">
                 <Image
-                  src={img.pizzaOven}
+                  src={img.pizzaBrickOven}
                   alt="Republic pizza fresh from the brick oven"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
