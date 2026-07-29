@@ -14,6 +14,10 @@ import { ArrowRight } from "@/components/Icons";
 const heroSlides = [
   { src: img.heroPatio, alt: "Republic of the Rio Grande patio at night" },
   {
+    src: img.patioLights,
+    alt: "Covered patio with firepit, string lights, and white-cloth tables",
+  },
+  {
     src: img.steakPlated,
     alt: "Grilled ribeye with shishito peppers, corn, and mashed potatoes",
   },
