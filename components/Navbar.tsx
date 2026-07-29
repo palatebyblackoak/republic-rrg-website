@@ -74,14 +74,22 @@ export default function Navbar() {
             )}
           </nav>
 
-          <a
-            href={site.reservation}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-block border border-accent text-cream hover:bg-accent hover:text-white transition-colors text-[11px] uppercase tracking-[0.15em] px-5 py-3"
-          >
-            Reserve a Table
-          </a>
+          <div className="hidden lg:flex items-center gap-3">
+            <Link
+              href="/menu"
+              className="bg-accent hover:bg-accent-hover text-white transition-colors text-[11px] uppercase tracking-[0.15em] px-5 py-3"
+            >
+              View the Menu
+            </Link>
+            <a
+              href={site.reservation}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-accent text-cream hover:bg-accent hover:text-white transition-colors text-[11px] uppercase tracking-[0.15em] px-5 py-3"
+            >
+              Reserve a Table
+            </a>
+          </div>
 
           <button
             aria-label={open ? "Close menu" : "Open menu"}
@@ -134,11 +142,17 @@ export default function Navbar() {
                   </Link>
                 )
               )}
+              <Link
+                href="/menu"
+                className="mt-4 bg-accent text-white text-center text-[11px] uppercase tracking-[0.15em] px-5 py-3"
+              >
+                View the Menu
+              </Link>
               <a
                 href={site.reservation}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 border border-accent text-cream hover:bg-accent text-center text-[11px] uppercase tracking-[0.15em] px-5 py-3"
+                className="mt-2 border border-accent text-cream hover:bg-accent text-center text-[11px] uppercase tracking-[0.15em] px-5 py-3"
               >
                 Reserve a Table
               </a>
