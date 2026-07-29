@@ -57,11 +57,11 @@ const dishes = [
     image: img.salmon,
   },
   {
-    name: "Avocado Chicken",
+    name: "Texas Filet",
     description:
-      "Grilled chicken breast, creamy avocado sauce, parmesan, cilantro rice, seasonal vegetables.",
-    price: "$18",
-    image: img.chicken,
+      "8 oz filet, epazote butter, creamy potato au-gratin, port sauce, grilled asparagus.",
+    price: "$36",
+    image: img.filetTexas,
   },
   {
     name: "Chimichurri Steak Salad",
