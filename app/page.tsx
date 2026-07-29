@@ -93,31 +93,10 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-screen min-h-[640px] md:min-h-[720px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[560px] md:min-h-[640px] flex items-center justify-center overflow-hidden">
         <HeroSlideshow images={heroSlides} />
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <p
-            className="text-[11px] uppercase tracking-widest-3 text-accent font-medium"
-            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.7)" }}
-          >
-            Est. 1998 · McAllen, Texas
-          </p>
-          <h1
-            className="mt-6 font-serif text-cream font-normal text-[44px] sm:text-[64px] md:text-[88px] leading-[1.05] md:leading-[1.02]"
-            style={{ textShadow: "0 4px 24px rgba(0,0,0,0.6)" }}
-          >
-            Bask in the History
-            <br />
-            of the Republic.
-          </h1>
-          <p
-            className="mt-6 md:mt-8 text-cream/90 font-light text-[15px] md:text-[18px] max-w-xl mx-auto leading-[1.7]"
-            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85)" }}
-          >
-            An iconic McAllen dining experience since 1998. Fire-crafted
-            cuisine, a legendary covered patio, and a menu worth returning to.
-          </p>
-          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full sm:w-auto max-w-sm sm:max-w-none mx-auto">
+        <div className="relative z-10 text-center px-6 w-full max-w-xl">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full">
             <Link
               href="/menu"
               className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
@@ -134,13 +113,12 @@ export default function HomePage() {
             </a>
           </div>
           <p
-            className="mt-8 md:mt-10 text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/80"
+            className="mt-6 md:mt-8 text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/85"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
           >
             Open Mon–Sat · 11AM–Late · Closed Sunday
           </p>
         </div>
-        <div className="hidden md:block absolute bottom-20 left-1/2 -translate-x-1/2 z-10 h-14 w-px bg-accent animate-scroll-line" />
       </section>
 
       {/* THE STORY */}
