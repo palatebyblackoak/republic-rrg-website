@@ -118,20 +118,20 @@ export default function HomePage() {
             cuisine, a legendary covered patio, and a menu worth returning to.
           </p>
           <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full sm:w-auto max-w-sm sm:max-w-none mx-auto">
+            <Link
+              href="/menu"
+              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
+            >
+              View the Menu <ArrowRight />
+            </Link>
             <a
               href={site.reservation}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
+              className="border border-cream text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
             >
               Reserve a Table <ArrowRight />
             </a>
-            <Link
-              href="/menu"
-              className="border border-cream text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
-            >
-              View the Menu <ArrowRight />
-            </Link>
           </div>
           <p
             className="mt-8 md:mt-10 text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/80"
