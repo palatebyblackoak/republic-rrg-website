@@ -122,7 +122,7 @@ export default function Footer() {
 
       <div className="border-t border-divider py-6">
         <p className="text-center text-[11px] uppercase tracking-widest-2 text-muted">
-          © 2025 Republic of the Rio Grande · McAllen, Texas · All Rights Reserved
+          © 2026 Republic of the Rio Grande · McAllen, Texas · All Rights Reserved
         </p>
       </div>
     </footer>
