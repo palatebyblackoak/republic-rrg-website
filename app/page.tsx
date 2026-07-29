@@ -165,7 +165,8 @@ export default function HomePage() {
               <StoryCard
                 eyebrow="Fire-Crafted"
                 title="The Kitchen"
-                href="/menu"
+                href="/reservations"
+                cta="Reserve a Table"
                 image={img.steakPlated}
                 imageAlt="Grilled ribeye plated with shishito peppers, corn, and mashed potatoes"
               />
