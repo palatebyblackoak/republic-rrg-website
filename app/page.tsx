@@ -4,11 +4,11 @@ import { site } from "@/lib/site";
 import { img } from "@/lib/images";
 import DishCard from "@/components/DishCard";
 import TestimonialCard from "@/components/TestimonialCard";
-import StatBar from "@/components/StatBar";
 import EClubSection from "@/components/EClubSection";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import StoryCard from "@/components/StoryCard";
 import { ArrowRight } from "@/components/Icons";
 
 const heroSlides = [
@@ -143,15 +143,87 @@ export default function HomePage() {
         <div className="hidden md:block absolute bottom-20 left-1/2 -translate-x-1/2 z-10 h-14 w-px bg-accent animate-scroll-line" />
       </section>
 
-      {/* STATS */}
-      <StatBar
-        stats={[
-          { number: "27+", label: "Years Serving McAllen" },
-          { number: "1998", label: "Established" },
-          { number: "#9", label: "Ranked in McAllen · TripAdvisor" },
-          { number: "4.5★", label: "Yelp Rating · 277+ Reviews" },
-        ]}
-      />
+      {/* THE STORY */}
+      <section className="bg-bg py-24 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <FadeIn className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent font-medium">
+              Est. 1998
+            </p>
+            <p className="mt-5 font-serif italic text-cream text-[22px] md:text-[28px]">
+              A McAllen Institution
+            </p>
+          </FadeIn>
+
+          <div className="mt-14 md:mt-20 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <FadeIn className="text-center md:text-left">
+              <h2 className="font-serif leading-[0.95]">
+                <span className="block text-accent text-[64px] sm:text-[80px] md:text-[104px] font-medium">
+                  27 YEARS
+                </span>
+                <span className="block text-cream text-[64px] sm:text-[80px] md:text-[104px] font-medium mt-1">
+                  IN McALLEN
+                </span>
+                <span className="block italic text-cream/85 text-[26px] md:text-[36px] mt-5">
+                  of history &amp; hospitality
+                </span>
+              </h2>
+            </FadeIn>
+            <FadeIn delay={120}>
+              <div className="relative aspect-[4/3] md:aspect-square w-full overflow-hidden">
+                <Image
+                  src={img.pizzaOven}
+                  alt="Republic pizza fresh from the brick oven"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+          </div>
+
+          <FadeIn className="mt-14 md:mt-20 max-w-2xl mx-auto text-center">
+            <p className="text-muted text-[16px] md:text-[17px] leading-[1.8]">
+              For over two decades, Republic of the Rio Grande has been the
+              table where McAllen celebrates. Fire-crafted cuisine, a legendary
+              covered patio, and a menu worth returning to.
+            </p>
+            <p className="mt-5 text-cream text-[16px] md:text-[17px] leading-[1.8]">
+              Come find your seat.
+            </p>
+          </FadeIn>
+
+          <div className="mt-16 md:mt-20 grid gap-4 md:gap-6 md:grid-cols-3">
+            <FadeIn delay={0}>
+              <StoryCard
+                eyebrow="Under the Lights"
+                title="The Patio"
+                href="/menu"
+                image={img.heroPatio}
+                imageAlt="Republic patio at night"
+              />
+            </FadeIn>
+            <FadeIn delay={120}>
+              <StoryCard
+                eyebrow="Fire-Crafted"
+                title="The Kitchen"
+                href="/menu"
+                image={img.pizzaOven}
+                imageAlt="Brick-oven pizza"
+              />
+            </FadeIn>
+            <FadeIn delay={240}>
+              <StoryCard
+                eyebrow="After Dark"
+                title="The Cantina"
+                href="/menu"
+                image={img.cantinaCocktail}
+                imageAlt="Cantina cocktail"
+              />
+            </FadeIn>
+          </div>
+        </div>
+      </section>
 
       {/* EXPERIENCE */}
       <section className="grid md:grid-cols-2 min-h-[600px]">
