@@ -276,32 +276,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* THE PATIO */}
-      <section className="relative h-[100svh] min-h-[540px] md:min-h-[600px] flex items-end justify-center overflow-hidden">
-        <div className="absolute inset-0 animate-slow-pan">
+      {/* RESERVATION CTA */}
+      <section className="grid md:grid-cols-2 min-h-[560px]">
+        <div className="bg-surface flex items-center px-6 md:px-20 py-16 md:py-24 order-2 md:order-1">
+          <FadeIn>
+            <SectionLabel label="Reservations" />
+            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[56px] leading-[1.1]">
+              Reserve the evening.
+            </h2>
+            <p className="mt-6 md:mt-8 text-muted text-[16px] md:text-[17px] leading-[1.8] max-w-lg">
+              Book online through OpenTable or call us directly. For weekend
+              evenings, we recommend reserving in advance.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <a
+                href={site.reservation}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors text-center"
+              >
+                Reserve a Table <ArrowRight />
+              </a>
+              <a
+                href={site.phoneHref}
+                className="border border-cream text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors text-center"
+              >
+                Call {site.phone}
+              </a>
+            </div>
+            <p className="mt-8 text-[12px] uppercase tracking-widest-2 text-muted">
+              Walk-ins welcome based on availability.
+            </p>
+          </FadeIn>
+        </div>
+        <div className="relative min-h-[360px] md:min-h-full order-1 md:order-2">
           <Image
             src={img.patioLights}
-            alt="Outdoor covered patio with warm string lights"
+            alt="Republic covered patio at night — reserve your evening"
             fill
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/70 via-40% to-transparent" />
-        <div className="relative z-10 text-center px-6 max-w-3xl pb-16 md:pb-24">
-          <div className="flex flex-col items-center">
-            <SectionLabel label="The Patio" centered />
-          </div>
-          <h2 className="font-serif text-cream text-[34px] sm:text-[42px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.6)]">
-            McAllen&apos;s Most Beloved
-            <br />
-            Outdoor Dining Experience.
-          </h2>
-          <p className="mt-8 text-cream/85 text-[16px] md:text-[18px] leading-[1.8] max-w-xl mx-auto drop-shadow-[0_1px_10px_rgba(0,0,0,0.7)]">
-            Our covered patio has hosted countless anniversaries, celebrations,
-            and late nights under the Texas sky. Come for the food. Stay for
-            the atmosphere.
-          </p>
         </div>
       </section>
 
