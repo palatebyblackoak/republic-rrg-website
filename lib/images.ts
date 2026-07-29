@@ -7,6 +7,7 @@ export const img = {
   cantinaPineapple: "/images/cantina-cocktail.jpg",
   steakPlated: "/images/steak-plated.jpg",
   filetTexas: "/images/filet-texas-plated.jpg",
+  filetTexasWide: "/images/filet-texas-wide.jpg",
   patioNight: "/images/patio-firepit.jpg",
   patioLights: "/images/patio-night.jpg",
   interior:

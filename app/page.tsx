@@ -26,6 +26,10 @@ const heroSlides = [
     alt: "Grilled ribeye with shishito peppers, corn, and mashed potatoes",
   },
   {
+    src: img.filetTexasWide,
+    alt: "Texas Filet with mashed potatoes, grilled asparagus, and port mushroom sauce",
+  },
+  {
     src: img.pizzaOven,
     alt: "Wood-fired Margherita pizza on the branded Republic pewter platter",
   },
