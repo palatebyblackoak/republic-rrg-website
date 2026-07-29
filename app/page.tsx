@@ -18,6 +18,10 @@ const heroSlides = [
     alt: "Covered patio with firepit, string lights, and white-cloth tables",
   },
   {
+    src: img.salmonWide,
+    alt: "Grilled avocado salmon with pico de gallo, corn relish, and Caymus Chardonnay",
+  },
+  {
     src: img.steakPlated,
     alt: "Grilled ribeye with shishito peppers, corn, and mashed potatoes",
   },

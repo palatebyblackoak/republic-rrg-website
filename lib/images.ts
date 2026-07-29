@@ -24,8 +24,8 @@ export const img = {
   ribeye:
     "https://images.unsplash.com/photo-1546241072-48010ad2862c?auto=format&fit=crop&w=1200&q=80",
   ceviche: "/images/ahi-tuna-ceviche.jpg",
-  salmon:
-    "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80",
+  salmon: "/images/avocado-salmon.jpg",
+  salmonWide: "/images/avocado-salmon-wide.jpg",
   chicken:
     "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=1200&q=80",
   steakSalad:
