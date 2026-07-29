@@ -74,23 +74,6 @@ export default function Navbar() {
             )}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/menu"
-              className="bg-accent hover:bg-accent-hover text-white transition-colors text-[11px] uppercase tracking-[0.15em] px-5 py-3"
-            >
-              View the Menu
-            </Link>
-            <a
-              href={site.reservation}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-accent text-cream hover:bg-accent hover:text-white transition-colors text-[11px] uppercase tracking-[0.15em] px-5 py-3"
-            >
-              Reserve a Table
-            </a>
-          </div>
-
           <button
             aria-label={open ? "Close menu" : "Open menu"}
             className="lg:hidden text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5"
