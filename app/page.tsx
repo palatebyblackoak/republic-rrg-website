@@ -200,7 +200,8 @@ export default function HomePage() {
               <StoryCard
                 eyebrow="Under the Lights"
                 title="The Patio"
-                href="/menu"
+                href="/reservations"
+                cta="Reserve a Table"
                 image={img.heroPatio}
                 imageAlt="Republic patio at night"
               />
