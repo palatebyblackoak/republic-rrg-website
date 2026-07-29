@@ -209,36 +209,38 @@ export default function HomePage() {
       </section>
 
       {/* THE CANTINA */}
-      <section className="grid md:grid-cols-2 min-h-[600px]">
-        <div className="bg-surface flex items-center px-6 md:px-20 py-20 md:py-24 order-2 md:order-1">
-          <FadeIn>
+      <section className="relative h-[95svh] md:h-[80vh] min-h-[600px] md:min-h-[640px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={img.cantinaSangria}
+            alt="Sangria-style cantina cocktail with pomegranate, blackberries, chile, and citrus at the bar"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/70 to-bg/20 md:from-bg md:via-bg/60 md:to-transparent" />
+        <div className="absolute inset-0 md:hidden bg-bg/40" />
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-20">
+          <FadeIn className="max-w-xl">
             <SectionLabel label="The Cantina" />
-            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
+            <h2 className="font-serif text-cream text-[36px] sm:text-[44px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)]">
               Where the night
               <br />
               finds its rhythm.
             </h2>
-            <p className="mt-6 md:mt-8 text-muted text-[16px] md:text-[17px] leading-[1.8] max-w-lg">
+            <p className="mt-6 md:mt-8 text-cream/85 text-[16px] md:text-[18px] leading-[1.8] max-w-lg drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]">
               Tequila-forward cocktails, house-made mixers, and the flavors of
               the Rio Grande — pomegranate, chile, pineapple, citrus. A cantina
               built for the way McAllen celebrates. Come thirsty. Stay a while.
             </p>
             <Link
               href="/reservations"
-              className="inline-block mt-8 text-[13px] uppercase tracking-[0.15em] text-accent hover:underline"
+              className="inline-block mt-8 md:mt-10 bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
             >
               Reserve a Table <ArrowRight />
             </Link>
           </FadeIn>
-        </div>
-        <div className="relative min-h-[380px] md:min-h-full order-1 md:order-2">
-          <Image
-            src={img.cantinaSangria}
-            alt="Sangria-style cantina cocktail with pomegranate, blackberries, chile, and citrus at the bar"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
         </div>
       </section>
 
