@@ -21,7 +21,6 @@ const heroSlides = [
     src: img.cantinaCocktail,
     alt: "Tropical cantina cocktail with pomegranate, chiles, and pineapple",
   },
-  { src: img.patioLights, alt: "Covered patio under string lights" },
 ];
 
 const dishes = [
@@ -213,6 +212,40 @@ export default function HomePage() {
               Explore the Full Menu <ArrowRight />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* THE CANTINA */}
+      <section className="grid md:grid-cols-2 min-h-[600px]">
+        <div className="bg-surface flex items-center px-8 md:px-20 py-20 md:py-24 order-2 md:order-1">
+          <FadeIn>
+            <SectionLabel label="The Cantina" />
+            <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[52px] leading-[1.1]">
+              Where the night
+              <br />
+              finds its rhythm.
+            </h2>
+            <p className="mt-6 md:mt-8 text-muted text-[16px] md:text-[17px] leading-[1.8] max-w-lg">
+              Tequila-forward cocktails, house-made mixers, and the flavors of
+              the Rio Grande — pomegranate, chile, pineapple, citrus. A cantina
+              built for the way McAllen celebrates. Come thirsty. Stay a while.
+            </p>
+            <Link
+              href="/menu"
+              className="inline-block mt-8 text-[13px] uppercase tracking-[0.15em] text-accent hover:underline"
+            >
+              See the Menu <ArrowRight />
+            </Link>
+          </FadeIn>
+        </div>
+        <div className="relative min-h-[380px] md:min-h-full order-1 md:order-2">
+          <Image
+            src={img.cantinaCocktail}
+            alt="Tropical cantina cocktail with pomegranate, chiles, and pineapple"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
