@@ -14,8 +14,7 @@ export const img = {
     "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=1600&q=80",
   experience:
     "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80",
-  menuHero:
-    "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80",
+  menuHero: "/images/filet-texas-wide.jpg",
   aboutHero: "/images/patio-firepit.jpg",
   reservationsHero:
     "https://images.unsplash.com/photo-1592861956120-e524fc739696?auto=format&fit=crop&w=2000&q=80",
