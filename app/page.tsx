@@ -104,28 +104,32 @@ export default function HomePage() {
           <FoodMarquee />
         </div>
         <div className="max-w-[1400px] mx-auto px-6 mt-12 md:mt-16 text-center">
-          <Link
-            href="/menu"
-            className="inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
-          >
-            Explore the Full Menu <ArrowRight />
+          <Link href="/menu" className="group inline-flex flex-col items-center">
+            <span className="text-[12px] md:text-[13px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent">
+              Explore the Full Menu
+            </span>
+            <span className="mt-2.5 block h-[1.5px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
           </Link>
         </div>
       </section>
 
-      {/* THE STORY */}
-      <section className="bg-bg py-16 md:py-32">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <FadeIn className="text-center max-w-2xl mx-auto">
-            <p className="text-[11px] uppercase tracking-widest-3 text-accent font-medium">
-              Est. 1998
-            </p>
-            <p className="mt-5 font-serif italic text-cream text-[22px] md:text-[28px]">
-              A McAllen Institution
-            </p>
-          </FadeIn>
+      {/* TRUST STRIP */}
+      <section className="bg-bg border-y border-divider py-8 md:py-10">
+        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-10 text-center">
+          <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-muted">
+            Ranked <span className="text-cream">#9 of 607 in McAllen</span> · TripAdvisor
+          </p>
+          <span className="hidden md:inline text-divider">|</span>
+          <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-accent">
+            Travelers Choice Award Winner
+          </p>
+        </div>
+      </section>
 
-          <div className="mt-14 md:mt-20 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      {/* THE STORY */}
+      <section className="bg-bg py-20 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <FadeIn className="text-center md:text-left">
               <h2 className="font-serif leading-[0.95]">
                 <span className="block text-accent text-[48px] sm:text-[72px] md:text-[104px] font-medium">
@@ -138,6 +142,15 @@ export default function HomePage() {
                   of history &amp; hospitality
                 </span>
               </h2>
+              <Link
+                href="/about"
+                className="group inline-flex flex-col items-center md:items-start mt-8 md:mt-10"
+              >
+                <span className="text-[11px] md:text-[12px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent">
+                  Read Our Story
+                </span>
+                <span className="mt-2 block h-[1.5px] w-8 bg-cream/50 group-hover:w-16 group-hover:bg-accent transition-all duration-500" />
+              </Link>
             </FadeIn>
             <FadeIn delay={120}>
               <div className="relative aspect-[4/3] md:aspect-square w-full overflow-hidden">
@@ -163,7 +176,7 @@ export default function HomePage() {
             </p>
           </FadeIn>
 
-          <div className="mt-12 md:mt-20 grid gap-4 md:gap-6 md:grid-cols-3">
+          <div className="mt-12 md:mt-20 grid gap-4 md:gap-6 md:grid-cols-2">
             <FadeIn delay={0}>
               <StoryCard
                 eyebrow="Under the Lights"
@@ -178,20 +191,10 @@ export default function HomePage() {
               <StoryCard
                 eyebrow="Fire-Crafted"
                 title="The Kitchen"
-                href="/reservations"
-                cta="Reserve a Table"
+                href="/menu"
+                cta="See the Menu"
                 image={img.steakPlated}
                 imageAlt="Grilled ribeye plated with shishito peppers, corn, and mashed potatoes"
-              />
-            </FadeIn>
-            <FadeIn delay={240}>
-              <StoryCard
-                eyebrow="After Dark"
-                title="The Cantina"
-                href="/reservations"
-                cta="Reserve a Table"
-                image={img.cantinaCocktail}
-                imageAlt="Cantina cocktail"
               />
             </FadeIn>
           </div>
@@ -224,11 +227,11 @@ export default function HomePage() {
               the Rio Grande — pomegranate, chile, pineapple, citrus. A cantina
               built for the way McAllen celebrates. Come thirsty. Stay a while.
             </p>
-            <Link
-              href="/reservations"
-              className="inline-block mt-7 md:mt-10 bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-8 md:px-9 py-4 transition-colors"
-            >
-              Reserve a Table <ArrowRight />
+            <Link href="/reservations" className="group inline-flex flex-col items-start mt-7 md:mt-10">
+              <span className="text-[12px] md:text-[13px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent">
+                Reserve a Table
+              </span>
+              <span className="mt-2.5 block h-[1.5px] w-10 bg-accent group-hover:w-full transition-all duration-500" />
             </Link>
           </FadeIn>
         </div>
@@ -284,19 +287,6 @@ export default function HomePage() {
               </div>
             </FadeIn>
           </div>
-        </div>
-      </section>
-
-      {/* TRUST STRIP */}
-      <section className="bg-bg border-t border-divider py-8 md:py-12">
-        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-10 text-center">
-          <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-muted">
-            Ranked <span className="text-cream">#9 of 607 in McAllen</span> · TripAdvisor
-          </p>
-          <span className="hidden md:inline text-divider">|</span>
-          <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-accent">
-            Travelers Choice Award Winner
-          </p>
         </div>
       </section>
 
