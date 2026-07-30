@@ -52,20 +52,19 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-20 md:pb-24">
         <HeroSlideshow images={heroSlides} />
-        <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center gap-7 md:gap-9">
-          <div className="flex flex-col items-center gap-2.5 md:gap-3">
-            <p
-              className="text-[10px] md:text-[11px] uppercase tracking-widest-2 text-accent"
-              style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
-            >
-              Est. 1998 · McAllen
-            </p>
-            <p
-              className="font-serif italic text-cream text-[22px] sm:text-[26px] md:text-[32px] leading-[1.15]"
-              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.7)" }}
-            >
-              Fire, patio, hospitality.
-            </p>
+        <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center gap-6 md:gap-8">
+          <div
+            className="relative w-28 md:w-36 aspect-square"
+            style={{ filter: "drop-shadow(0 4px 20px rgba(0,0,0,0.6))" }}
+          >
+            <Image
+              src="/images/logo-footer.png"
+              alt="Republic of the Rio Grande"
+              fill
+              priority
+              sizes="(max-width: 768px) 112px, 144px"
+              className="object-cover object-top"
+            />
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-8">
