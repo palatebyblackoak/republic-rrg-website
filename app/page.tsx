@@ -52,20 +52,32 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-20 md:pb-24">
         <HeroSlideshow images={heroSlides} />
-        <div className="relative z-10 text-center px-6 w-full max-w-2xl flex flex-col items-center gap-7 md:gap-8">
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 md:gap-12">
+        <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center gap-7 md:gap-9">
+          <div className="flex flex-col items-center gap-2.5 md:gap-3">
+            <p
+              className="text-[10px] md:text-[11px] uppercase tracking-widest-2 text-accent"
+              style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
+            >
+              Est. 1998 · McAllen
+            </p>
+            <p
+              className="font-serif italic text-cream text-[22px] sm:text-[26px] md:text-[32px] leading-[1.15]"
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.7)" }}
+            >
+              Fire, patio, hospitality.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-8">
             <Link href="/menu" className="group inline-flex flex-col items-center">
               <span
-                className="text-[13px] md:text-[14px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                className="text-[14px] md:text-[16px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
                 style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.75)" }}
               >
                 See the Menu
               </span>
               <span className="mt-2.5 block h-[2px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
             </Link>
-            <span className="hidden sm:inline text-cream/30 text-sm" aria-hidden>
-              ·
-            </span>
             <a
               href={site.reservation}
               target="_blank"
@@ -73,7 +85,7 @@ export default function HomePage() {
               className="group inline-flex flex-col items-center"
             >
               <span
-                className="text-[13px] md:text-[14px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                className="text-[14px] md:text-[16px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
                 style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.75)" }}
               >
                 Reserve a Table
@@ -82,7 +94,7 @@ export default function HomePage() {
             </a>
           </div>
           <p
-            className="text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/85"
+            className="text-[10px] uppercase tracking-[0.2em] text-cream/60"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
           >
             Open Mon–Sat · 11AM–Late · Closed Sunday
