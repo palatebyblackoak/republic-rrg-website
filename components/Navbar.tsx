@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,6 +10,12 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = () => {
+    setOpen(false);
+    hamburgerRef.current?.focus();
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -32,7 +38,7 @@ export default function Navbar() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") closeMenu();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -121,7 +127,10 @@ export default function Navbar() {
           </nav>
 
           <button
+            ref={hamburgerRef}
             aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-drawer"
             className="lg:hidden text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5"
             onClick={() => setOpen((v) => !v)}
           >
@@ -146,6 +155,8 @@ export default function Navbar() {
       </div>
 
       <div
+        id="mobile-drawer"
+        aria-hidden={!open}
         className={`lg:hidden absolute inset-x-0 top-full overflow-hidden bg-bg border-t border-divider transition-all duration-300 ease-out ${
           open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
         }`}
@@ -154,6 +165,7 @@ export default function Navbar() {
           <nav className="flex flex-col gap-1 pt-4">
             {nav.map((link) => {
               const isReserve = link.href === "/reservations";
+              const tabIndex = open ? 0 : -1;
               if (link.external) {
                 return (
                   <a
@@ -161,6 +173,7 @@ export default function Navbar() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    tabIndex={tabIndex}
                     className="py-3 text-sm uppercase tracking-[0.15em] text-cream hover:text-accent"
                   >
                     {link.label}
@@ -171,6 +184,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  tabIndex={tabIndex}
                   className={`py-3 text-sm uppercase tracking-[0.15em] ${
                     isActive(link.href) || isReserve
                       ? "text-accent"
@@ -189,7 +203,9 @@ export default function Navbar() {
     <button
       type="button"
       aria-label="Close menu"
-      onClick={() => setOpen(false)}
+      aria-hidden={!open}
+      tabIndex={open ? 0 : -1}
+      onClick={closeMenu}
       className={`lg:hidden fixed top-16 md:top-20 inset-x-0 bottom-0 z-30 bg-bg/50 backdrop-blur-sm transition-opacity duration-300 ${
         open ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
