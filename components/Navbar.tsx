@@ -111,7 +111,12 @@ export default function Navbar() {
                 }
 
                 return (
-                  <Link key={link.label} href={link.href} className={base}>
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={base}
+                  >
                     {link.label}
                     {isReserve ? (
                       <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-accent group-hover:w-full transition-all duration-500" />
@@ -161,12 +166,23 @@ export default function Navbar() {
             <nav className="flex flex-col gap-1 pt-4">
               {nav.map((link) => {
                 const isReserve = link.href === "/reservations";
+                const active = isActive(link.href);
                 const tabIndex = open ? 0 : -1;
-                const base = `py-3 text-sm uppercase tracking-[0.15em] ${focusRing} ${
-                  isActive(link.href) || isReserve
+                const base = `flex items-center gap-3 py-3 text-sm uppercase tracking-[0.15em] transition-colors ${focusRing} ${
+                  isReserve
                     ? "text-accent"
+                    : active
+                    ? "text-cream"
                     : "text-cream hover:text-accent"
                 }`;
+                const indicator = (
+                  <span
+                    className={`block h-1.5 w-1.5 rounded-full shrink-0 ${
+                      active && !isReserve ? "bg-accent" : "bg-transparent"
+                    }`}
+                    aria-hidden
+                  />
+                );
 
                 if (link.external) {
                   return (
@@ -178,6 +194,7 @@ export default function Navbar() {
                       tabIndex={tabIndex}
                       className={base}
                     >
+                      {indicator}
                       {link.label}
                     </a>
                   );
@@ -187,8 +204,10 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     tabIndex={tabIndex}
+                    aria-current={active ? "page" : undefined}
                     className={base}
                   >
+                    {indicator}
                     {link.label}
                   </Link>
                 );
