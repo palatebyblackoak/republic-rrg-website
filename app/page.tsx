@@ -223,74 +223,55 @@ export default function HomePage() {
       </section>
 
       {/* RESERVATION CTA */}
-      <section className="grid md:grid-cols-2 md:min-h-[720px]">
-        <div className="relative h-[320px] md:h-auto md:min-h-full order-1">
+      <section className="relative min-h-[560px] md:min-h-[720px] flex items-center py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
           <Image
             src={img.patioLights}
             alt="Republic covered patio at night — reserve your evening"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-bg/50 via-transparent to-bg/30" />
+          <div className="absolute inset-0 bg-bg/65 md:bg-bg/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/70 via-bg/30 to-bg/50 md:from-transparent md:via-bg/20 md:to-bg/80" />
         </div>
-        <div className="bg-surface flex flex-col justify-center px-6 md:px-16 py-12 md:py-20 order-2">
-          <FadeIn>
-            <SectionLabel label="Reservations" />
-            <h2 className="font-serif text-cream text-[30px] sm:text-[40px] md:text-[56px] leading-[1.05]">
-              Reserve the evening.
-            </h2>
-            <p className="mt-4 md:mt-6 text-muted text-[15px] md:text-[16px] leading-[1.75] max-w-md">
-              Book instantly through OpenTable or call us directly. For weekend
-              evenings, we recommend reserving in advance.
-            </p>
-            <div className="mt-7 md:mt-8 flex flex-col sm:flex-row gap-3">
-              <a
-                href={site.reservation}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-8 py-4 transition-colors text-center"
-              >
-                Reserve a Table <ArrowRight />
-              </a>
-              <a
-                href={site.phoneHref}
-                className="border border-cream/40 text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[13px] px-8 py-4 transition-colors text-center"
-              >
-                Call {site.phone}
-              </a>
-            </div>
 
-            <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-divider">
-              <p className="text-[11px] uppercase tracking-widest-2 text-accent mb-3 md:mb-4">
-                Hours
-              </p>
-              <ul className="space-y-2 text-[13px] md:text-[14px] max-w-xs">
-                {site.hours.map((h) => (
-                  <li key={h.day} className="flex justify-between">
-                    <span className="text-muted">{h.day}</span>
-                    <span className="text-cream">{h.time}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-divider flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
-              <p className="text-[13px] text-muted">{site.address}</p>
-              <a
-                href={site.mapsDirections}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] uppercase tracking-[0.15em] text-accent hover:underline whitespace-nowrap"
-              >
-                Get Directions <ArrowRight />
-              </a>
-            </div>
-
-            <p className="mt-6 md:mt-8 text-[11px] uppercase tracking-widest-2 text-muted">
-              Walk-ins welcome based on availability
-            </p>
-          </FadeIn>
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="max-w-md md:max-w-lg mx-auto md:mx-0 md:ml-auto">
+            <FadeIn>
+              <div className="bg-surface/95 backdrop-blur-sm border-t-[3px] border-accent p-8 sm:p-10 md:p-12">
+                <p className="text-[10px] md:text-[11px] uppercase tracking-widest-3 text-accent font-medium">
+                  Reservations
+                </p>
+                <h2 className="mt-4 md:mt-5 font-serif text-cream text-[30px] sm:text-[38px] md:text-[48px] leading-[1.05]">
+                  Reserve the evening.
+                </h2>
+                <p className="mt-4 md:mt-5 text-muted text-[14px] md:text-[15px] leading-[1.75]">
+                  Book instantly through OpenTable or call us. For weekend
+                  evenings, we recommend reserving ahead.
+                </p>
+                <div className="mt-7 md:mt-8 flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={site.reservation}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-6 md:px-8 py-4 transition-colors text-center"
+                  >
+                    Reserve a Table <ArrowRight />
+                  </a>
+                  <a
+                    href={site.phoneHref}
+                    className="border border-cream/40 text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-6 md:px-8 py-4 transition-colors text-center"
+                  >
+                    Call {site.phone}
+                  </a>
+                </div>
+                <p className="mt-6 md:mt-7 pt-5 md:pt-6 border-t border-divider text-[10px] md:text-[11px] uppercase tracking-widest-2 text-muted">
+                  Walk-ins welcome based on availability
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
