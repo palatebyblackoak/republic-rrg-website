@@ -16,7 +16,7 @@ export const menu: MenuSection[] = [
   {
     id: "appetizers",
     label: "Appetizers",
-    title: "Small plates. Big flavors.",
+    title: "Appetizers",
     items: [
       {
         name: "Buffalo Shrimp",
@@ -105,7 +105,7 @@ export const menu: MenuSection[] = [
   {
     id: "soups-salads",
     label: "Soups & Salads",
-    title: "Slow-simmered. Field-fresh.",
+    title: "Soups & Salads",
     note: "Dressings: Balsamic Vinegar, Cilantro Ranch, Bleu Cheese, Lime-Oregano Vinaigrette, Caesar. Add-Ons: Chicken $8, Salmon $10, Shrimp (4) $10, Ahi Tuna $12.",
     items: [
       {
@@ -155,7 +155,7 @@ export const menu: MenuSection[] = [
   {
     id: "local-favorites",
     label: "Local Favorites",
-    title: "What McAllen keeps ordering.",
+    title: "Local Favorites",
     items: [
       {
         name: "Grilled Ribeye",
@@ -264,7 +264,7 @@ export const menu: MenuSection[] = [
   {
     id: "enchiladas",
     label: "Enchiladas",
-    title: "Our Famous Enchiladas",
+    title: "Enchiladas",
     items: [
       {
         name: "Suizas",
@@ -289,7 +289,7 @@ export const menu: MenuSection[] = [
   {
     id: "pizzas",
     label: "Pizzas & Calzones",
-    title: "Straight from the brick oven.",
+    title: "Pizzas & Calzones",
     items: [
       {
         name: "Pepperoni",
@@ -403,7 +403,7 @@ export const menu: MenuSection[] = [
   {
     id: "desserts",
     label: "Desserts",
-    title: "Sweet endings.",
+    title: "Desserts",
     items: [
       {
         name: "Banana Bread Pudding",
