@@ -56,12 +56,12 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 md:gap-12">
             <Link href="/menu" className="group inline-flex flex-col items-center">
               <span
-                className="text-[11px] md:text-[12px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
-                style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85)" }}
+                className="text-[13px] md:text-[14px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.75)" }}
               >
                 See the Menu
               </span>
-              <span className="mt-2 block h-px w-8 bg-cream/40 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
+              <span className="mt-2.5 block h-[2px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
             </Link>
             <span className="hidden sm:inline text-cream/30 text-sm" aria-hidden>
               ·
@@ -73,12 +73,12 @@ export default function HomePage() {
               className="group inline-flex flex-col items-center"
             >
               <span
-                className="text-[11px] md:text-[12px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
-                style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85)" }}
+                className="text-[13px] md:text-[14px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.75)" }}
               >
                 Reserve a Table
               </span>
-              <span className="mt-2 block h-px w-8 bg-accent group-hover:w-full transition-all duration-500" />
+              <span className="mt-2.5 block h-[2px] w-10 bg-accent group-hover:w-full transition-all duration-500" />
             </a>
           </div>
           <p
