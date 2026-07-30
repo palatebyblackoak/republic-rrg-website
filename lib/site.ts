@@ -32,11 +32,10 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Home", href: "/" },
   { label: "Menu", href: "/menu" },
-  { label: "Reserve", href: "/reservations" },
-  { label: "Gift Cards", href: site.giftCards, external: true },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
+  { label: "Gift Cards", href: site.giftCards, external: true },
   { label: "Contact", href: "/contact" },
+  { label: "Reserve", href: "/reservations" },
 ];

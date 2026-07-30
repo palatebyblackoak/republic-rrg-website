@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav, site } from "@/lib/site";
+import { nav } from "@/lib/site";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -47,18 +47,42 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-7">
-            {nav.map((link) =>
-              link.external ? (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] uppercase tracking-[0.15em] text-cream hover:text-accent transition-colors"
-                >
-                  {link.label}
-                </a>
-              ) : (
+            {nav.map((link) => {
+              const isReserve = link.href === "/reservations";
+              if (link.external) {
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] uppercase tracking-[0.15em] text-cream hover:text-accent transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
+              if (isReserve) {
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="group inline-flex flex-col items-center"
+                  >
+                    <span
+                      className={`text-[11px] uppercase tracking-[0.15em] transition-colors ${
+                        isActive(link.href)
+                          ? "text-accent"
+                          : "text-cream group-hover:text-accent"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                    <span className="mt-1.5 block h-[1.5px] w-6 bg-accent group-hover:w-full transition-all duration-500" />
+                  </Link>
+                );
+              }
+              return (
                 <Link
                   key={link.label}
                   href={link.href}
@@ -70,8 +94,8 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
-              )
-            )}
+              );
+            })}
           </nav>
 
           <button
@@ -100,45 +124,35 @@ export default function Navbar() {
         {open && (
           <div className="lg:hidden pb-8 pt-2 border-t border-divider">
             <nav className="flex flex-col gap-1 pt-4">
-              {nav.map((link) =>
-                link.external ? (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="py-3 text-sm uppercase tracking-[0.15em] text-cream hover:text-accent"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
+              {nav.map((link) => {
+                const isReserve = link.href === "/reservations";
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-3 text-sm uppercase tracking-[0.15em] text-cream hover:text-accent"
+                    >
+                      {link.label}
+                    </a>
+                  );
+                }
+                return (
                   <Link
                     key={link.label}
                     href={link.href}
                     className={`py-3 text-sm uppercase tracking-[0.15em] ${
-                      isActive(link.href)
+                      isActive(link.href) || isReserve
                         ? "text-accent"
                         : "text-cream hover:text-accent"
                     }`}
                   >
                     {link.label}
                   </Link>
-                )
-              )}
-              <Link
-                href="/menu"
-                className="mt-4 bg-accent text-white text-center text-[11px] uppercase tracking-[0.15em] px-5 py-3"
-              >
-                View the Menu
-              </Link>
-              <a
-                href={site.reservation}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 border border-accent text-cream hover:bg-accent text-center text-[11px] uppercase tracking-[0.15em] px-5 py-3"
-              >
-                Reserve a Table
-              </a>
+                );
+              })}
             </nav>
           </div>
         )}
