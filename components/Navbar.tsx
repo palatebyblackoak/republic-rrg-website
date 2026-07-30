@@ -29,12 +29,22 @@ export default function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
 
   return (
+    <>
     <header className="sticky top-0 z-40 backdrop-blur-sm">
       {/* Gradient scrim — always visible; extends below header for soft fade over hero */}
       <div className="absolute inset-x-0 top-0 h-24 md:h-32 pointer-events-none bg-gradient-to-b from-bg via-bg/70 to-transparent" />
@@ -133,46 +143,57 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
-            open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="pt-2 pb-8 border-t border-divider">
-            <nav className="flex flex-col gap-1 pt-4">
-              {nav.map((link) => {
-                const isReserve = link.href === "/reservations";
-                if (link.external) {
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="py-3 text-sm uppercase tracking-[0.15em] text-cream hover:text-accent"
-                    >
-                      {link.label}
-                    </a>
-                  );
-                }
+      </div>
+
+      <div
+        className={`lg:hidden absolute inset-x-0 top-full overflow-hidden bg-bg border-t border-divider transition-all duration-300 ease-out ${
+          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="max-w-[1400px] mx-auto px-6 pt-2 pb-8">
+          <nav className="flex flex-col gap-1 pt-4">
+            {nav.map((link) => {
+              const isReserve = link.href === "/reservations";
+              if (link.external) {
                 return (
-                  <Link
+                  <a
                     key={link.label}
                     href={link.href}
-                    className={`py-3 text-sm uppercase tracking-[0.15em] ${
-                      isActive(link.href) || isReserve
-                        ? "text-accent"
-                        : "text-cream hover:text-accent"
-                    }`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-3 text-sm uppercase tracking-[0.15em] text-cream hover:text-accent"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 );
-              })}
-            </nav>
-          </div>
+              }
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`py-3 text-sm uppercase tracking-[0.15em] ${
+                    isActive(link.href) || isReserve
+                      ? "text-accent"
+                      : "text-cream hover:text-accent"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
         </div>
       </div>
     </header>
+
+    <button
+      type="button"
+      aria-label="Close menu"
+      onClick={() => setOpen(false)}
+      className={`lg:hidden fixed top-16 md:top-20 inset-x-0 bottom-0 z-30 bg-bg/50 backdrop-blur-sm transition-opacity duration-300 ${
+        open ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    />
+    </>
   );
 }
