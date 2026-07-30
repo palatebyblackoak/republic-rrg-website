@@ -6,6 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { nav } from "@/lib/site";
 
+const focusRing =
+  "focus-visible:outline-1 focus-visible:outline focus-visible:outline-accent focus-visible:outline-offset-4";
+
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -51,165 +54,160 @@ export default function Navbar() {
 
   return (
     <>
-    <header className="sticky top-0 z-40 backdrop-blur-sm">
-      {/* Gradient scrim — always visible; extends below header for soft fade over hero */}
-      <div className="absolute inset-x-0 top-0 h-24 md:h-32 pointer-events-none bg-gradient-to-b from-bg via-bg/70 to-transparent" />
-      {/* Solid bg — fades in on scroll or drawer open */}
-      <div
-        className={`absolute inset-0 pointer-events-none bg-bg transition-opacity duration-300 ${
-          scrolled || open ? "opacity-100" : "opacity-0"
-        }`}
-      />
+      <a
+        href="#main"
+        className={`sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:text-[12px] focus:uppercase focus:tracking-[0.15em] ${focusRing}`}
+      >
+        Skip to content
+      </a>
 
-      <div className="relative max-w-[1400px] mx-auto px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href="/" className="flex items-center" aria-label="Republic of the Rio Grande — Home">
-            <Image
-              src="/images/logo-nav.png"
-              alt="Republic of the Rio Grande"
-              width={400}
-              height={100}
-              priority
-              className="h-10 md:h-12 w-auto"
-            />
-          </Link>
+      <header className="sticky top-0 z-40 backdrop-blur-sm">
+        {/* Gradient scrim — always visible; extends below header for soft fade over hero */}
+        <div className="absolute inset-x-0 top-0 h-24 md:h-32 pointer-events-none bg-gradient-to-b from-bg via-bg/70 to-transparent" />
+        {/* Solid bg — fades in on scroll or drawer open */}
+        <div
+          className={`absolute inset-0 pointer-events-none bg-bg transition-opacity duration-300 ${
+            scrolled || open ? "opacity-100" : "opacity-0"
+          }`}
+        />
 
-          <nav className="hidden lg:flex items-center gap-7">
-            {nav.map((link) => {
-              const isReserve = link.href === "/reservations";
-              if (link.external) {
+        <div className="relative max-w-[1400px] mx-auto px-6">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            <Link
+              href="/"
+              className={`flex items-center ${focusRing}`}
+              aria-label="Republic of the Rio Grande — Home"
+            >
+              <Image
+                src="/images/logo-nav.png"
+                alt="Republic of the Rio Grande"
+                width={400}
+                height={100}
+                priority
+                className="h-10 md:h-12 w-auto"
+              />
+            </Link>
+
+            <nav className="hidden lg:flex items-center gap-7">
+              {nav.map((link) => {
+                const isReserve = link.href === "/reservations";
+                const active = isActive(link.href);
+                const base = `group relative text-[12px] uppercase tracking-[0.15em] transition-colors ${focusRing} ${
+                  active ? "text-accent" : "text-cream hover:text-accent"
+                }`;
+
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={base}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                }
+
                 return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] uppercase tracking-[0.15em] text-cream hover:text-accent transition-colors"
-                  >
+                  <Link key={link.label} href={link.href} className={base}>
                     {link.label}
-                  </a>
+                    {isReserve ? (
+                      <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-accent group-hover:w-full transition-all duration-500" />
+                    ) : active ? (
+                      <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-cream/40" />
+                    ) : null}
+                  </Link>
                 );
-              }
-              if (isReserve) {
+              })}
+            </nav>
+
+            <button
+              ref={hamburgerRef}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="mobile-drawer"
+              className={`lg:hidden text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5 ${focusRing}`}
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span
+                className={`block w-6 h-px bg-cream transition-transform ${
+                  open ? "translate-y-[7px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-px bg-cream transition-opacity ${
+                  open ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`block w-6 h-px bg-cream transition-transform ${
+                  open ? "-translate-y-[7px] -rotate-45" : ""
+                }`}
+              />
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="mobile-drawer"
+          aria-hidden={!open}
+          className={`lg:hidden absolute inset-x-0 top-full overflow-hidden bg-bg border-t border-divider transition-all duration-300 ease-out ${
+            open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          }`}
+        >
+          <div className="max-w-[1400px] mx-auto px-6 pt-2 pb-8">
+            <nav className="flex flex-col gap-1 pt-4">
+              {nav.map((link) => {
+                const isReserve = link.href === "/reservations";
+                const tabIndex = open ? 0 : -1;
+                const base = `py-3 text-sm uppercase tracking-[0.15em] ${focusRing} ${
+                  isActive(link.href) || isReserve
+                    ? "text-accent"
+                    : "text-cream hover:text-accent"
+                }`;
+
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      tabIndex={tabIndex}
+                      className={base}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                }
                 return (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="group inline-flex flex-col items-center"
-                  >
-                    <span
-                      className={`text-[11px] uppercase tracking-[0.15em] transition-colors ${
-                        isActive(link.href)
-                          ? "text-accent"
-                          : "text-cream group-hover:text-accent"
-                      }`}
-                    >
-                      {link.label}
-                    </span>
-                    <span className="mt-1.5 block h-[1.5px] w-6 bg-accent group-hover:w-full transition-all duration-500" />
-                  </Link>
-                );
-              }
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={`text-[11px] uppercase tracking-[0.15em] transition-colors ${
-                    isActive(link.href)
-                      ? "text-accent"
-                      : "text-cream hover:text-accent"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          <button
-            ref={hamburgerRef}
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-drawer"
-            className="lg:hidden text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span
-              className={`block w-6 h-px bg-cream transition-transform ${
-                open ? "translate-y-[7px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-px bg-cream transition-opacity ${
-                open ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block w-6 h-px bg-cream transition-transform ${
-                open ? "-translate-y-[7px] -rotate-45" : ""
-              }`}
-            />
-          </button>
-        </div>
-
-      </div>
-
-      <div
-        id="mobile-drawer"
-        aria-hidden={!open}
-        className={`lg:hidden absolute inset-x-0 top-full overflow-hidden bg-bg border-t border-divider transition-all duration-300 ease-out ${
-          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
-        }`}
-      >
-        <div className="max-w-[1400px] mx-auto px-6 pt-2 pb-8">
-          <nav className="flex flex-col gap-1 pt-4">
-            {nav.map((link) => {
-              const isReserve = link.href === "/reservations";
-              const tabIndex = open ? 0 : -1;
-              if (link.external) {
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     tabIndex={tabIndex}
-                    className="py-3 text-sm uppercase tracking-[0.15em] text-cream hover:text-accent"
+                    className={base}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 );
-              }
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  tabIndex={tabIndex}
-                  className={`py-3 text-sm uppercase tracking-[0.15em] ${
-                    isActive(link.href) || isReserve
-                      ? "text-accent"
-                      : "text-cream hover:text-accent"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
+              })}
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <button
-      type="button"
-      aria-label="Close menu"
-      aria-hidden={!open}
-      tabIndex={open ? 0 : -1}
-      onClick={closeMenu}
-      className={`lg:hidden fixed top-16 md:top-20 inset-x-0 bottom-0 z-30 bg-bg/50 backdrop-blur-sm transition-opacity duration-300 ${
-        open ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
-    />
+      <button
+        type="button"
+        aria-label="Close menu"
+        aria-hidden={!open}
+        tabIndex={-1}
+        onClick={closeMenu}
+        className={`lg:hidden fixed top-16 md:top-20 inset-x-0 bottom-0 z-30 bg-bg/65 backdrop-blur-sm transition-opacity duration-300 focus:outline-none ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      />
     </>
   );
 }
