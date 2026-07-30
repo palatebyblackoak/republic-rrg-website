@@ -187,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* THE CANTINA */}
-      <section className="relative h-[95svh] md:h-[80vh] min-h-[600px] md:min-h-[640px] flex items-center overflow-hidden">
+      <section className="relative h-[82svh] md:h-[80vh] min-h-[540px] md:min-h-[640px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={img.cantinaSangria}
@@ -202,19 +202,19 @@ export default function HomePage() {
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-20">
           <FadeIn className="max-w-xl">
             <SectionLabel label="The Cantina" />
-            <h2 className="font-serif text-cream text-[36px] sm:text-[44px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)]">
+            <h2 className="font-serif text-cream text-[30px] sm:text-[40px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)]">
               Where the night
               <br />
               finds its rhythm.
             </h2>
-            <p className="mt-6 md:mt-8 text-cream/85 text-[16px] md:text-[18px] leading-[1.8] max-w-lg drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]">
+            <p className="mt-5 md:mt-8 text-cream/85 text-[15px] sm:text-[16px] md:text-[18px] leading-[1.75] max-w-lg drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]">
               Tequila-forward cocktails, house-made mixers, and the flavors of
               the Rio Grande — pomegranate, chile, pineapple, citrus. A cantina
               built for the way McAllen celebrates. Come thirsty. Stay a while.
             </p>
             <Link
               href="/reservations"
-              className="inline-block mt-8 md:mt-10 bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
+              className="inline-block mt-7 md:mt-10 bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-8 md:px-9 py-4 transition-colors"
             >
               Reserve a Table <ArrowRight />
             </Link>
@@ -223,8 +223,8 @@ export default function HomePage() {
       </section>
 
       {/* RESERVATION CTA */}
-      <section className="grid md:grid-cols-2 min-h-[720px]">
-        <div className="relative min-h-[400px] md:min-h-full order-1">
+      <section className="grid md:grid-cols-2 md:min-h-[720px]">
+        <div className="relative h-[320px] md:h-auto md:min-h-full order-1">
           <Image
             src={img.patioLights}
             alt="Republic covered patio at night — reserve your evening"
@@ -234,17 +234,17 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-bg/50 via-transparent to-bg/30" />
         </div>
-        <div className="bg-surface flex flex-col justify-center px-6 md:px-16 py-16 md:py-20 order-2">
+        <div className="bg-surface flex flex-col justify-center px-6 md:px-16 py-12 md:py-20 order-2">
           <FadeIn>
             <SectionLabel label="Reservations" />
-            <h2 className="font-serif text-cream text-[34px] sm:text-[44px] md:text-[56px] leading-[1.05]">
+            <h2 className="font-serif text-cream text-[30px] sm:text-[40px] md:text-[56px] leading-[1.05]">
               Reserve the evening.
             </h2>
-            <p className="mt-5 md:mt-6 text-muted text-[15px] md:text-[16px] leading-[1.75] max-w-md">
+            <p className="mt-4 md:mt-6 text-muted text-[15px] md:text-[16px] leading-[1.75] max-w-md">
               Book instantly through OpenTable or call us directly. For weekend
               evenings, we recommend reserving in advance.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-7 md:mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href={site.reservation}
                 target="_blank"
@@ -261,11 +261,11 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-divider">
-              <p className="text-[11px] uppercase tracking-widest-2 text-accent mb-4">
+            <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-divider">
+              <p className="text-[11px] uppercase tracking-widest-2 text-accent mb-3 md:mb-4">
                 Hours
               </p>
-              <ul className="space-y-2 text-[14px] max-w-xs">
+              <ul className="space-y-2 text-[13px] md:text-[14px] max-w-xs">
                 {site.hours.map((h) => (
                   <li key={h.day} className="flex justify-between">
                     <span className="text-muted">{h.day}</span>
@@ -275,7 +275,7 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-divider flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-divider flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
               <p className="text-[13px] text-muted">{site.address}</p>
               <a
                 href={site.mapsDirections}
@@ -287,7 +287,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            <p className="mt-8 text-[11px] uppercase tracking-widest-2 text-muted">
+            <p className="mt-6 md:mt-8 text-[11px] uppercase tracking-widest-2 text-muted">
               Walk-ins welcome based on availability
             </p>
           </FadeIn>
@@ -295,13 +295,13 @@ export default function HomePage() {
       </section>
 
       {/* TRUST STRIP */}
-      <section className="bg-bg border-t border-divider py-10 md:py-12">
-        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 text-center">
-          <p className="text-[11px] md:text-[12px] uppercase tracking-widest-2 text-muted">
-            Ranked <span className="text-cream">#9 of 607 Restaurants in McAllen</span> · TripAdvisor
+      <section className="bg-bg border-t border-divider py-8 md:py-12">
+        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-10 text-center">
+          <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-muted">
+            Ranked <span className="text-cream">#9 of 607 in McAllen</span> · TripAdvisor
           </p>
           <span className="hidden md:inline text-divider">|</span>
-          <p className="text-[11px] md:text-[12px] uppercase tracking-widest-2 text-accent">
+          <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-accent">
             Travelers Choice Award Winner
           </p>
         </div>

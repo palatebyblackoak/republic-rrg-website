@@ -33,13 +33,13 @@ function Row({ items, reverse = false }: { items: MarqueeItem[]; reverse?: boole
         {doubled.map((it, i) => (
           <div
             key={`${it.src}-${i}`}
-            className="relative shrink-0 mr-4 md:mr-6 w-[220px] h-[220px] md:w-[300px] md:h-[300px] overflow-hidden"
+            className="relative shrink-0 mr-3 md:mr-6 w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[300px] md:h-[300px] overflow-hidden"
           >
             <Image
               src={it.src}
               alt={it.alt}
               fill
-              sizes="(max-width: 768px) 220px, 300px"
+              sizes="(max-width: 640px) 180px, (max-width: 768px) 220px, 300px"
               className="object-cover"
             />
           </div>
@@ -51,7 +51,7 @@ function Row({ items, reverse = false }: { items: MarqueeItem[]; reverse?: boole
 
 export default function FoodMarquee() {
   return (
-    <div className="space-y-4 md:space-y-6">
+    <div className="space-y-3 md:space-y-6">
       <Row items={rowA} />
       <Row items={rowB} reverse />
     </div>
