@@ -16,7 +16,7 @@ export const menu: MenuSection[] = [
   {
     id: "appetizers",
     label: "Appetizers",
-    title: "Appetizers",
+    title: "Small plates. Big flavors.",
     items: [
       {
         name: "Buffalo Shrimp",
@@ -105,20 +105,20 @@ export const menu: MenuSection[] = [
   {
     id: "soups-salads",
     label: "Soups & Salads",
-    title: "Soups & Salads",
+    title: "Slow-simmered. Field-fresh.",
     note: "Dressings: Balsamic Vinegar, Cilantro Ranch, Bleu Cheese, Lime-Oregano Vinaigrette, Caesar. Add-Ons: Chicken $8, Salmon $10, Shrimp (4) $10, Ahi Tuna $12.",
     items: [
       {
         name: "Tortilla Soup",
         description:
           "Chicken, caldo, pasilla peppers, avocado cubes, cheese, tortilla strips.",
-        price: "$9 / $15",
+        price: "$15",
       },
       {
         name: "Poblano Chicken Corn Chowder",
         description:
           "Poblano cream soup, chicken, roasted corn, potatoes.",
-        price: "$9 / $15",
+        price: "$15",
       },
       {
         name: "House Greek Salad",
@@ -155,7 +155,7 @@ export const menu: MenuSection[] = [
   {
     id: "local-favorites",
     label: "Local Favorites",
-    title: "Local Favorites",
+    title: "What McAllen keeps ordering.",
     items: [
       {
         name: "Grilled Ribeye",
@@ -289,60 +289,59 @@ export const menu: MenuSection[] = [
   {
     id: "pizzas",
     label: "Pizzas & Calzones",
-    title: "Republic Pizzas & Calzones",
-    note: "Small / Large pricing shown where applicable.",
+    title: "Straight from the brick oven.",
     items: [
       {
         name: "Pepperoni",
         description: "Tomato basil sauce, mozzarella, cheddar, pepperoni.",
-        price: "$10 / $19",
+        price: "$19",
       },
       {
         name: "Texas Goat Cheese",
         description:
           "Texas garlic olive oil, mushrooms, goat cheese, mozzarella, walnuts, fresh basil.",
-        price: "$14 / $24",
+        price: "$24",
       },
       {
         name: "Supreme",
         description:
           "Tomato-basil sauce, mozzarella, pepperoni, Italian sausage, mushrooms, bell peppers, red onions.",
-        price: "$14 / $24",
+        price: "$24",
       },
       {
         name: "Hawaiian",
         description:
           "Tomato-basil sauce, mozzarella, Canadian bacon, pineapple, red onions.",
-        price: "$12 / $22",
+        price: "$22",
       },
       {
         name: "Margherita",
         description:
           "Texas garlic olive oil, fresh mozzarella, tomatoes, fresh basil, pine nuts.",
-        price: "$10 / $20",
+        price: "$20",
       },
       {
         name: "Smoke Salmon",
         description:
           "Texas garlic olive oil, mozzarella, cream cheese, smoked salmon, capers, red onions.",
-        price: "$12 / $22",
+        price: "$22",
       },
       {
         name: "Fajita Pizza",
         description:
           "Tomato-basil sauce, mozzarella, fajita, avocado, cilantro, red onions, chimichurri sauce.",
-        price: "$16 / $27",
+        price: "$27",
       },
       {
         name: "Cheeseburger Pizza",
         description:
           "Tomato-basil sauce, mozzarella, American cheese, ground beef, bacon, chipotle mayo, red onions.",
-        price: "$12 / $20",
+        price: "$20",
       },
       {
         name: "BBQ Chicken",
         description: "Barbecue sauce, mozzarella, chicken breast.",
-        price: "$14 / $24",
+        price: "$24",
       },
       {
         name: "Meat Lovers",
@@ -404,7 +403,7 @@ export const menu: MenuSection[] = [
   {
     id: "desserts",
     label: "Desserts",
-    title: "Desserts",
+    title: "Sweet endings.",
     items: [
       {
         name: "Banana Bread Pudding",

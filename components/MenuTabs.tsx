@@ -14,6 +14,7 @@ export default function MenuTabs() {
   const [active, setActive] = useState<string>(menu[0].id);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const skipObserverUntil = useRef<number>(0);
 
   useEffect(() => {
     const sections = menu
@@ -23,12 +24,13 @@ export default function MenuTabs() {
 
     const io = new IntersectionObserver(
       (entries) => {
+        if (Date.now() < skipObserverUntil.current) return;
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         if (visible[0]) setActive(visible[0].target.id);
       },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+      { rootMargin: "-20% 0px -45% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
 
     sections.forEach((s) => io.observe(s));
@@ -50,6 +52,7 @@ export default function MenuTabs() {
 
   const scrollTo = (id: string) => {
     setActive(id);
+    skipObserverUntil.current = Date.now() + 900;
     const el = document.getElementById(id);
     if (!el) return;
     const y = el.getBoundingClientRect().top + window.scrollY - 140;
