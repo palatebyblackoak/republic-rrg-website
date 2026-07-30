@@ -233,17 +233,6 @@ export default function HomePage() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-bg/50 via-transparent to-bg/30" />
-          <div className="absolute top-6 left-6 md:top-10 md:left-10">
-            <div className="inline-flex items-center gap-2.5 bg-bg/70 backdrop-blur-sm border border-cream/20 px-4 py-2">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-              </span>
-              <span className="text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream">
-                Open Tonight · Til Late
-              </span>
-            </div>
-          </div>
         </div>
         <div className="bg-surface flex flex-col justify-center px-6 md:px-16 py-16 md:py-20 order-2">
           <FadeIn>
