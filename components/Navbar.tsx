@@ -12,7 +12,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -22,18 +22,30 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
 
   return (
-    <header
-      className={`sticky top-0 z-40 transition-colors duration-300 ${
-        scrolled || open ? "bg-bg" : "bg-bg/60 backdrop-blur-sm"
-      }`}
-    >
-      <div className="max-w-[1400px] mx-auto px-6">
+    <header className="sticky top-0 z-40 backdrop-blur-sm">
+      {/* Gradient scrim — always visible; extends below header for soft fade over hero */}
+      <div className="absolute inset-x-0 top-0 h-24 md:h-32 pointer-events-none bg-gradient-to-b from-bg via-bg/70 to-transparent" />
+      {/* Solid bg — fades in on scroll or drawer open */}
+      <div
+        className={`absolute inset-0 pointer-events-none bg-bg transition-opacity duration-300 ${
+          scrolled || open ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      <div className="relative max-w-[1400px] mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center" aria-label="Republic of the Rio Grande — Home">
             <Image
@@ -121,8 +133,12 @@ export default function Navbar() {
           </button>
         </div>
 
-        {open && (
-          <div className="lg:hidden pb-8 pt-2 border-t border-divider">
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
+            open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="pt-2 pb-8 border-t border-divider">
             <nav className="flex flex-col gap-1 pt-4">
               {nav.map((link) => {
                 const isReserve = link.href === "/reservations";
@@ -155,7 +171,7 @@ export default function Navbar() {
               })}
             </nav>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
