@@ -13,6 +13,7 @@ const rowA = [
 const rowB = [
   { src: img.filetTexasWide, alt: "Texas Filet with mashed potatoes, asparagus, and port mushroom sauce" },
   { src: img.pizzaOven, alt: "Wood-fired Margherita pizza on the branded Republic platter" },
+  { src: img.steakSalad, alt: "Chimichurri steak salad with mixed greens and cheese crisp" },
   { src: img.cantinaSangria, alt: "Sangria-style cocktail with pomegranate, blackberries, and citrus" },
   { src: img.chicken, alt: "Grilled chicken breast with cream sauce, avocado, and pico" },
   { src: img.pizzaBrickOven, alt: "Republic pizza fresh from the brick oven" },

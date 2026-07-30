@@ -33,6 +33,5 @@ export const img = {
   chicken: "/images/chicken-plated.jpg",
   pizzaSpecialty: "/images/pizza-specialty.jpg",
   pizzaMushroom: "/images/pizza-mushroom.jpg",
-  steakSalad:
-    "https://images.unsplash.com/photo-1546793665-c74683f339c1?auto=format&fit=crop&w=1200&q=80",
+  steakSalad: "/images/chimichurri-steak-salad.jpg",
 };
