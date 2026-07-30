@@ -87,11 +87,31 @@ export default function HomePage() {
           >
             Open Mon–Sat · 11AM–Late · Closed Sunday
           </p>
+          <a
+            href="#explore"
+            aria-label="Scroll to explore"
+            className="scroll-cue group mt-3 md:mt-4 inline-flex items-center justify-center w-8 h-8 text-cream/70 hover:text-accent transition-colors"
+            style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.75))" }}
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
         </div>
       </section>
 
       {/* GALLERY */}
-      <section className="bg-bg py-16 md:py-28 overflow-hidden">
+      <section id="explore" className="bg-bg py-20 md:py-32 overflow-hidden scroll-mt-20">
         <div className="max-w-[1400px] mx-auto px-6">
           <FadeIn className="text-center flex flex-col items-center">
             <SectionLabel label="Gallery" centered />
@@ -202,7 +222,7 @@ export default function HomePage() {
       </section>
 
       {/* THE CANTINA */}
-      <section className="relative h-[82svh] md:h-[80vh] min-h-[540px] md:min-h-[640px] flex items-center overflow-hidden">
+      <section className="relative h-[72svh] md:h-[80vh] min-h-[520px] md:min-h-[640px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={img.cantinaSangria}
