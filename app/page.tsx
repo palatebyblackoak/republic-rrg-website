@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { img } from "@/lib/images";
-import TestimonialCard from "@/components/TestimonialCard";
 import EClubSection from "@/components/EClubSection";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
@@ -44,27 +43,6 @@ const heroSlides = [
   {
     src: img.cantinaCocktail,
     alt: "Pomegranate-blackberry cantina cocktail with dried chiles on the bar",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "The patio is beautiful and the food is outstanding. The filet mignon and avocado salmon are must-orders. One of the best restaurants in the Valley.",
-    reviewer: "Verified Guest",
-    platform: "TripAdvisor",
-  },
-  {
-    quote:
-      "Been coming here for years. The stuffed quail is unlike anything else in McAllen. Service is always attentive and the atmosphere is perfect for a special occasion.",
-    reviewer: "Verified Guest",
-    platform: "Yelp",
-  },
-  {
-    quote:
-      "The ahi tuna ceviche is a standout. Handmade tortillas, beautiful patio, and a menu that keeps you coming back. Republic is a McAllen institution.",
-    reviewer: "Verified Guest",
-    platform: "TripAdvisor",
   },
 ];
 
@@ -288,27 +266,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="bg-bg py-16 md:py-28">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <FadeIn className="text-center flex flex-col items-center">
-            <SectionLabel label="What Guests Are Saying" centered />
-            <h2 className="font-serif text-cream text-[30px] sm:text-[38px] md:text-[48px] leading-[1.1]">
-              A McAllen institution
-              <br />
-              for a reason.
-            </h2>
-          </FadeIn>
-          <div className="mt-10 md:mt-16 grid gap-6 md:gap-8 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <FadeIn key={t.quote} delay={i * 120}>
-                <TestimonialCard {...t} />
-              </FadeIn>
-            ))}
-          </div>
-          <p className="mt-12 text-center text-[13px] text-muted">
-            Ranked #9 of 607 Restaurants in McAllen · TripAdvisor
-            <br />
+      {/* TRUST STRIP */}
+      <section className="bg-bg border-t border-divider py-10 md:py-12">
+        <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 text-center">
+          <p className="text-[11px] md:text-[12px] uppercase tracking-widest-2 text-muted">
+            Ranked <span className="text-cream">#9 of 607 Restaurants in McAllen</span> · TripAdvisor
+          </p>
+          <span className="hidden md:inline text-divider">|</span>
+          <p className="text-[11px] md:text-[12px] uppercase tracking-widest-2 text-accent">
             Travelers Choice Award Winner
           </p>
         </div>
