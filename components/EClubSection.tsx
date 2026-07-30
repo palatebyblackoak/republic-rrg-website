@@ -24,10 +24,30 @@ export default function EClubSection() {
           Be the first to know about promotions, events, and exclusive offers.
         </p>
 
-        <ul className="mt-8 text-cream text-[14px] space-y-2">
-          <li>✓ Discounts &amp; Promotions</li>
-          <li>✓ Exclusive Newsletters</li>
-          <li>✓ Event Announcements</li>
+        <ul className="mt-10 text-cream text-[14px] md:text-[15px] flex flex-col gap-3">
+          {[
+            "Discounts & Promotions",
+            "Exclusive Newsletters",
+            "Event Announcements",
+          ].map((item) => (
+            <li key={item} className="flex items-center gap-3">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-accent shrink-0"
+                aria-hidden
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
 
         {submitted ? (
@@ -42,14 +62,15 @@ export default function EClubSection() {
             <input
               type="email"
               required
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 bg-bg border border-cream/30 text-cream placeholder:text-muted px-4 py-3 focus:outline-none focus:border-accent transition-colors"
+              className="flex-1 bg-bg border border-cream/30 text-cream placeholder:text-muted px-4 py-4 focus:outline-none focus:border-accent transition-colors"
             />
             <button
               type="submit"
-              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] px-6 py-3 transition-colors"
+              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] px-8 py-4 transition-colors"
             >
               Join Now
             </button>

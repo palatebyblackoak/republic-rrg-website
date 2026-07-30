@@ -240,7 +240,7 @@ export default function HomePage() {
             <h2 className="font-serif text-cream text-[30px] sm:text-[40px] md:text-[64px] leading-[1.05] drop-shadow-[0_2px_20px_rgba(0,0,0,0.7)]">
               Where the night
               <br />
-              finds its rhythm.
+              finds its <span className="text-accent">rhythm.</span>
             </h2>
             <p className="mt-5 md:mt-8 text-cream/85 text-[15px] sm:text-[16px] md:text-[18px] leading-[1.75] max-w-lg drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]">
               Tequila-forward cocktails, house-made mixers, and the flavors of
