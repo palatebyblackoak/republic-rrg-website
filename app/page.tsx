@@ -11,18 +11,18 @@ import FoodMarquee from "@/components/FoodMarquee";
 import { ArrowRight } from "@/components/Icons";
 
 const heroSlides = [
-  { src: img.heroPatio, alt: "Republic of the Rio Grande patio at night" },
   {
     src: img.patioLights,
     alt: "Covered patio with firepit, string lights, and white-cloth tables",
   },
   {
-    src: img.salmonWide,
-    alt: "Grilled avocado salmon with pico de gallo, corn relish, and Caymus Chardonnay",
-  },
-  {
     src: img.steakPlated,
     alt: "Grilled ribeye with shishito peppers, corn, and mashed potatoes",
+  },
+  { src: img.heroPatio, alt: "Republic of the Rio Grande patio at night" },
+  {
+    src: img.salmonWide,
+    alt: "Grilled avocado salmon with pico de gallo, corn relish, and Caymus Chardonnay",
   },
   {
     src: img.filetTexasWide,
