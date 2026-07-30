@@ -50,27 +50,39 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-24 md:pb-28">
+      <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-20 md:pb-24">
         <HeroSlideshow images={heroSlides} />
-        <div className="relative z-10 text-center px-6 w-full max-w-xl">
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center w-full">
-            <Link
-              href="/menu"
-              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
-            >
-              View the Menu <ArrowRight />
+        <div className="relative z-10 text-center px-6 w-full max-w-2xl flex flex-col items-center gap-7 md:gap-8">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10 md:gap-12">
+            <Link href="/menu" className="group inline-flex flex-col items-center">
+              <span
+                className="text-[11px] md:text-[12px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85)" }}
+              >
+                See the Menu
+              </span>
+              <span className="mt-2 block h-px w-8 bg-cream/40 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
             </Link>
+            <span className="hidden sm:inline text-cream/30 text-sm" aria-hidden>
+              ·
+            </span>
             <a
               href={site.reservation}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-cream text-cream hover:bg-cream hover:text-bg uppercase tracking-[0.15em] text-[12px] md:text-[13px] px-7 md:px-9 py-4 transition-colors text-center"
+              className="group inline-flex flex-col items-center"
             >
-              Reserve a Table <ArrowRight />
+              <span
+                className="text-[11px] md:text-[12px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                style={{ textShadow: "0 2px 10px rgba(0,0,0,0.85)" }}
+              >
+                Reserve a Table
+              </span>
+              <span className="mt-2 block h-px w-8 bg-accent group-hover:w-full transition-all duration-500" />
             </a>
           </div>
           <p
-            className="mt-5 md:mt-6 text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/85"
+            className="text-[10px] md:text-[11px] uppercase tracking-widest-2 text-cream/85"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
           >
             Open Mon–Sat · 11AM–Late · Closed Sunday
