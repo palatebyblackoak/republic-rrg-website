@@ -21,9 +21,9 @@ export default function GiftCardsPage() {
         overlay={0.72}
       />
 
-      <section className="bg-surface py-20 md:py-28">
+      <section className="bg-parchment py-20 md:py-28">
         <div className="max-w-xl mx-auto px-6 text-center flex flex-col items-center">
-          <p className="text-muted text-[16px] md:text-[17px] leading-[1.9]">
+          <p className="text-ink text-[16px] md:text-[17px] leading-[1.9]">
             Digital or physical, in any amount. Redeemable in-restaurant on
             their next visit.
           </p>
@@ -35,7 +35,7 @@ export default function GiftCardsPage() {
           >
             Buy a Gift Card <ArrowRight />
           </a>
-          <p className="mt-6 text-[11px] uppercase tracking-widest-2 text-muted">
+          <p className="mt-6 text-[11px] uppercase tracking-widest-2 text-ink-muted">
             Secure checkout via QuickGifts
           </p>
         </div>

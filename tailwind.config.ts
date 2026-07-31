@@ -15,6 +15,9 @@ const config: Config = {
         accent: "#a52020",
         "accent-hover": "#8b1a1a",
         divider: "#262626",
+        parchment: "#f4ecdd",
+        ink: "#1a1a1a",
+        "ink-muted": "#6b5f4f",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
