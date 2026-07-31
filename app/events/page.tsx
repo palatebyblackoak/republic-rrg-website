@@ -27,8 +27,8 @@ export default function EventsPage() {
           className="hidden md:block absolute inset-y-0 left-0 w-1/2 bg-parchment pointer-events-none"
           aria-hidden
         />
-        <div className="relative max-w-[1100px] mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
-          <div className="md:pt-4 -mx-6 md:mx-0 px-6 md:pr-10 md:pl-0 py-12 md:py-0 bg-parchment md:bg-transparent">
+        <div className="relative max-w-[1100px] mx-auto px-6 md:px-8 py-16 md:py-24 grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-20 items-start">
+          <div className="-mx-6 md:mx-0 px-6 md:px-0 py-12 md:py-0 bg-parchment md:!bg-transparent md:!bg-none">
             <SectionLabel label="Private Dining & Catering" />
             <h2 className="font-serif text-ink text-[28px] sm:text-[36px] md:text-[44px] leading-tight">
               Host with us — or let us cater to you.
