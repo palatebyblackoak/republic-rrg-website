@@ -62,12 +62,12 @@ body {
 
 .flag-sway {
   transform-origin: 15% 50%;
-  animation: flagSway 7s ease-in-out infinite;
+  animation: flagSway 4.5s ease-in-out infinite;
   will-change: transform;
 }
 @keyframes flagSway {
-  0%, 100% { transform: rotate(-0.6deg) translateY(0); }
-  50% { transform: rotate(1.2deg) translateY(-4px); }
+  0%, 100% { transform: rotate(-1.8deg) skewX(-1.5deg) translateY(0); }
+  50% { transform: rotate(2.2deg) skewX(1.8deg) translateY(-9px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .flag-sway { animation: none; }
