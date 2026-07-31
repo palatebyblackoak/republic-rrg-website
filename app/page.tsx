@@ -41,6 +41,10 @@ const heroSlides = [
     alt: "Wild mushroom brick-oven pizza with basil on the branded Republic platter",
   },
   {
+    src: img.pizzaGreensPlatter,
+    alt: "Brick-oven pizza with avocado, arugula, and fresh greens on the branded Republic pewter platter",
+  },
+  {
     src: img.cantinaCocktail,
     alt: "Pomegranate-blackberry cantina cocktail with dried chiles on the bar",
   },
