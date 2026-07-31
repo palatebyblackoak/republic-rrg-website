@@ -27,7 +27,7 @@ export default function ContactPage() {
         label="Find Us"
         headline="Come Find Us."
         image={img.patioNight}
-        overlay={0.7}
+        overlay={0.88}
       />
 
       <section className="bg-surface">
