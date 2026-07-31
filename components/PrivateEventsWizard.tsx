@@ -11,15 +11,12 @@ type Occasion =
   | "Rehearsal Dinner"
   | "Other";
 
-type ServiceStyle = "Buffet" | "Plated" | "Boxed Lunches" | "Family Style";
-
 type FormState = {
   occasion: Occasion | "";
   date: string;
   guests: string;
   deliveryTime: string;
   venue: string;
-  serviceStyle: ServiceStyle | "";
   firstName: string;
   lastName: string;
   email: string;
@@ -34,13 +31,6 @@ const OCCASIONS: Occasion[] = [
   "Corporate",
   "Rehearsal Dinner",
   "Other",
-];
-
-const SERVICE_STYLES: ServiceStyle[] = [
-  "Buffet",
-  "Plated",
-  "Boxed Lunches",
-  "Family Style",
 ];
 
 const STEPS = ["Occasion", "Details", "Contact"] as const;
@@ -58,7 +48,6 @@ export default function PrivateEventsWizard() {
     guests: "",
     deliveryTime: "",
     venue: "",
-    serviceStyle: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -75,8 +64,7 @@ export default function PrivateEventsWizard() {
     ? form.date !== "" &&
       form.deliveryTime !== "" &&
       form.guests !== "" &&
-      form.venue.trim() !== "" &&
-      form.serviceStyle !== ""
+      form.venue.trim() !== ""
     : form.date !== "" && form.guests !== "";
 
   const canAdvance =
@@ -264,29 +252,6 @@ export default function PrivateEventsWizard() {
                 className={inputCls}
               />
             </label>
-          </div>
-
-          <div className="mt-6">
-            <span className={labelCls}>Service Style</span>
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              {SERVICE_STYLES.map((s) => {
-                const active = form.serviceStyle === s;
-                return (
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={() => update("serviceStyle", s)}
-                    className={`text-left px-5 py-3 text-[13px] uppercase tracking-widest-2 border transition-colors ${
-                      active
-                        ? "border-accent text-cream bg-accent/10"
-                        : "border-divider text-muted hover:border-accent hover:text-cream"
-                    }`}
-                  >
-                    {s}
-                  </button>
-                );
-              })}
-            </div>
           </div>
         </div>
       )}
