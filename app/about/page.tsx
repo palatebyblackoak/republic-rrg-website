@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { img } from "@/lib/images";
-import { site } from "@/lib/site";
 import FadeIn from "@/components/FadeIn";
-import SectionLabel from "@/components/SectionLabel";
 
 export const metadata: Metadata = {
   title: "About · Republic of the Rio Grande",
@@ -58,7 +56,7 @@ export default function AboutPage() {
       {/* THE NAMESAKE — 1840 */}
       <section className="relative bg-surface py-20 md:py-32 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 grid gap-12 md:gap-20 md:grid-cols-2 items-center">
-          <FadeIn>
+          <FadeIn className="order-2 md:order-1">
             <p className="text-[11px] uppercase tracking-widest-3 text-accent">
               The Namesake · 1840
             </p>
@@ -89,15 +87,17 @@ export default function AboutPage() {
               </p>
             </div>
           </FadeIn>
-          <FadeIn delay={120}>
-            <div className="relative w-full aspect-[4/3] md:aspect-square">
+          <FadeIn delay={120} className="order-1 md:order-2">
+            <div
+              className="flag-sway relative w-full aspect-[4/3] md:aspect-square"
+              style={{ filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.5))" }}
+            >
               <Image
                 src={img.rrgFlag}
                 alt="Flag of the Republic of the Rio Grande — red, white, and black with three white stars"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain"
-                style={{ filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.5))" }}
               />
             </div>
           </FadeIn>
