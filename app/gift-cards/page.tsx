@@ -31,8 +31,8 @@ const heroTriptych = [
 export default function GiftCardsPage() {
   return (
     <>
-      <section className="relative h-[65svh] md:h-[70vh] min-h-[440px] md:min-h-[520px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 grid grid-cols-3 gap-[2px] bg-bg">
+      <section className="bg-bg pt-8 md:pt-12">
+        <div className="grid grid-cols-3 gap-[3px] md:gap-[6px] h-[42svh] md:h-[58vh] min-h-[280px] md:min-h-[440px]">
           {heroTriptych.map((tile) => (
             <div key={tile.src} className="relative overflow-hidden">
               <Image
@@ -40,41 +40,32 @@ export default function GiftCardsPage() {
                 alt={tile.alt}
                 fill
                 priority
-                sizes="(max-width: 768px) 33vw, 33vw"
+                sizes="33vw"
                 style={{ objectPosition: tile.position }}
                 className="object-cover"
               />
             </div>
           ))}
         </div>
-        <div className="absolute inset-0 bg-bg/70" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/40 to-bg/80" />
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+
+        <div className="max-w-3xl mx-auto px-6 pt-14 md:pt-20 pb-20 md:pb-28 text-center flex flex-col items-center">
           <h1 className="font-serif text-cream font-normal text-[40px] sm:text-[52px] md:text-[72px] leading-[1.05]">
             Give the Gift of Republic.
           </h1>
-          <p className="mt-5 md:mt-6 text-muted font-light text-[15px] sm:text-[16px] md:text-[18px] max-w-xl mx-auto leading-[1.7]">
+          <p className="mt-6 md:mt-8 text-muted font-light text-[15px] sm:text-[16px] md:text-[18px] max-w-xl leading-[1.7]">
             Brick-oven dinners, cocktails in the cantina, celebrations worth
-            remembering.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-parchment py-20 md:py-28">
-        <div className="max-w-xl mx-auto px-6 text-center flex flex-col items-center">
-          <p className="text-ink text-[16px] md:text-[17px] leading-[1.9]">
-            Digital or physical, in any amount. Redeemable in-restaurant on
+            remembering. Digital or physical, in any amount — redeemable on
             their next visit.
           </p>
           <a
             href={site.giftCards}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
+            className="mt-10 md:mt-12 inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
           >
             Buy a Gift Card <ArrowRight />
           </a>
-          <p className="mt-6 text-[11px] uppercase tracking-widest-2 text-ink-muted">
+          <p className="mt-6 text-[11px] uppercase tracking-widest-2 text-muted">
             Secure checkout via QuickGifts
           </p>
         </div>
