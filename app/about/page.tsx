@@ -40,13 +40,14 @@ export default function AboutPage() {
       {/* NAMESAKE — 1840 */}
       <section className="bg-bg border-t border-divider py-16 md:py-24">
         <div className="max-w-[1100px] mx-auto px-6">
-          <FadeIn className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
-              The Namesake
-            </p>
-            <h2 className="mt-4 font-serif text-cream text-[24px] md:text-[30px] leading-tight">
-              Republic of the Rio Grande, 1840.
-            </h2>
+          <FadeIn>
+            <div className="max-w-3xl mx-auto flex items-center justify-center gap-4 md:gap-6 mb-12 md:mb-16">
+              <div className="flex-1 h-px bg-divider" />
+              <h2 className="text-cream text-[12px] md:text-[13px] uppercase tracking-[0.25em] font-medium whitespace-nowrap">
+                Republic of the Rio Grande · 1840
+              </h2>
+              <div className="flex-1 h-px bg-divider" />
+            </div>
           </FadeIn>
           <FadeIn>
             <div className="grid gap-x-14 md:grid-cols-2 gap-y-5 text-muted text-[15px] md:text-[16px] leading-[1.8]">
@@ -73,7 +74,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
           <FadeIn delay={160}>
-            <div className="mt-14 md:mt-20 flex justify-center">
+            <div className="mt-14 md:mt-20 flex flex-col items-center">
               <div
                 className="flag-sway relative w-60 md:w-96 aspect-[4/3]"
                 style={{ filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.4))" }}
@@ -86,6 +87,9 @@ export default function AboutPage() {
                   className="object-contain"
                 />
               </div>
+              <p className="mt-6 md:mt-8 font-serif italic text-muted text-[13px] md:text-[14px] text-center">
+                Flag of the Republic of the Rio Grande · 1840
+              </p>
             </div>
           </FadeIn>
         </div>
@@ -93,15 +97,29 @@ export default function AboutPage() {
 
       {/* RESTAURANT — 1998 */}
       <section className="bg-bg border-t border-divider py-16 md:py-24">
-        <div className="max-w-2xl mx-auto px-6 text-center">
+        <div className="max-w-[1100px] mx-auto px-6">
           <FadeIn>
-            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
-              Est. 1998
-            </p>
-            <h2 className="mt-4 font-serif text-cream text-[24px] md:text-[30px] leading-tight">
-              Grill &amp; Cantina, McAllen.
-            </h2>
-            <div className="mt-8 space-y-5 text-muted text-[15px] md:text-[16px] leading-[1.8]">
+            <div className="relative w-16 md:w-20 aspect-square mx-auto mb-8 md:mb-10">
+              <Image
+                src={img.rrgSeal}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 64px, 80px"
+                className="object-contain invert opacity-70"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={80}>
+            <div className="max-w-3xl mx-auto flex items-center justify-center gap-4 md:gap-6 mb-12 md:mb-16">
+              <div className="flex-1 h-px bg-divider" />
+              <h2 className="text-cream text-[12px] md:text-[13px] uppercase tracking-[0.25em] font-medium whitespace-nowrap">
+                Grill &amp; Cantina · 1998
+              </h2>
+              <div className="flex-1 h-px bg-divider" />
+            </div>
+          </FadeIn>
+          <FadeIn delay={160}>
+            <div className="max-w-2xl mx-auto space-y-5 text-muted text-[15px] md:text-[16px] leading-[1.8] text-center">
               <p>
                 Republic of the Rio Grande Grill &amp; Cantina opened in 1998
                 on 10th Street in McAllen. Fire-crafted cooking, Texas and
