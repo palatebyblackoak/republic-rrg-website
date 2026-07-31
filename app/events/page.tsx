@@ -19,7 +19,7 @@ export default function EventsPage() {
         headline="Events at Republic."
         subhead="Private dining, special programming, and celebrations worth remembering."
         image={img.heroPatio}
-        overlay={0.8}
+        overlay={0.88}
       />
 
       <section className="bg-surface py-16 md:py-24">
