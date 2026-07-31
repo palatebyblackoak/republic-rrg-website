@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { img } from "@/lib/images";
 import PageHero from "@/components/PageHero";
@@ -92,14 +93,12 @@ export default function ReservationsPage() {
             Perfect for birthdays, anniversaries, and every celebration in
             between.
           </p>
-          <a
-            href={site.giftCards}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/gift-cards"
             className="mt-10 inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
           >
-            Purchase a Gift Card <ArrowRight />
-          </a>
+            Explore Gift Cards <ArrowRight />
+          </Link>
         </div>
       </section>
     </>

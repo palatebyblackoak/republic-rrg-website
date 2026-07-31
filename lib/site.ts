@@ -31,11 +31,13 @@ export const site = {
     "https://www.google.com/maps/dir/?api=1&destination=1411+S+10th+St+McAllen+TX+78501",
 };
 
-export const nav = [
+export type NavLink = { label: string; href: string; external?: boolean };
+
+export const nav: NavLink[] = [
   { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
-  { label: "Gift Cards", href: site.giftCards, external: true },
+  { label: "Gift Cards", href: "/gift-cards" },
   { label: "Contact", href: "/contact" },
   { label: "Reserve", href: "/reservations" },
 ];

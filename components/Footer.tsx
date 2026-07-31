@@ -66,14 +66,12 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <a
-                href={site.giftCards}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/gift-cards"
                 className="text-[12px] uppercase tracking-[0.15em] text-muted hover:text-accent transition-colors"
               >
                 Gift Cards
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="mt-8 flex items-center gap-4 text-accent">
