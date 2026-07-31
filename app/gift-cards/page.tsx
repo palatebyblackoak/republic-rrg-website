@@ -17,7 +17,7 @@ export default function GiftCardsPage() {
         label="Gift Cards"
         headline="Give the Gift of Republic."
         subhead="Brick-oven dinners, cocktails in the cantina, celebrations worth remembering."
-        image={img.steakPlated}
+        image={img.pizzaBrickOven}
         overlay={0.72}
       />
 
