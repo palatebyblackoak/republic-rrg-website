@@ -108,7 +108,7 @@ export default function HomePage() {
             className="text-[10px] uppercase tracking-[0.2em] text-cream/60"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
           >
-            Open Mon–Sat · 11AM–Late · Closed Sunday
+            Open Mon–Sat · Closed Sunday
           </p>
           <a
             href="#explore"
