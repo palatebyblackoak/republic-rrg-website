@@ -257,46 +257,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* THE FAMILY — SISTER RESTAURANTS */}
-      <section className="bg-surface py-20 md:py-28">
-        <div className="max-w-[1400px] mx-auto px-6">
-          <FadeIn className="text-center max-w-2xl mx-auto">
-            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
-              The Family
-            </p>
-            <h2 className="mt-5 font-serif text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1]">
-              Part of a family of McAllen tables.
-            </h2>
-          </FadeIn>
-          <div className="mt-12 md:mt-16 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-            <div className="bg-bg border border-divider p-8 md:p-10">
-              <p className="text-[11px] uppercase tracking-widest-3 text-accent">
-                Sister Restaurant
-              </p>
-              <h3 className="mt-3 font-serif text-cream text-[26px] md:text-[30px]">
-                Santa Fe Steakhouse
-              </h3>
-              <p className="mt-4 text-muted text-[14px] md:text-[15px] leading-[1.75]">
-                McAllen&apos;s prime steakhouse. A quieter sibling with the same
-                commitment to fire-crafted cuts and warm service.
-              </p>
-            </div>
-            <div className="bg-bg border border-divider p-8 md:p-10">
-              <p className="text-[11px] uppercase tracking-widest-3 text-accent">
-                Sister Restaurant
-              </p>
-              <h3 className="mt-3 font-serif text-cream text-[26px] md:text-[30px]">
-                University Draft House
-              </h3>
-              <p className="mt-4 text-muted text-[14px] md:text-[15px] leading-[1.75]">
-                A neighborhood pub built for game days and long nights. Casual,
-                McAllen-owned, always full.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CLOSE */}
       <section className="bg-bg py-20 md:py-28">
         <div className="max-w-2xl mx-auto px-6 text-center flex flex-col items-center">
