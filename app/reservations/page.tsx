@@ -19,7 +19,7 @@ export default function ReservationsPage() {
         headline="Reserve Your Table."
         subhead="We recommend reserving in advance, especially for Friday and Saturday evenings."
         image={img.salmonWide}
-        overlay={0.6}
+        overlay={0.88}
       />
 
       <section className="bg-bg py-2">
