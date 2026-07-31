@@ -8,6 +8,7 @@ type Occasion =
   | "Anniversary"
   | "Corporate"
   | "Rehearsal Dinner"
+  | "Catering"
   | "Other";
 
 type FormState = {
@@ -26,6 +27,7 @@ const OCCASIONS: Occasion[] = [
   "Anniversary",
   "Corporate",
   "Rehearsal Dinner",
+  "Catering",
   "Other",
 ];
 

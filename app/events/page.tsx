@@ -25,14 +25,14 @@ export default function EventsPage() {
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-[1100px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
           <div className="md:pt-4">
-            <SectionLabel label="Private Dining" />
+            <SectionLabel label="Private Dining & Catering" />
             <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-tight">
-              Host your next celebration with us.
+              Host with us — or let us cater to you.
             </h2>
             <p className="mt-8 text-muted text-[16px] leading-[1.8]">
-              Birthdays, anniversaries, corporate dinners, and private
-              celebrations — tell us a little about your event and our team
-              will follow up with details.
+              Private dining for birthdays, anniversaries, corporate dinners,
+              and rehearsal dinners — plus off-site catering for events of any
+              size. Tell us a little about yours and our team will follow up.
             </p>
             <p className="mt-6 text-muted text-[14px]">
               Prefer to talk?{" "}
