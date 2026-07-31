@@ -138,8 +138,8 @@ export default function AboutPage() {
           <FadeIn className="order-2 md:order-1">
             <div className="relative w-full aspect-[4/5] md:aspect-[3/4]">
               <Image
-                src={img.heroPatio}
-                alt="Republic of the Rio Grande covered patio at night"
+                src={img.patioNight}
+                alt="Republic patio at night with the firepit lit"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -187,12 +187,12 @@ export default function AboutPage() {
               {
                 eyebrow: "Fire",
                 title: "Cooked over flame.",
-                copy: "Ribeyes, filets, brick-oven pizzas, wood-charred vegetables. Fire is not a technique here — it&apos;s the technique.",
+                copy: "Ribeyes, filets, brick-oven pizzas, wood-charred vegetables. Fire is not a technique here — it's the technique.",
               },
               {
                 eyebrow: "Patio",
                 title: "Under the lights.",
-                copy: "Our covered patio has hosted anniversaries, first dates, last dinners, and everything between. It&apos;s the heart of the restaurant.",
+                copy: "Our covered patio has hosted anniversaries, first dates, last dinners, and everything between. It's the heart of the restaurant.",
               },
               {
                 eyebrow: "Hospitality",
@@ -208,10 +208,9 @@ export default function AboutPage() {
                   <h3 className="mt-4 font-serif text-cream text-[24px] md:text-[28px] leading-tight">
                     {p.title}
                   </h3>
-                  <p
-                    className="mt-4 text-muted text-[15px] md:text-[16px] leading-[1.8]"
-                    dangerouslySetInnerHTML={{ __html: p.copy }}
-                  />
+                  <p className="mt-4 text-muted text-[15px] md:text-[16px] leading-[1.8]">
+                    {p.copy}
+                  </p>
                 </div>
               </FadeIn>
             ))}
@@ -238,9 +237,6 @@ export default function AboutPage() {
               <p className="mt-4 text-[11px] uppercase tracking-widest-2 text-muted">
                 of 607 Restaurants in McAllen
               </p>
-              <p className="mt-1 text-[11px] uppercase tracking-widest-2 text-accent">
-                TripAdvisor
-              </p>
             </FadeIn>
             <FadeIn delay={120}>
               <p className="font-serif italic text-cream text-[36px] md:text-[44px] leading-none">
@@ -249,11 +245,13 @@ export default function AboutPage() {
               <p className="mt-4 text-[11px] uppercase tracking-widest-2 text-muted">
                 Award Winner
               </p>
-              <p className="mt-1 text-[11px] uppercase tracking-widest-2 text-accent">
-                TripAdvisor
-              </p>
             </FadeIn>
           </div>
+          <FadeIn delay={260}>
+            <p className="mt-12 md:mt-14 text-[10px] uppercase tracking-widest-2 text-muted">
+              Rankings via <span className="text-accent">TripAdvisor</span>
+            </p>
+          </FadeIn>
         </div>
       </section>
 
