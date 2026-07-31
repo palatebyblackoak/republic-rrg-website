@@ -16,7 +16,6 @@ export default function ReservationsPage() {
   return (
     <>
       <PageHero
-        label="Reservations"
         headline="Reserve Your Table."
         subhead="We recommend reserving in advance, especially for Friday and Saturday evenings."
         image={img.salmonWide}

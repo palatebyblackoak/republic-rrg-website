@@ -1,8 +1,6 @@
 import Image from "next/image";
-import SectionLabel from "./SectionLabel";
 
 type Props = {
-  label: string;
   headline: string;
   subhead?: string;
   image: string;
@@ -10,7 +8,6 @@ type Props = {
 };
 
 export default function PageHero({
-  label,
   headline,
   subhead,
   image,
@@ -31,9 +28,6 @@ export default function PageHero({
         style={{ opacity: overlay }}
       />
       <div className="relative z-10 text-center px-6 max-w-4xl">
-        <div className="flex flex-col items-center">
-          <SectionLabel label={label} centered />
-        </div>
         <h1 className="font-serif text-cream font-normal text-[40px] sm:text-[52px] md:text-[72px] leading-[1.05]">
           {headline}
         </h1>

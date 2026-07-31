@@ -148,7 +148,7 @@ export default function HomePage() {
       <section className="bg-bg border-y border-divider py-8 md:py-10">
         <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-10 text-center">
           <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-muted">
-            Ranked <span className="text-cream">#9 of 607 in McAllen</span> · TripAdvisor
+            Ranked <span className="text-cream">Top 10 of 607 Restaurants in McAllen</span> · TripAdvisor
           </p>
           <span className="hidden md:inline text-divider">|</span>
           <p className="text-[10px] md:text-[12px] uppercase tracking-widest-2 text-accent">

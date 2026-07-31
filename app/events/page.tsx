@@ -15,7 +15,6 @@ export default function EventsPage() {
   return (
     <>
       <PageHero
-        label="Events"
         headline="Events at Republic."
         subhead="Private dining, special programming, and celebrations worth remembering."
         image={img.heroPatio}

@@ -24,7 +24,6 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        label="Find Us"
         headline="Come Find Us."
         image={img.patioNight}
         overlay={0.88}

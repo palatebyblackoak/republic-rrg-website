@@ -14,7 +14,6 @@ export default function GiftCardsPage() {
   return (
     <>
       <PageHero
-        label="Gift Cards"
         headline="Give the Gift of Republic."
         subhead="Brick-oven dinners, cocktails in the cantina, celebrations worth remembering."
         image={img.pizzaBrickOven}

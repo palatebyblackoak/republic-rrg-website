@@ -27,10 +27,7 @@ export default function AboutPage() {
                 className="object-contain opacity-90"
               />
             </div>
-            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
-              About
-            </p>
-            <h1 className="mt-5 font-serif text-ink text-[32px] md:text-[44px] leading-[1.15]">
+            <h1 className="font-serif text-ink text-[32px] md:text-[44px] leading-[1.15]">
               A name with a story.
             </h1>
           </FadeIn>
