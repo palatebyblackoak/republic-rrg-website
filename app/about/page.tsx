@@ -115,8 +115,9 @@ export default function AboutPage() {
               From proclamation to a table in McAllen.
             </p>
           </FadeIn>
-          <div className="mt-12 md:mt-16 grid gap-8 md:gap-6 md:grid-cols-5">
-            {timeline.map((t, i) => (
+
+          <div className="mt-12 md:mt-16 grid gap-8 md:gap-6 md:grid-cols-4">
+            {timeline.slice(0, 4).map((t, i) => (
               <FadeIn key={t.year} delay={i * 80}>
                 <div className="text-center md:text-left border-t border-divider pt-5 md:pt-6">
                   <p className="font-serif text-accent text-[22px] md:text-[26px] leading-none">
@@ -129,6 +130,27 @@ export default function AboutPage() {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn delay={360}>
+            <div className="my-10 md:my-14 flex items-center gap-5 md:gap-6 max-w-3xl mx-auto">
+              <div className="flex-1 h-px bg-divider" />
+              <p className="text-[10px] md:text-[11px] uppercase tracking-widest-2 text-accent italic whitespace-nowrap">
+                158 years later
+              </p>
+              <div className="flex-1 h-px bg-divider" />
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={440}>
+            <div className="text-center border-t border-divider pt-5 md:pt-6 max-w-sm mx-auto">
+              <p className="font-serif text-accent text-[26px] md:text-[32px] leading-none">
+                {timeline[4].year}
+              </p>
+              <p className="mt-3 text-muted text-[13px] md:text-[14px] leading-[1.65]">
+                {timeline[4].event}
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
