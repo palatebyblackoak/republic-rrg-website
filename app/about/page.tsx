@@ -41,9 +41,9 @@ export default function AboutPage() {
       <section className="bg-bg border-t border-divider py-16 md:py-24">
         <div className="max-w-[1100px] mx-auto px-6">
           <FadeIn>
-            <div className="max-w-3xl mx-auto flex items-center justify-center gap-4 md:gap-6 mb-12 md:mb-16">
+            <div className="max-w-3xl mx-auto flex items-center justify-center gap-3 md:gap-6 mb-12 md:mb-16">
               <div className="flex-1 h-px bg-divider" />
-              <h2 className="text-cream text-[12px] md:text-[13px] uppercase tracking-[0.25em] font-medium whitespace-nowrap">
+              <h2 className="text-cream text-[11px] md:text-[13px] uppercase tracking-[0.2em] md:tracking-[0.25em] font-medium whitespace-nowrap">
                 Republic of the Rio Grande · 1840
               </h2>
               <div className="flex-1 h-px bg-divider" />
