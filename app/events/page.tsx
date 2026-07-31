@@ -22,19 +22,23 @@ export default function EventsPage() {
         overlay={0.88}
       />
 
-      <section className="bg-surface py-16 md:py-24">
-        <div className="max-w-[1100px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
-          <div className="md:pt-4">
+      <section className="relative bg-surface overflow-hidden">
+        <div
+          className="hidden md:block absolute inset-y-0 left-0 w-1/2 bg-parchment pointer-events-none"
+          aria-hidden
+        />
+        <div className="relative max-w-[1100px] mx-auto px-6 py-16 md:py-24 grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
+          <div className="md:pt-4 -mx-6 md:mx-0 px-6 md:pr-10 md:pl-0 py-12 md:py-0 bg-parchment md:bg-transparent">
             <SectionLabel label="Private Dining & Catering" />
-            <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-tight">
+            <h2 className="font-serif text-ink text-[28px] sm:text-[36px] md:text-[44px] leading-tight">
               Host with us — or let us cater to you.
             </h2>
-            <p className="mt-8 text-muted text-[16px] leading-[1.8]">
+            <p className="mt-8 text-ink-muted text-[16px] leading-[1.8]">
               Private dining for birthdays, anniversaries, corporate dinners,
               and rehearsal dinners — plus off-site catering for events of any
               size. Tell us a little about yours and our team will follow up.
             </p>
-            <p className="mt-6 text-muted text-[14px]">
+            <p className="mt-6 text-ink-muted text-[14px]">
               Prefer to talk?{" "}
               <a
                 href={site.phoneHref}
