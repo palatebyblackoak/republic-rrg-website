@@ -53,6 +53,10 @@ const heroSlides = [
     alt: "Key lime dessert with fresh strawberries and strawberry coulis, paired with a sangria in the cantina",
   },
   {
+    src: img.chicken,
+    alt: "Grilled avocado chicken topped with pico de gallo, tomatillo cream, and micro greens in the cantina",
+  },
+  {
     src: img.cantinaCocktail,
     alt: "Pomegranate-blackberry cantina cocktail with dried chiles on the bar",
   },

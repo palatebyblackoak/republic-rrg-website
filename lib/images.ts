@@ -31,7 +31,7 @@ export const img = {
   ceviche: "/images/ahi-tuna-ceviche.jpg",
   salmon: "/images/avocado-salmon.jpg",
   salmonWide: "/images/avocado-salmon-wide.jpg",
-  chicken: "/images/chicken-plated.jpg",
+  chicken: "/images/avocado-chicken-plated.png",
   pizzaSpecialty: "/images/pizza-specialty.jpg",
   pizzaMushroom: "/images/pizza-mushroom.jpg",
   pizzaGreensPlatter: "/images/pizza-greens-platter.png",
