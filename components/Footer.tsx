@@ -73,6 +73,14 @@ export default function Footer() {
                 Gift Cards
               </Link>
             </li>
+            <li>
+              <Link
+                href="/employment"
+                className="text-[12px] uppercase tracking-[0.15em] text-muted hover:text-accent transition-colors"
+              >
+                Employment
+              </Link>
+            </li>
           </ul>
           <div className="mt-8 flex items-center gap-4 text-cream">
             {socialLinks.map(({ href, label, Icon }) => (

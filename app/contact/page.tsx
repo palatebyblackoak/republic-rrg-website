@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { img } from "@/lib/images";
 import PageHero from "@/components/PageHero";
@@ -134,6 +135,16 @@ export default function ContactPage() {
             >
               Get Directions <ArrowRight />
             </a>
+
+            <p className="mt-10 text-[13px] text-muted">
+              Interested in joining the team?{" "}
+              <Link
+                href="/employment"
+                className="text-accent hover:text-accent-hover transition-colors"
+              >
+                Apply for a position →
+              </Link>
+            </p>
           </div>
 
           <div className="min-h-[340px] md:min-h-full relative bg-bg">
