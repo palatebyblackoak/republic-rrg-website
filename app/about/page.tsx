@@ -14,7 +14,7 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-bg py-20 md:py-28">
+      <section className="bg-parchment py-24 md:py-32">
         <div className="max-w-2xl mx-auto px-6 text-center flex flex-col items-center">
           <FadeIn className="flex flex-col items-center">
             <div className="relative w-20 md:w-24 aspect-square mb-8 md:mb-10">
@@ -24,13 +24,13 @@ export default function AboutPage() {
                 fill
                 priority
                 sizes="(max-width: 768px) 80px, 96px"
-                className="object-contain invert opacity-90"
+                className="object-contain opacity-90"
               />
             </div>
             <p className="text-[11px] uppercase tracking-widest-3 text-accent">
               About
             </p>
-            <h1 className="mt-5 font-serif text-cream text-[32px] md:text-[44px] leading-[1.15]">
+            <h1 className="mt-5 font-serif text-ink text-[32px] md:text-[44px] leading-[1.15]">
               A name with a story.
             </h1>
           </FadeIn>
