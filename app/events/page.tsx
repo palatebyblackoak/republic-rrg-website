@@ -23,7 +23,7 @@ export default function EventsPage() {
         label="Events"
         headline="Events at Republic."
         subhead="Private dining, special programming, and celebrations worth remembering."
-        image={img.eventsHero}
+        image={img.patioNight}
         overlay={0.65}
       />
 
