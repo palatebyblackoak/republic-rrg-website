@@ -1,9 +1,9 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import { img } from "@/lib/images";
 import PageHero from "@/components/PageHero";
 import SectionLabel from "@/components/SectionLabel";
+import PrivateEventsWizard from "@/components/PrivateEventsWizard";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -28,34 +28,28 @@ export default function EventsPage() {
       />
 
       <section className="bg-surface py-16 md:py-24">
-        <div className="max-w-[1400px] mx-auto px-6 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
-          <div>
+        <div className="max-w-[1100px] mx-auto px-6 grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-start">
+          <div className="md:pt-4">
             <SectionLabel label="Private Dining" />
-            <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[48px] leading-tight">
+            <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-tight">
               Host your next celebration with us.
             </h2>
-            <p className="mt-8 text-muted text-[17px] leading-[1.8]">
-              Republic of the Rio Grande is the perfect setting for birthdays,
-              anniversaries, corporate dinners, and private celebrations. Our
-              team will work with you to create an experience your guests will
-              never forget.
+            <p className="mt-8 text-muted text-[16px] leading-[1.8]">
+              Birthdays, anniversaries, corporate dinners, and private
+              celebrations — tell us a little about your event and our team
+              will follow up with details.
             </p>
-            <a
-              href={site.phoneHref}
-              className="mt-10 inline-block bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors"
-            >
-              Call to Inquire — {site.phone}
-            </a>
+            <p className="mt-6 text-muted text-[14px]">
+              Prefer to talk?{" "}
+              <a
+                href={site.phoneHref}
+                className="text-accent hover:text-accent-hover transition-colors"
+              >
+                Call {site.phone}
+              </a>
+            </p>
           </div>
-          <div className="relative w-full h-[320px] md:h-[440px]">
-            <Image
-              src={img.interior}
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
+          <PrivateEventsWizard />
         </div>
       </section>
 
