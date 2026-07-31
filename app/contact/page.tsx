@@ -26,8 +26,8 @@ export default function ContactPage() {
       <PageHero
         label="Find Us"
         headline="Come Find Us."
-        image={img.contactHero}
-        overlay={0.65}
+        image={img.patioLights}
+        overlay={0.7}
       />
 
       <section className="bg-surface">
