@@ -49,6 +49,10 @@ const heroSlides = [
     alt: "Warm bread pudding with vanilla ice cream, caramel drizzle, and a rosemary sprig in the cantina",
   },
   {
+    src: img.keyLimeStrawberry,
+    alt: "Key lime dessert with fresh strawberries and strawberry coulis, paired with a sangria in the cantina",
+  },
+  {
     src: img.cantinaCocktail,
     alt: "Pomegranate-blackberry cantina cocktail with dried chiles on the bar",
   },
