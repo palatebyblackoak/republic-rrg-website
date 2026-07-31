@@ -22,7 +22,7 @@ export default function TopBar() {
   return (
     <div className="hidden md:block bg-surface text-cream text-[11px] tracking-widest-2 uppercase relative z-50">
       <div className="max-w-[1400px] mx-auto px-6 h-9 flex items-center justify-between">
-        <div className="flex items-center gap-4 text-accent">
+        <div className="flex items-center gap-4 text-cream">
           {socialLinks.map(({ href, label, Icon }) => (
             <a
               key={label}
@@ -30,7 +30,7 @@ export default function TopBar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="transition-colors hover:text-cream"
+              className="transition-colors hover:text-accent"
             >
               <Icon />
             </a>

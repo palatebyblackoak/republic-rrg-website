@@ -74,7 +74,7 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <div className="mt-8 flex items-center gap-4 text-accent">
+          <div className="mt-8 flex items-center gap-4 text-cream">
             {socialLinks.map(({ href, label, Icon }) => (
               <a
                 key={label}
@@ -82,7 +82,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="hover:text-cream transition-colors"
+                className="hover:text-accent transition-colors"
               >
                 <Icon />
               </a>
