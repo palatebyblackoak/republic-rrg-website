@@ -18,8 +18,8 @@ export default function ReservationsPage() {
         label="Reservations"
         headline="Reserve Your Table."
         subhead="We recommend reserving in advance, especially for Friday and Saturday evenings."
-        image={img.reservationsHero}
-        overlay={0.65}
+        image={img.patioLights}
+        overlay={0.7}
       />
 
       <section className="bg-bg py-2">
