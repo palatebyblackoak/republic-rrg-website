@@ -45,7 +45,7 @@ export const menu: MenuSection[] = [
       {
         name: "Costra de Ribeye",
         description:
-          "Crispy cheese tortilla shell, ribeye, guacamole, salsa roja and verde.",
+          "Crispy cheese tortilla shell filled with ribeye, guacamole, served with salsa roja & verde.",
         price: "$18",
       },
       {
@@ -91,13 +91,14 @@ export const menu: MenuSection[] = [
       },
       {
         name: "Ribeye Chicharrones",
-        description: "Guacamole, 8oz ribeye, queso fresco, chips.",
+        description:
+          "Bed of guacamole, 8oz ribeye, queso fresco, and chips.",
         price: "$18",
       },
       {
         name: "Grill Cauliflower",
         description:
-          "Grilled cauliflower, chile guajillo, chipotle, orange zest, parmesan.",
+          "Grilled cauliflower marinated in chile guajillo, chipotle, orange zest, finished with parmesan cheese.",
         price: "$11",
       },
     ],
@@ -111,14 +112,14 @@ export const menu: MenuSection[] = [
       {
         name: "Tortilla Soup",
         description:
-          "Chicken, caldo, pasilla peppers, avocado cubes, cheese, tortilla strips.",
-        price: "$15",
+          "Chicken, caldo, pasilla peppers, avocado cubes, cheese, and tortilla strips.",
+        price: "$9 / $15",
       },
       {
-        name: "Poblano Chicken Corn Chowder",
+        name: "Poblano Chicken Corn Chowder Soup",
         description:
-          "Poblano cream soup, chicken, roasted corn, potatoes.",
-        price: "$15",
+          "Poblano cream soup, chicken, roasted corn, and potatoes.",
+        price: "$9 / $15",
       },
       {
         name: "House Greek Salad",
@@ -290,58 +291,61 @@ export const menu: MenuSection[] = [
     id: "pizzas",
     label: "Pizzas & Calzones",
     title: "Pizzas & Calzones",
+    note: "Small / Large pricing shown where applicable.",
     items: [
       {
         name: "Pepperoni",
-        description: "Tomato basil sauce, mozzarella, cheddar, pepperoni.",
-        price: "$19",
+        description:
+          "Tomato basil sauce, mozzarella, cheddar cheese, and pepperoni.",
+        price: "$10 / $19",
       },
       {
-        name: "Texas Goat Cheese",
+        name: "Our Famous Texas Goat Cheese",
         description:
-          "Texas garlic olive oil, mushrooms, goat cheese, mozzarella, walnuts, fresh basil.",
-        price: "$24",
+          "Texas garlic olive oil, mushrooms, goat cheese and mozzarella, walnuts, and fresh basil.",
+        price: "$14 / $24",
       },
       {
         name: "Supreme",
         description:
-          "Tomato-basil sauce, mozzarella, pepperoni, Italian sausage, mushrooms, bell peppers, red onions.",
-        price: "$24",
+          "Tomato-basil sauce, mozzarella, pepperoni, Italian sausage, mushrooms, bell peppers, and red onions.",
+        price: "$14 / $24",
       },
       {
         name: "Hawaiian",
         description:
-          "Tomato-basil sauce, mozzarella, Canadian bacon, pineapple, red onions.",
-        price: "$22",
+          "Tomato-basil sauce, mozzarella cheese, Canadian bacon, pineapple, and red onions.",
+        price: "$12 / $22",
       },
       {
         name: "Margherita",
         description:
-          "Texas garlic olive oil, fresh mozzarella, tomatoes, fresh basil, pine nuts.",
-        price: "$20",
+          "Texas garlic olive oil, tomatoes, fresh mozzarella, fresh basil, and pine nuts.",
+        price: "$10 / $20",
       },
       {
         name: "Smoke Salmon",
         description:
-          "Texas garlic olive oil, mozzarella, cream cheese, smoked salmon, capers, red onions.",
-        price: "$22",
+          "Texas garlic olive oil, mozzarella, cream cheese, smoked salmon, capers, and red onions.",
+        price: "$12 / $22",
       },
       {
         name: "Fajita Pizza",
         description:
-          "Tomato-basil sauce, mozzarella, fajita, avocado, cilantro, red onions, chimichurri sauce.",
-        price: "$27",
+          "Tomato-basil sauce, mozzarella cheese, fajita, avocado, cilantro, red onions, and chimichurri sauce.",
+        price: "$16 / $27",
       },
       {
-        name: "Cheeseburger Pizza",
+        name: "Cheeseburger",
         description:
-          "Tomato-basil sauce, mozzarella, American cheese, ground beef, bacon, chipotle mayo, red onions.",
-        price: "$20",
+          "Tomato-basil sauce, mozzarella and American cheese, ground beef, bacon, chipotle mayo, and red onions.",
+        price: "$12 / $20",
       },
       {
         name: "BBQ Chicken",
-        description: "Barbecue sauce, mozzarella, chicken breast.",
-        price: "$24",
+        description:
+          "Barbecue sauce, mozzarella, and chicken breast.",
+        price: "$14 / $24",
       },
       {
         name: "Meat Lovers",
