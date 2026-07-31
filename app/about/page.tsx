@@ -1,123 +1,328 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { img } from "@/lib/images";
-import PageHero from "@/components/PageHero";
-import SectionLabel from "@/components/SectionLabel";
-import StatBar from "@/components/StatBar";
+import { site } from "@/lib/site";
 import FadeIn from "@/components/FadeIn";
+import SectionLabel from "@/components/SectionLabel";
 
 export const metadata: Metadata = {
   title: "About · Republic of the Rio Grande",
   description:
-    "A McAllen institution since 1998. Fire-crafted cuisine, a legendary covered patio, and 27 years of local craft.",
+    "The name comes from a 283-day republic declared along the Rio Grande in 1840. The restaurant carries that name forward — McAllen, since 1998.",
 };
+
+const timeline = [
+  { year: "Jan 1840", event: "The Republic of the Rio Grande is proclaimed. Laredo named capital." },
+  { year: "Jan 17", event: "Jesús Cárdenas, a lawyer from Reynosa, is chosen president." },
+  { year: "Summer", event: "Battles along the Rio Grande. Villages taken, retaken, and lost." },
+  { year: "Nov 1840", event: "Canales surrenders at Camargo. The republic dissolves after 283 days." },
+  { year: "1998", event: "The name comes back — to a table in McAllen." },
+];
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        label="Our Story"
-        headline={"27 Years at the Heart\nof McAllen."}
-        image={img.aboutHero}
-        overlay={0.6}
-      />
+      {/* HERO */}
+      <section className="relative bg-bg overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 py-24 md:py-36 flex flex-col items-center text-center">
+          <FadeIn className="flex flex-col items-center">
+            <div className="relative w-24 md:w-32 aspect-square mb-8 md:mb-10">
+              <Image
+                src={img.rrgSeal}
+                alt="Republic of the Rio Grande seal"
+                fill
+                priority
+                sizes="(max-width: 768px) 96px, 128px"
+                className="object-contain invert opacity-90"
+              />
+            </div>
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+              About
+            </p>
+            <h1 className="mt-5 font-serif italic text-cream text-[36px] sm:text-[52px] md:text-[72px] leading-[1.05] max-w-3xl">
+              A name.
+              <br />
+              A story.
+              <br />
+              A table.
+            </h1>
+            <p className="mt-8 md:mt-10 text-muted text-[15px] md:text-[17px] leading-[1.8] max-w-xl">
+              The Republic of the Rio Grande lasted 283 days in 1840. The name
+              endured. In 1998, we brought it back — to a table in McAllen.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
 
-      <section className="bg-bg py-16 md:py-28">
-        <div className="max-w-[1400px] mx-auto px-6 grid gap-14 md:grid-cols-2 md:gap-20 items-center">
+      {/* THE NAMESAKE — 1840 */}
+      <section className="relative bg-surface py-20 md:py-32 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 grid gap-12 md:gap-20 md:grid-cols-2 items-center">
           <FadeIn>
-            <SectionLabel label="Since 1998" />
-            <div className="space-y-6 text-muted text-[17px] leading-[1.8]">
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+              The Namesake · 1840
+            </p>
+            <h2 className="mt-5 font-serif text-cream text-[36px] sm:text-[48px] md:text-[64px] leading-[1.02]">
+              <span className="block text-accent">283 days.</span>
+              <span className="block">One republic.</span>
+            </h2>
+            <div className="mt-8 md:mt-10 space-y-5 text-muted text-[16px] md:text-[17px] leading-[1.85]">
               <p>
-                Republic of the Rio Grande has been a McAllen institution since
-                1998. What started as a vision to bring elevated, fire-crafted
-                cuisine to the Rio Grande Valley has grown into one of the most
-                beloved dining experiences in South Texas.
+                On January 7, 1840, a constitutional convention along the Rio
+                Grande declared an independent republic. Laredo was named the
+                capital. Antonio Canales led the army. Jesús Cárdenas of Reynosa
+                was chosen president.
               </p>
               <p>
-                Our menu is a celebration of Texas and Latin culinary traditions
-                — steaks cut and cooked over fire, enchiladas made with care,
-                handmade tortillas, and a patio that has hosted more
-                celebrations than we can count.
+                Their cause was federalism — a rebellion against the centralist
+                government in Mexico City. Their front stretched from Saltillo
+                to the Nueces. Battles followed all summer along the river,
+                villages taken and retaken.
               </p>
               <p>
-                We are proud to be locally owned, locally rooted, and committed
-                to the same standard of quality that has kept our tables full
-                for over two decades.
+                By November, it was over. Canales surrendered at Camargo. The
+                republic dissolved. Two hundred and eighty-three days from
+                proclamation to end.
+              </p>
+              <p className="pt-3 font-serif italic text-cream text-[20px] md:text-[24px]">
+                &ldquo;¡Viva la Revolución!&rdquo;
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={120}>
-            <div className="relative w-full h-[360px] md:h-[520px]">
+            <div className="relative w-full aspect-[4/3] md:aspect-square">
               <Image
-                src={img.interior}
-                alt="Republic of the Rio Grande interior"
+                src={img.rrgFlag}
+                alt="Flag of the Republic of the Rio Grande — red, white, and black with three white stars"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                className="object-contain"
+                style={{ filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.5))" }}
               />
             </div>
           </FadeIn>
         </div>
       </section>
 
-      <StatBar
-        stats={[
-          { number: "27+", label: "Years in McAllen" },
-          { number: "Locally Owned", label: "Since Day One" },
-          { number: "Est. 1998", label: "McAllen, Texas" },
-        ]}
-      />
-
-      <section className="relative h-[65svh] md:h-[70vh] min-h-[440px] md:min-h-[520px] flex items-center justify-center overflow-hidden">
-        <Image
-          src={img.patioNight}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-bg/60" />
-        <div className="relative z-10 text-center px-6 max-w-3xl">
-          <div className="flex flex-col items-center">
-            <SectionLabel label="The Patio" centered />
+      {/* TIMELINE */}
+      <section className="bg-bg border-y border-divider py-14 md:py-20">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <FadeIn className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+              The Timeline
+            </p>
+            <p className="mt-4 font-serif italic text-cream text-[20px] md:text-[24px]">
+              From proclamation to a table in McAllen.
+            </p>
+          </FadeIn>
+          <div className="mt-12 md:mt-16 grid gap-8 md:gap-6 md:grid-cols-5">
+            {timeline.map((t, i) => (
+              <FadeIn key={t.year} delay={i * 80}>
+                <div className="text-center md:text-left border-t border-divider pt-5 md:pt-6">
+                  <p className="font-serif text-accent text-[22px] md:text-[26px] leading-none">
+                    {t.year}
+                  </p>
+                  <p className="mt-3 text-muted text-[13px] md:text-[14px] leading-[1.65]">
+                    {t.event}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
-          <h2 className="font-serif text-cream text-[32px] sm:text-[40px] md:text-[56px] leading-[1.1]">
-            The heart of Republic.
-          </h2>
-          <p className="mt-5 md:mt-6 text-muted text-[15px] sm:text-[17px] leading-[1.8] max-w-xl mx-auto">
-            Our covered outdoor patio is the soul of the restaurant. Whether
-            it&apos;s a quiet dinner for two or a celebration with the whole
-            family — the patio is where Republic comes alive.
-          </p>
         </div>
       </section>
 
-      <section className="bg-surface py-16 md:py-28">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="flex flex-col items-center">
-            <SectionLabel label="Part of the Family" centered />
+      {/* THE RESTAURANT — TODAY */}
+      <section className="bg-bg py-20 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6 grid gap-14 md:grid-cols-2 md:gap-20 items-center">
+          <FadeIn className="order-2 md:order-1">
+            <div className="relative w-full aspect-[4/5] md:aspect-[3/4]">
+              <Image
+                src={img.heroPatio}
+                alt="Republic of the Rio Grande covered patio at night"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={120} className="order-1 md:order-2">
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+              The Restaurant · Est. 1998
+            </p>
+            <h2 className="mt-5 font-serif text-cream text-[36px] sm:text-[48px] md:text-[56px] leading-[1.05]">
+              The name comes back to the table.
+            </h2>
+            <div className="mt-8 space-y-5 text-muted text-[16px] md:text-[17px] leading-[1.85]">
+              <p>
+                Republic of the Rio Grande Grill &amp; Cantina opened in 1998
+                on 10th Street in McAllen. The mission was simple: bring
+                fire-crafted cooking, Texas and Latin traditions, and a covered
+                patio worth returning to — under a name that belongs to this
+                border.
+              </p>
+              <p>
+                Twenty-seven years later, we&apos;re still locally owned, still
+                cooking over fire, and still setting tables on the patio where
+                McAllen has celebrated for more nights than we can count.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY — 3 PILLARS */}
+      <section className="bg-surface py-20 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <FadeIn className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+              The Philosophy
+            </p>
+            <h2 className="mt-5 font-serif italic text-cream text-[32px] sm:text-[42px] md:text-[52px] leading-[1.05]">
+              Fire. Patio. Hospitality.
+            </h2>
+          </FadeIn>
+          <div className="mt-14 md:mt-20 grid gap-10 md:gap-12 md:grid-cols-3">
+            {[
+              {
+                eyebrow: "Fire",
+                title: "Cooked over flame.",
+                copy: "Ribeyes, filets, brick-oven pizzas, wood-charred vegetables. Fire is not a technique here — it&apos;s the technique.",
+              },
+              {
+                eyebrow: "Patio",
+                title: "Under the lights.",
+                copy: "Our covered patio has hosted anniversaries, first dates, last dinners, and everything between. It&apos;s the heart of the restaurant.",
+              },
+              {
+                eyebrow: "Hospitality",
+                title: "McAllen-made.",
+                copy: "Locally owned since day one. The same standard that filled our tables in 1998 fills them tonight.",
+              },
+            ].map((p, i) => (
+              <FadeIn key={p.eyebrow} delay={i * 100}>
+                <div className="text-center md:text-left">
+                  <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+                    {p.eyebrow}
+                  </p>
+                  <h3 className="mt-4 font-serif text-cream text-[24px] md:text-[28px] leading-tight">
+                    {p.title}
+                  </h3>
+                  <p
+                    className="mt-4 text-muted text-[15px] md:text-[16px] leading-[1.8]"
+                    dangerouslySetInnerHTML={{ __html: p.copy }}
+                  />
+                </div>
+              </FadeIn>
+            ))}
           </div>
-          <h2 className="font-serif text-cream text-[26px] sm:text-[32px] md:text-[40px] leading-tight">
-            A family of McAllen dining traditions.
-          </h2>
-          <div className="mt-10 md:mt-12 grid gap-6 md:grid-cols-2">
-            <div className="bg-bg p-8 md:p-10 border border-divider">
-              <p className="text-[11px] uppercase tracking-widest-2 text-accent">
+        </div>
+      </section>
+
+      {/* AWARDS */}
+      <section className="bg-bg py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-6 text-center">
+          <FadeIn className="max-w-2xl mx-auto">
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+              Recognition
+            </p>
+            <h2 className="mt-5 font-serif italic text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1]">
+              A table McAllen keeps recommending.
+            </h2>
+          </FadeIn>
+          <div className="mt-14 md:mt-16 grid gap-10 md:grid-cols-2 max-w-3xl mx-auto">
+            <FadeIn>
+              <p className="font-serif text-cream text-[44px] md:text-[56px] leading-none">
+                #9
+              </p>
+              <p className="mt-4 text-[11px] uppercase tracking-widest-2 text-muted">
+                of 607 Restaurants in McAllen
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-widest-2 text-accent">
+                TripAdvisor
+              </p>
+            </FadeIn>
+            <FadeIn delay={120}>
+              <p className="font-serif italic text-cream text-[36px] md:text-[44px] leading-none">
+                Travelers Choice
+              </p>
+              <p className="mt-4 text-[11px] uppercase tracking-widest-2 text-muted">
+                Award Winner
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-widest-2 text-accent">
+                TripAdvisor
+              </p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* THE FAMILY — SISTER RESTAURANTS */}
+      <section className="bg-surface py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <FadeIn className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] uppercase tracking-widest-3 text-accent">
+              The Family
+            </p>
+            <h2 className="mt-5 font-serif text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-[1.1]">
+              Part of a family of McAllen tables.
+            </h2>
+          </FadeIn>
+          <div className="mt-12 md:mt-16 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+            <div className="bg-bg border border-divider p-8 md:p-10">
+              <p className="text-[11px] uppercase tracking-widest-3 text-accent">
                 Sister Restaurant
               </p>
-              <h3 className="mt-3 font-serif text-cream text-[28px]">
+              <h3 className="mt-3 font-serif text-cream text-[26px] md:text-[30px]">
                 Santa Fe Steakhouse
               </h3>
+              <p className="mt-4 text-muted text-[14px] md:text-[15px] leading-[1.75]">
+                McAllen&apos;s prime steakhouse. A quieter sibling with the same
+                commitment to fire-crafted cuts and warm service.
+              </p>
             </div>
-            <div className="bg-bg p-8 md:p-10 border border-divider">
-              <p className="text-[11px] uppercase tracking-widest-2 text-accent">
+            <div className="bg-bg border border-divider p-8 md:p-10">
+              <p className="text-[11px] uppercase tracking-widest-3 text-accent">
                 Sister Restaurant
               </p>
-              <h3 className="mt-3 font-serif text-cream text-[28px]">
+              <h3 className="mt-3 font-serif text-cream text-[26px] md:text-[30px]">
                 University Draft House
               </h3>
+              <p className="mt-4 text-muted text-[14px] md:text-[15px] leading-[1.75]">
+                A neighborhood pub built for game days and long nights. Casual,
+                McAllen-owned, always full.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CLOSE */}
+      <section className="bg-bg py-20 md:py-28">
+        <div className="max-w-2xl mx-auto px-6 text-center flex flex-col items-center">
+          <FadeIn className="flex flex-col items-center">
+            <p className="font-serif italic text-cream text-[28px] sm:text-[36px] md:text-[44px] leading-tight">
+              Come find your seat.
+            </p>
+            <Link
+              href="/reservations"
+              className="group inline-flex flex-col items-center mt-10"
+            >
+              <span className="text-[12px] md:text-[13px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent">
+                Reserve a Table
+              </span>
+              <span className="mt-2.5 block h-[1.5px] w-10 bg-accent group-hover:w-full transition-all duration-500" />
+            </Link>
+            <div className="relative w-40 md:w-48 aspect-[2/1] mt-14 md:mt-16 opacity-70">
+              <Image
+                src={img.rrgSignature}
+                alt="Republic of the Rio Grande — Grill & Cantina"
+                fill
+                sizes="(max-width: 768px) 160px, 192px"
+                className="object-contain invert"
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
     </>
