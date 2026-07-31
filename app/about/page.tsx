@@ -96,7 +96,7 @@ export default function AboutPage() {
       </section>
 
       {/* RESTAURANT — 1998 */}
-      <section className="bg-bg border-t border-divider py-16 md:py-24">
+      <section className="bg-parchment py-20 md:py-32">
         <div className="max-w-[1100px] mx-auto px-6">
           <FadeIn>
             <div className="relative w-16 md:w-20 aspect-square mx-auto mb-8 md:mb-10">
@@ -105,21 +105,21 @@ export default function AboutPage() {
                 alt=""
                 fill
                 sizes="(max-width: 768px) 64px, 80px"
-                className="object-contain invert opacity-70"
+                className="object-contain opacity-80"
               />
             </div>
           </FadeIn>
           <FadeIn delay={80}>
             <div className="max-w-3xl mx-auto flex items-center justify-center gap-4 md:gap-6 mb-12 md:mb-16">
-              <div className="flex-1 h-px bg-divider" />
-              <h2 className="text-cream text-[12px] md:text-[13px] uppercase tracking-[0.25em] font-medium whitespace-nowrap">
+              <div className="flex-1 h-px bg-ink/15" />
+              <h2 className="text-ink text-[12px] md:text-[13px] uppercase tracking-[0.25em] font-medium whitespace-nowrap">
                 Grill &amp; Cantina · 1998
               </h2>
-              <div className="flex-1 h-px bg-divider" />
+              <div className="flex-1 h-px bg-ink/15" />
             </div>
           </FadeIn>
           <FadeIn delay={160}>
-            <div className="max-w-2xl mx-auto space-y-5 text-muted text-[15px] md:text-[16px] leading-[1.8] text-center">
+            <div className="max-w-2xl mx-auto space-y-5 text-ink-muted text-[15px] md:text-[16px] leading-[1.8] text-center">
               <p>
                 Republic of the Rio Grande Grill &amp; Cantina opened in 1998
                 on 10th Street in McAllen. Fire-crafted cooking, Texas and
