@@ -110,6 +110,51 @@ export default function Navbar() {
                   );
                 }
 
+                if (link.children && link.children.length > 0) {
+                  return (
+                    <div
+                      key={link.label}
+                      className="relative group/menu"
+                    >
+                      <Link
+                        href={link.href}
+                        aria-current={active ? "page" : undefined}
+                        aria-haspopup="menu"
+                        className={base}
+                      >
+                        {link.label}
+                        {active ? (
+                          <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-cream/40" />
+                        ) : null}
+                      </Link>
+                      <div
+                        role="menu"
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover/menu:opacity-100 group-hover/menu:visible focus-within:opacity-100 focus-within:visible transition-all duration-200"
+                      >
+                        <div className="min-w-[180px] bg-bg border border-divider py-2">
+                          {link.children.map((child) => {
+                            const childActive = pathname === child.href;
+                            return (
+                              <Link
+                                key={child.label}
+                                href={child.href}
+                                role="menuitem"
+                                className={`block px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] transition-colors ${focusRing} ${
+                                  childActive
+                                    ? "text-accent"
+                                    : "text-cream hover:text-accent"
+                                }`}
+                              >
+                                {child.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.label}
@@ -199,6 +244,44 @@ export default function Navbar() {
                     </a>
                   );
                 }
+
+                if (link.children && link.children.length > 0) {
+                  return (
+                    <div key={link.label}>
+                      <Link
+                        href={link.href}
+                        tabIndex={tabIndex}
+                        aria-current={active ? "page" : undefined}
+                        className={base}
+                      >
+                        {indicator}
+                        {link.label}
+                      </Link>
+                      <div className="pl-6 flex flex-col">
+                        {link.children.map((child) => {
+                          const childActive = pathname === child.href;
+                          return (
+                            <Link
+                              key={child.label}
+                              href={child.href}
+                              tabIndex={tabIndex}
+                              aria-current={childActive ? "page" : undefined}
+                              className={`flex items-center gap-3 py-2.5 text-[13px] uppercase tracking-[0.15em] transition-colors ${focusRing} ${
+                                childActive
+                                  ? "text-accent"
+                                  : "text-muted hover:text-accent"
+                              }`}
+                            >
+                              <span className="block h-px w-4 bg-divider" aria-hidden />
+                              {child.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.label}

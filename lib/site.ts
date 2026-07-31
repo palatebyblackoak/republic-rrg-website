@@ -31,13 +31,25 @@ export const site = {
     "https://www.google.com/maps/dir/?api=1&destination=1411+S+10th+St+McAllen+TX+78501",
 };
 
-export type NavLink = { label: string; href: string; external?: boolean };
+export type NavLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+  children?: NavLink[];
+};
 
 export const nav: NavLink[] = [
   { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
   { label: "Gift Cards", href: "/gift-cards" },
-  { label: "Contact", href: "/contact" },
+  {
+    label: "Contact",
+    href: "/contact",
+    children: [
+      { label: "Contact Us", href: "/contact" },
+      { label: "Employment", href: "/employment" },
+    ],
+  },
   { label: "Reserve", href: "/reservations" },
 ];
