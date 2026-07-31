@@ -4,11 +4,6 @@ import { img } from "@/lib/images";
 import PageHero from "@/components/PageHero";
 import SectionLabel from "@/components/SectionLabel";
 import PrivateEventsWizard from "@/components/PrivateEventsWizard";
-import {
-  FacebookIcon,
-  InstagramIcon,
-  TwitterIcon,
-} from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Events · Republic of the Rio Grande",
@@ -53,47 +48,6 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="bg-bg py-16 md:py-28">
-        <div className="max-w-3xl mx-auto px-6 text-center flex flex-col items-center">
-          <SectionLabel label="Upcoming Events" centered />
-          <h2 className="font-serif text-cream text-[28px] sm:text-[36px] md:text-[48px] leading-tight">
-            More events coming soon.
-          </h2>
-          <p className="mt-6 text-muted text-[17px] leading-[1.8] max-w-lg">
-            Follow us on social media to stay up to date on special
-            programming, seasonal menus, and exclusive dining events.
-          </p>
-          <div className="mt-10 flex items-center gap-6 text-accent">
-            <a
-              href={site.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="hover:text-accent-hover transition-colors"
-            >
-              <FacebookIcon className="w-6 h-6" />
-            </a>
-            <a
-              href={site.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:text-accent-hover transition-colors"
-            >
-              <InstagramIcon className="w-6 h-6" />
-            </a>
-            <a
-              href={site.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-              className="hover:text-accent-hover transition-colors"
-            >
-              <TwitterIcon className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
