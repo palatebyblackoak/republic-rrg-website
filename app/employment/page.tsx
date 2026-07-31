@@ -17,8 +17,8 @@ export default function EmploymentPage() {
       <PageHero
         headline="Join the Republic Team."
         subhead="We're always hiring — servers, cooks, bar, and more."
-        image={img.pizzaBrickOven}
-        overlay={0.8}
+        image={img.patioLights}
+        overlay={0.75}
       />
 
       <section className="bg-surface">
