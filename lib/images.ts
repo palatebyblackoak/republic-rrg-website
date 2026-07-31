@@ -35,5 +35,6 @@ export const img = {
   pizzaSpecialty: "/images/pizza-specialty.jpg",
   pizzaMushroom: "/images/pizza-mushroom.jpg",
   pizzaGreensPlatter: "/images/pizza-greens-platter.png",
+  breadPuddingVanilla: "/images/bread-pudding-vanilla.png",
   steakSalad: "/images/chimichurri-steak-salad.jpg",
 };

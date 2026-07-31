@@ -45,6 +45,10 @@ const heroSlides = [
     alt: "Brick-oven pizza with avocado, arugula, and fresh greens on the branded Republic pewter platter",
   },
   {
+    src: img.breadPuddingVanilla,
+    alt: "Warm bread pudding with vanilla ice cream, caramel drizzle, and a rosemary sprig in the cantina",
+  },
+  {
     src: img.cantinaCocktail,
     alt: "Pomegranate-blackberry cantina cocktail with dried chiles on the bar",
   },
