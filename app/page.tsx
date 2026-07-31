@@ -158,7 +158,7 @@ export default function HomePage() {
       </section>
 
       {/* THE STORY */}
-      <section className="bg-bg py-20 md:py-32">
+      <section className="bg-parchment py-20 md:py-32">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <FadeIn className="text-center md:text-left">
@@ -166,10 +166,10 @@ export default function HomePage() {
                 <span className="block text-accent text-[48px] sm:text-[72px] md:text-[104px] font-medium">
                   27 YEARS
                 </span>
-                <span className="block text-cream text-[48px] sm:text-[72px] md:text-[104px] font-medium mt-1">
+                <span className="block text-ink text-[48px] sm:text-[72px] md:text-[104px] font-medium mt-1">
                   IN McALLEN
                 </span>
-                <span className="block italic text-cream/85 text-[22px] sm:text-[28px] md:text-[36px] mt-4 md:mt-5">
+                <span className="block italic text-ink/70 text-[22px] sm:text-[28px] md:text-[36px] mt-4 md:mt-5">
                   of history &amp; hospitality
                 </span>
               </h2>
@@ -177,10 +177,10 @@ export default function HomePage() {
                 href="/about"
                 className="group inline-flex flex-col items-center md:items-start mt-8 md:mt-10"
               >
-                <span className="text-[11px] md:text-[12px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent">
+                <span className="text-[11px] md:text-[12px] uppercase tracking-[0.25em] text-ink transition-colors group-hover:text-accent">
                   Read Our Story
                 </span>
-                <span className="mt-2 block h-[1.5px] w-8 bg-cream/50 group-hover:w-16 group-hover:bg-accent transition-all duration-500" />
+                <span className="mt-2 block h-[1.5px] w-8 bg-ink/40 group-hover:w-16 group-hover:bg-accent transition-all duration-500" />
               </Link>
             </FadeIn>
             <FadeIn delay={120}>
@@ -197,12 +197,12 @@ export default function HomePage() {
           </div>
 
           <FadeIn className="mt-14 md:mt-20 max-w-2xl mx-auto text-center">
-            <p className="text-muted text-[16px] md:text-[17px] leading-[1.8]">
+            <p className="text-ink-muted text-[16px] md:text-[17px] leading-[1.8]">
               For over two decades, Republic of the Rio Grande has been the
               table where McAllen celebrates. Fire-crafted cuisine, a legendary
               covered patio, and a menu worth returning to.
             </p>
-            <p className="mt-5 text-cream text-[16px] md:text-[17px] leading-[1.8]">
+            <p className="mt-5 text-ink text-[16px] md:text-[17px] leading-[1.8]">
               Come find your seat.
             </p>
           </FadeIn>
