@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center gap-6 md:gap-8">
           <div
             className="relative w-28 md:w-36 aspect-square"
-            style={{ filter: "drop-shadow(0 4px 20px rgba(0,0,0,0.6))" }}
+            style={{ filter: "drop-shadow(0 2px 14px rgba(0,0,0,0.35))" }}
           >
             <Image
               src="/images/logo-footer.png"
@@ -87,11 +87,11 @@ export default function HomePage() {
             <Link href="/menu" className="group inline-flex flex-col items-center">
               <span
                 className="text-[14px] md:text-[16px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
-                style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.75)" }}
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
               >
                 See the Menu
               </span>
-              <span className="mt-2.5 block h-[2px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
+              <span className="mt-2.5 block h-[1.5px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
             </Link>
             <a
               href={site.reservation}
@@ -101,16 +101,16 @@ export default function HomePage() {
             >
               <span
                 className="text-[14px] md:text-[16px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
-                style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.75)" }}
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
               >
                 Reserve a Table
               </span>
-              <span className="mt-2.5 block h-[2px] w-10 bg-accent group-hover:w-full transition-all duration-500" />
+              <span className="mt-2.5 block h-[1.5px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
             </a>
           </div>
           <p
             className="text-[10px] uppercase tracking-[0.2em] text-cream/60"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85)" }}
+            style={{ textShadow: "0 1px 6px rgba(0,0,0,0.65)" }}
           >
             Open Mon–Sat · Closed Sunday
           </p>
