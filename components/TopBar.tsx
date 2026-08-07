@@ -4,8 +4,8 @@ import { navUtility, site } from "@/lib/site";
 export default function TopBar() {
   return (
     <div className="bg-parchment text-ink relative z-50 border-b border-ink/10">
-      {/* Mobile: single centered line */}
-      <div className="md:hidden max-w-[1400px] mx-auto px-4 h-9 flex items-center justify-center gap-2">
+      {/* Mobile: centered — script "Visit us at" + full address */}
+      <div className="md:hidden max-w-[1400px] mx-auto px-4 py-1.5 flex flex-wrap items-baseline justify-center gap-x-2 gap-y-0.5">
         <span className="font-serif italic text-accent text-[13px]">
           Visit us at
         </span>
@@ -15,7 +15,7 @@ export default function TopBar() {
           rel="noopener noreferrer"
           className="uppercase tracking-widest-2 text-[10px] text-ink"
         >
-          {site.addressLine1}
+          1411 S 10th St, McAllen, Texas
         </a>
       </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type Props = {
@@ -9,21 +9,59 @@ type Props = {
 };
 
 const panClasses = ["pan-a", "pan-b", "pan-c", "pan-d", "pan-e"];
+const SWIPE_THRESHOLD = 50;
 
 export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
   const [active, setActive] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const dragStartX = useRef<number | null>(null);
 
-  useEffect(() => {
+  const startAutoplay = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
     if (images.length <= 1) return;
-    const id = setInterval(
+    timerRef.current = setInterval(
       () => setActive((i) => (i + 1) % images.length),
       intervalMs
     );
-    return () => clearInterval(id);
+  };
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [images.length, intervalMs]);
 
+  const goTo = (idx: number) => {
+    const n = images.length;
+    setActive(((idx % n) + n) % n);
+    startAutoplay();
+  };
+
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).closest("button")) return;
+    dragStartX.current = e.clientX;
+  };
+  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) return;
+    const delta = e.clientX - dragStartX.current;
+    dragStartX.current = null;
+    if (Math.abs(delta) < SWIPE_THRESHOLD) return;
+    goTo(active + (delta < 0 ? 1 : -1));
+  };
+  const cancelDrag = () => {
+    dragStartX.current = null;
+  };
+
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div
+      className="absolute inset-0 overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing"
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      onPointerCancel={cancelDrag}
+      onPointerLeave={cancelDrag}
+    >
       {images.map((img, i) => (
         <div
           key={img.src}
@@ -38,7 +76,8 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
               fill
               priority={i === 0}
               sizes="100vw"
-              className="object-cover"
+              draggable={false}
+              className="object-cover pointer-events-none"
             />
           </div>
         </div>
