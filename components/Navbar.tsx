@@ -110,8 +110,8 @@ export default function Navbar() {
         />
 
         <div className="relative max-w-[1400px] mx-auto px-6">
-          {/* Mobile: logo + hamburger */}
-          <div className="lg:hidden flex items-center justify-between h-16">
+          {/* Mobile: centered logo with hamburger positioned right */}
+          <div className="lg:hidden relative flex items-center justify-center h-16">
             <Link
               href="/"
               className={`flex items-center ${focusRing}`}
@@ -123,7 +123,7 @@ export default function Navbar() {
                 width={400}
                 height={100}
                 priority
-                className="h-10 w-auto"
+                className="h-11 w-auto"
               />
             </Link>
 
@@ -132,7 +132,7 @@ export default function Navbar() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-drawer"
-              className={`text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5 ${focusRing}`}
+              className={`absolute right-0 top-1/2 -translate-y-1/2 text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5 ${focusRing}`}
               onClick={() => setOpen((v) => !v)}
             >
               <span
