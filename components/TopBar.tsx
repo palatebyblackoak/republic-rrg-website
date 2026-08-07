@@ -29,7 +29,7 @@ export default function TopBar() {
             rel="noopener noreferrer"
             className="uppercase tracking-widest-2 text-[11px] text-ink hover:text-accent transition-colors"
           >
-            {site.addressLine1}, McAllen
+            1411 S 10th St, McAllen, Texas
           </a>
           <span className="text-ink/30">·</span>
           <a
