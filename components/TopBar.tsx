@@ -1,53 +1,38 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
-import {
-  FacebookIcon,
-  TwitterIcon,
-  InstagramIcon,
-  GoogleIcon,
-  TripAdvisorIcon,
-  YelpIcon,
-} from "./Icons";
-
-const socialLinks = [
-  { href: site.social.facebook, label: "Facebook", Icon: FacebookIcon },
-  { href: site.social.instagram, label: "Instagram", Icon: InstagramIcon },
-  { href: site.social.twitter, label: "X", Icon: TwitterIcon },
-  { href: site.social.google, label: "Google", Icon: GoogleIcon },
-  { href: site.social.tripadvisor, label: "TripAdvisor", Icon: TripAdvisorIcon },
-  { href: site.social.yelp, label: "Yelp", Icon: YelpIcon },
-];
+import { navUtility, site } from "@/lib/site";
 
 export default function TopBar() {
   return (
-    <div className="hidden md:block bg-surface text-cream text-[11px] tracking-widest-2 uppercase relative z-50">
+    <div className="hidden md:block bg-parchment text-ink relative z-50 border-b border-ink/10">
       <div className="max-w-[1400px] mx-auto px-6 h-9 flex items-center justify-between">
-        <div className="flex items-center gap-4 text-cream">
-          {socialLinks.map(({ href, label, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="transition-colors hover:text-accent"
-            >
-              <Icon />
-            </a>
-          ))}
-        </div>
-        <div className="flex items-center gap-4">
-          <span className="text-muted normal-case tracking-normal text-[12px]">
-            {site.address}
-          </span>
-          <span className="text-divider">|</span>
+        <div className="flex items-baseline gap-2 text-[12px]">
+          <span className="font-serif italic text-accent">Visit us at</span>
+          <a
+            href={site.mapsDirections}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="uppercase tracking-widest-2 text-[11px] text-ink hover:text-accent transition-colors"
+          >
+            {site.addressLine1}, McAllen
+          </a>
+          <span className="text-ink/30">·</span>
           <a
             href={site.phoneHref}
-            className="text-muted normal-case tracking-normal text-[12px] hover:text-accent transition-colors"
+            className="uppercase tracking-widest-2 text-[11px] text-ink hover:text-accent transition-colors"
           >
             {site.phone}
           </a>
-          <span className="text-divider">|</span>
+        </div>
+        <div className="flex items-center gap-6">
+          {navUtility.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="uppercase tracking-widest-2 text-[11px] text-ink hover:text-accent transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
             href="/#eclub"
             className="bg-accent hover:bg-accent-hover text-white px-3 py-1 uppercase tracking-widest-2 text-[10px] transition-colors"

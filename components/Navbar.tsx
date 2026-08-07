@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav } from "@/lib/site";
+import { nav, navLeft, navRight, type NavLink } from "@/lib/site";
 
 const focusRing =
   "focus-visible:outline-1 focus-visible:outline focus-visible:outline-accent focus-visible:outline-offset-4";
@@ -52,6 +52,44 @@ export default function Navbar() {
     return pathname.startsWith(href);
   };
 
+  const renderDesktopLink = (link: NavLink) => {
+    const isReserve = link.href === "/reservations";
+    const active = isActive(link.href);
+    const base = `group relative text-[12px] uppercase tracking-[0.15em] transition-colors ${focusRing} ${
+      active ? "text-accent" : "text-cream hover:text-accent"
+    }`;
+
+    if (link.external) {
+      return (
+        <a
+          key={link.label}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={base}
+        >
+          {link.label}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        key={link.label}
+        href={link.href}
+        aria-current={active ? "page" : undefined}
+        className={base}
+      >
+        {link.label}
+        {isReserve ? (
+          <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-accent group-hover:w-full transition-all duration-500" />
+        ) : active ? (
+          <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-cream/40" />
+        ) : null}
+      </Link>
+    );
+  };
+
   return (
     <>
       <a
@@ -72,7 +110,8 @@ export default function Navbar() {
         />
 
         <div className="relative max-w-[1400px] mx-auto px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Mobile: logo + hamburger */}
+          <div className="lg:hidden flex items-center justify-between h-16">
             <Link
               href="/"
               className={`flex items-center ${focusRing}`}
@@ -84,101 +123,16 @@ export default function Navbar() {
                 width={400}
                 height={100}
                 priority
-                className="h-10 md:h-12 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
-
-            <nav className="hidden lg:flex items-center gap-7">
-              {nav.map((link) => {
-                const isReserve = link.href === "/reservations";
-                const active = isActive(link.href);
-                const base = `group relative text-[12px] uppercase tracking-[0.15em] transition-colors ${focusRing} ${
-                  active ? "text-accent" : "text-cream hover:text-accent"
-                }`;
-
-                if (link.external) {
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={base}
-                    >
-                      {link.label}
-                    </a>
-                  );
-                }
-
-                if (link.children && link.children.length > 0) {
-                  return (
-                    <div
-                      key={link.label}
-                      className="relative group/menu"
-                    >
-                      <Link
-                        href={link.href}
-                        aria-current={active ? "page" : undefined}
-                        aria-haspopup="menu"
-                        className={base}
-                      >
-                        {link.label}
-                        {active ? (
-                          <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-cream/40" />
-                        ) : null}
-                      </Link>
-                      <div
-                        role="menu"
-                        className="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible group-hover/menu:opacity-100 group-hover/menu:visible focus-within:opacity-100 focus-within:visible transition-all duration-200"
-                      >
-                        <div className="min-w-[180px] bg-bg border border-divider py-2">
-                          {link.children.map((child) => {
-                            const childActive = pathname === child.href;
-                            return (
-                              <Link
-                                key={child.label}
-                                href={child.href}
-                                role="menuitem"
-                                className={`block px-5 py-2.5 text-[12px] uppercase tracking-[0.15em] transition-colors ${focusRing} ${
-                                  childActive
-                                    ? "text-accent"
-                                    : "text-cream hover:text-accent"
-                                }`}
-                              >
-                                {child.label}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                }
-
-                return (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    aria-current={active ? "page" : undefined}
-                    className={base}
-                  >
-                    {link.label}
-                    {isReserve ? (
-                      <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-accent group-hover:w-full transition-all duration-500" />
-                    ) : active ? (
-                      <span className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 block h-[1.5px] w-6 bg-cream/40" />
-                    ) : null}
-                  </Link>
-                );
-              })}
-            </nav>
 
             <button
               ref={hamburgerRef}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-drawer"
-              className={`lg:hidden text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5 ${focusRing}`}
+              className={`text-cream w-10 h-10 flex flex-col items-center justify-center gap-1.5 ${focusRing}`}
               onClick={() => setOpen((v) => !v)}
             >
               <span
@@ -197,6 +151,32 @@ export default function Navbar() {
                 }`}
               />
             </button>
+          </div>
+
+          {/* Desktop: 3-column with centered logo */}
+          <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center h-24 gap-8">
+            <nav className="flex items-center justify-end gap-8">
+              {navLeft.map(renderDesktopLink)}
+            </nav>
+
+            <Link
+              href="/"
+              className={`flex items-center justify-center ${focusRing}`}
+              aria-label="Republic of the Rio Grande — Home"
+            >
+              <Image
+                src="/images/logo-nav.png"
+                alt="Republic of the Rio Grande"
+                width={520}
+                height={130}
+                priority
+                className="h-16 w-auto"
+              />
+            </Link>
+
+            <nav className="flex items-center justify-start gap-8">
+              {navRight.map(renderDesktopLink)}
+            </nav>
           </div>
         </div>
 
@@ -245,43 +225,6 @@ export default function Navbar() {
                   );
                 }
 
-                if (link.children && link.children.length > 0) {
-                  return (
-                    <div key={link.label}>
-                      <Link
-                        href={link.href}
-                        tabIndex={tabIndex}
-                        aria-current={active ? "page" : undefined}
-                        className={base}
-                      >
-                        {indicator}
-                        {link.label}
-                      </Link>
-                      <div className="pl-6 flex flex-col">
-                        {link.children.map((child) => {
-                          const childActive = pathname === child.href;
-                          return (
-                            <Link
-                              key={child.label}
-                              href={child.href}
-                              tabIndex={tabIndex}
-                              aria-current={childActive ? "page" : undefined}
-                              className={`flex items-center gap-3 py-2.5 text-[13px] uppercase tracking-[0.15em] transition-colors ${focusRing} ${
-                                childActive
-                                  ? "text-accent"
-                                  : "text-muted hover:text-accent"
-                              }`}
-                            >
-                              <span className="block h-px w-4 bg-divider" aria-hidden />
-                              {child.label}
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                }
-
                 return (
                   <Link
                     key={link.label}
@@ -306,7 +249,7 @@ export default function Navbar() {
         aria-hidden={!open}
         tabIndex={-1}
         onClick={closeMenu}
-        className={`lg:hidden fixed top-16 md:top-20 inset-x-0 bottom-0 z-30 bg-bg/65 backdrop-blur-sm transition-opacity duration-300 focus:outline-none ${
+        className={`lg:hidden fixed top-16 inset-x-0 bottom-0 z-30 bg-bg/65 backdrop-blur-sm transition-opacity duration-300 focus:outline-none ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />

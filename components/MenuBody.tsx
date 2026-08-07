@@ -1,7 +1,27 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { menu } from "@/lib/menu";
+import { menu, type MenuItem } from "@/lib/menu";
+
+function MenuItemRow({ item }: { item: MenuItem }) {
+  return (
+    <div className="py-5 border-b border-divider last:border-b-0 md:[&:nth-last-child(2):nth-child(odd)]:border-b-0">
+      <div className="flex items-baseline justify-between gap-4">
+        <h3 className="font-serif font-semibold text-cream text-[20px]">
+          {item.name}
+        </h3>
+        <span className="text-[14px] text-cream whitespace-nowrap">
+          {item.price}
+        </span>
+      </div>
+      {item.description && (
+        <p className="mt-2 text-[14px] text-muted leading-[1.6]">
+          {item.description}
+        </p>
+      )}
+    </div>
+  );
+}
 
 const edgeMask = {
   maskImage:
@@ -60,7 +80,7 @@ export default function MenuBody() {
     setActiveId(id);
     const el = document.getElementById("menu-content");
     if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY - 140;
+    const y = el.getBoundingClientRect().top + window.scrollY - 160;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
@@ -70,7 +90,7 @@ export default function MenuBody() {
 
   return (
     <>
-      <div className="sticky top-16 md:top-20 z-30 bg-surface border-y border-divider">
+      <div className="sticky top-16 lg:top-24 z-30 bg-surface border-y border-divider">
         <div className="max-w-[1400px] mx-auto">
           <div
             ref={scrollerRef}
@@ -112,26 +132,34 @@ export default function MenuBody() {
               </p>
             )}
 
-            <div className="grid gap-x-14 md:grid-cols-2">
-              {active.items.map((item) => (
-                <div
-                  key={item.name}
-                  className="py-5 border-b border-divider last:border-b-0 md:[&:nth-last-child(2):nth-child(odd)]:border-b-0"
-                >
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-serif font-semibold text-cream text-[20px]">
-                      {item.name}
-                    </h3>
-                    <span className="text-[14px] text-cream whitespace-nowrap">
-                      {item.price}
-                    </span>
+            {active.groups ? (
+              <div className="flex flex-col gap-10 md:gap-14">
+                {active.groups.map((group, gi) => (
+                  <div key={group.heading ?? `group-${gi}`}>
+                    {group.heading && (
+                      <div className="mb-6 md:mb-8 flex items-center gap-4">
+                        <span className="h-px flex-1 bg-divider" aria-hidden />
+                        <h3 className="font-serif text-cream text-[18px] md:text-[20px] uppercase tracking-[0.15em]">
+                          {group.heading}
+                        </h3>
+                        <span className="h-px flex-1 bg-divider" aria-hidden />
+                      </div>
+                    )}
+                    <div className="grid gap-x-14 md:grid-cols-2">
+                      {group.items.map((item) => (
+                        <MenuItemRow key={item.name} item={item} />
+                      ))}
+                    </div>
                   </div>
-                  <p className="mt-2 text-[14px] text-muted leading-[1.6]">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid gap-x-14 md:grid-cols-2">
+                {active.items?.map((item) => (
+                  <MenuItemRow key={item.name} item={item} />
+                ))}
+              </div>
+            )}
 
             {nextSection && (
               <div className="mt-14 md:mt-20 flex justify-center">

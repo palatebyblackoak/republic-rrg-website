@@ -38,18 +38,20 @@ export type NavLink = {
   children?: NavLink[];
 };
 
-export const nav: NavLink[] = [
+export const navLeft: NavLink[] = [
   { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
-  { label: "Gift Cards", href: "/gift-cards" },
-  {
-    label: "Contact",
-    href: "/contact",
-    children: [
-      { label: "Contact Us", href: "/contact" },
-      { label: "Employment", href: "/employment" },
-    ],
-  },
+];
+
+export const navRight: NavLink[] = [
+  { label: "Contact", href: "/contact" },
   { label: "Reserve", href: "/reservations" },
 ];
+
+export const navUtility: NavLink[] = [
+  { label: "Employment", href: "/employment" },
+  { label: "Gift Cards", href: "/gift-cards" },
+];
+
+export const nav: NavLink[] = [...navLeft, ...navRight, ...navUtility];
