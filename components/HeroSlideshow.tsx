@@ -80,38 +80,61 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
   };
 
   // ── Mobile handlers ──────────────────────────────────────────
-  const applyMobileTransform = (offsetPx: number) => {
-    if (!mobileStripRef.current) return;
-    mobileStripRef.current.style.transform = `translate3d(calc(${-active * 100}% + ${offsetPx}px), 0, 0)`;
+  // Keep the transform in sync with `active` whenever we're not dragging.
+  // We manage transform via ref (never the style prop) so drag → snap
+  // transitions cleanly without React fighting the inline style.
+  useEffect(() => {
+    if (mobileDragging) return;
+    if (!mobileStripRef.current || !mobileContainerRef.current) return;
+    const width = mobileContainerRef.current.getBoundingClientRect().width;
+    mobileStripRef.current.style.transform = `translate3d(${-active * width}px, 0, 0)`;
+  }, [active, mobileDragging]);
+
+  const resistDrag = (delta: number, width: number) => {
+    // Cap normal travel at one slide width.
+    const capped = Math.max(-width, Math.min(width, delta));
+    // Rubber-band at the first/last slide (30% of movement).
+    if (active === 0 && delta > 0) return delta * 0.3;
+    if (active === images.length - 1 && delta < 0) return delta * 0.3;
+    return capped;
   };
 
   const onMobilePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if ((e.target as HTMLElement).closest("button")) return;
     mobileDragStart.current = e.clientX;
     setMobileDragging(true);
-    // Ensure the pointer keeps sending events to this element even if it leaves
-    (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+    try {
+      (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+    } catch {}
   };
 
   const onMobilePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (mobileDragStart.current === null) return;
+    if (mobileDragStart.current === null || !mobileStripRef.current || !mobileContainerRef.current) return;
+    const width = mobileContainerRef.current.getBoundingClientRect().width;
     const delta = e.clientX - mobileDragStart.current;
-    applyMobileTransform(delta);
+    const effective = resistDrag(delta, width);
+    mobileStripRef.current.style.transform = `translate3d(${-active * width + effective}px, 0, 0)`;
   };
 
   const onMobilePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     if (mobileDragStart.current === null) return;
     const delta = e.clientX - mobileDragStart.current;
     mobileDragStart.current = null;
-    setMobileDragging(false);
-    if (mobileStripRef.current) {
-      mobileStripRef.current.style.transform = ""; // clear inline; class-based transform takes over
-    }
 
     const width = mobileContainerRef.current?.getBoundingClientRect().width ?? 300;
     const threshold = width * MOBILE_SWIPE_RATIO;
+
+    let next = active;
     if (Math.abs(delta) > threshold) {
-      goToClamp(active + (delta < 0 ? 1 : -1));
+      next = Math.max(0, Math.min(images.length - 1, active + (delta < 0 ? 1 : -1)));
+    }
+
+    setMobileDragging(false);
+    if (next !== active) {
+      setActive(next);
+    } else if (mobileStripRef.current) {
+      // No advance — snap back to current slide with transition
+      mobileStripRef.current.style.transform = `translate3d(${-active * width}px, 0, 0)`;
     }
   };
 
@@ -119,7 +142,11 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
     if (mobileDragStart.current === null) return;
     mobileDragStart.current = null;
     setMobileDragging(false);
-    if (mobileStripRef.current) mobileStripRef.current.style.transform = "";
+    // useEffect will re-sync transform to current active
+    if (mobileStripRef.current && mobileContainerRef.current) {
+      const width = mobileContainerRef.current.getBoundingClientRect().width;
+      mobileStripRef.current.style.transform = `translate3d(${-active * width}px, 0, 0)`;
+    }
   };
 
   return (
@@ -135,12 +162,9 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
       >
         <div
           ref={mobileStripRef}
-          className={`flex h-full w-full ${
-            mobileDragging ? "" : "transition-transform duration-500 ease-out"
+          className={`flex h-full w-full will-change-transform ${
+            mobileDragging ? "" : "transition-transform duration-[400ms] ease-out"
           }`}
-          style={{
-            transform: `translate3d(${-active * 100}%, 0, 0)`,
-          }}
         >
           {images.map((img, i) => (
             <div key={img.src} className="relative shrink-0 w-full h-full">
@@ -187,23 +211,31 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
           </div>
         ))}
 
-        {/* Prev/next chevron affordances */}
+        {/* Prev/next arrow buttons — always visible, subtle by default, prominent on hover */}
         {images.length > 1 && (
           <>
-            <div className="absolute left-0 top-0 bottom-0 w-20 lg:w-24 flex items-center justify-start pl-4 lg:pl-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
-              <span className="text-cream/80" style={{ filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.6))" }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polyline points="15 18 9 12 15 6" />
-                </svg>
-              </span>
-            </div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 lg:w-24 flex items-center justify-end pr-4 lg:pr-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
-              <span className="text-cream/80" style={{ filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.6))" }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </span>
-            </div>
+            <button
+              type="button"
+              aria-label="Previous slide"
+              onClick={() => goToWrap(active - 1)}
+              className="absolute left-6 lg:left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center border border-cream/25 bg-bg/30 backdrop-blur-sm text-cream/85 opacity-60 hover:opacity-100 hover:bg-bg/50 hover:border-accent hover:text-accent hover:scale-105 transition-all duration-300"
+              style={{ boxShadow: "0 2px 20px rgba(0,0,0,0.35)" }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Next slide"
+              onClick={() => goToWrap(active + 1)}
+              className="absolute right-6 lg:right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center border border-cream/25 bg-bg/30 backdrop-blur-sm text-cream/85 opacity-60 hover:opacity-100 hover:bg-bg/50 hover:border-accent hover:text-accent hover:scale-105 transition-all duration-300"
+              style={{ boxShadow: "0 2px 20px rgba(0,0,0,0.35)" }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
           </>
         )}
       </div>
