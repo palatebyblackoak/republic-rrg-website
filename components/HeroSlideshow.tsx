@@ -47,8 +47,17 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
     if (dragStartX.current === null) return;
     const delta = e.clientX - dragStartX.current;
     dragStartX.current = null;
-    if (Math.abs(delta) < SWIPE_THRESHOLD) return;
-    goTo(active + (delta < 0 ? 1 : -1));
+
+    if (Math.abs(delta) >= SWIPE_THRESHOLD) {
+      goTo(active + (delta < 0 ? 1 : -1));
+      return;
+    }
+
+    // Tap/click zones: left third → prev, right third → next, middle → neutral
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = e.clientX - rect.left;
+    if (relX < rect.width * 0.33) goTo(active - 1);
+    else if (relX > rect.width * 0.67) goTo(active + 1);
   };
   const cancelDrag = () => {
     dragStartX.current = null;
@@ -56,7 +65,7 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
 
   return (
     <div
-      className="absolute inset-0 overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing"
+      className="group absolute inset-0 overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing"
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
       onPointerCancel={cancelDrag}
@@ -95,6 +104,32 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
             "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.4) 100%)",
         }}
       />
+
+      {/* Prev/next chevron affordances — visible on hover, pointer-events off so pointer capture still owns the region */}
+      {images.length > 1 && (
+        <>
+          <div className="hidden md:flex absolute left-0 top-0 bottom-0 w-20 lg:w-24 items-center justify-start pl-4 lg:pl-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+            <span
+              className="text-cream/80"
+              style={{ filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.6))" }}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </span>
+          </div>
+          <div className="hidden md:flex absolute right-0 top-0 bottom-0 w-20 lg:w-24 items-center justify-end pr-4 lg:pr-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+            <span
+              className="text-cream/80"
+              style={{ filter: "drop-shadow(0 1px 6px rgba(0,0,0,0.6))" }}
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </span>
+          </div>
+        </>
+      )}
 
       {/* Slide indicators */}
       {images.length > 1 && (
