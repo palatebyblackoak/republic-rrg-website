@@ -10,20 +10,17 @@ type Props = {
 
 const panClasses = ["pan-a", "pan-b", "pan-c", "pan-d", "pan-e"];
 const SWIPE_THRESHOLD = 50;
-const MOBILE_SWIPE_RATIO = 0.18; // 18% of screen width triggers advance
 
 export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
   const [active, setActive] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // ── Desktop crossfade drag/click ─────────────────────────────
+  // ── Desktop crossfade ─────────────────────────────────────────
   const desktopDragStart = useRef<number | null>(null);
 
-  // ── Mobile carousel drag ─────────────────────────────────────
-  const mobileDragStart = useRef<number | null>(null);
-  const mobileContainerRef = useRef<HTMLDivElement>(null);
-  const mobileStripRef = useRef<HTMLDivElement>(null);
-  const [mobileDragging, setMobileDragging] = useState(false);
+  // ── Mobile scroll-snap carousel ───────────────────────────────
+  const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const suppressScrollSync = useRef(false); // prevents feedback loops during programmatic scrolling
 
   const startAutoplay = () => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -50,9 +47,38 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
     startAutoplay();
   };
 
-  const goToClamp = (idx: number) => {
-    const n = images.length;
-    setActive(Math.max(0, Math.min(n - 1, idx)));
+  // Sync mobile scroll position → active (for indicators)
+  useEffect(() => {
+    const el = mobileScrollRef.current;
+    if (!el) return;
+    let raf = 0;
+    const onScroll = () => {
+      if (suppressScrollSync.current) return;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const w = el.clientWidth;
+        if (!w) return;
+        const idx = Math.round(el.scrollLeft / w);
+        setActive((prev) => (prev !== idx ? idx : prev));
+      });
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  // When active changes via indicator/dot click on mobile, scroll to that slide
+  const scrollMobileTo = (i: number, smooth: boolean) => {
+    const el = mobileScrollRef.current;
+    if (!el) return;
+    suppressScrollSync.current = true;
+    el.scrollTo({ left: i * el.clientWidth, behavior: smooth ? "smooth" : "auto" });
+    // Clear suppression after scroll settles
+    window.setTimeout(() => {
+      suppressScrollSync.current = false;
+    }, smooth ? 500 : 50);
   };
 
   // ── Desktop handlers ─────────────────────────────────────────
@@ -79,110 +105,37 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
     desktopDragStart.current = null;
   };
 
-  // ── Mobile handlers ──────────────────────────────────────────
-  // Keep the transform in sync with `active` whenever we're not dragging.
-  // We manage transform via ref (never the style prop) so drag → snap
-  // transitions cleanly without React fighting the inline style.
-  useEffect(() => {
-    if (mobileDragging) return;
-    if (!mobileStripRef.current || !mobileContainerRef.current) return;
-    const width = mobileContainerRef.current.getBoundingClientRect().width;
-    mobileStripRef.current.style.transform = `translate3d(${-active * width}px, 0, 0)`;
-  }, [active, mobileDragging]);
-
-  const resistDrag = (delta: number, width: number) => {
-    // Cap normal travel at one slide width.
-    const capped = Math.max(-width, Math.min(width, delta));
-    // Rubber-band at the first/last slide (30% of movement).
-    if (active === 0 && delta > 0) return delta * 0.3;
-    if (active === images.length - 1 && delta < 0) return delta * 0.3;
-    return capped;
-  };
-
-  const onMobilePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    if ((e.target as HTMLElement).closest("button")) return;
-    mobileDragStart.current = e.clientX;
-    setMobileDragging(true);
-    try {
-      (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
-    } catch {}
-  };
-
-  const onMobilePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (mobileDragStart.current === null || !mobileStripRef.current || !mobileContainerRef.current) return;
-    const width = mobileContainerRef.current.getBoundingClientRect().width;
-    const delta = e.clientX - mobileDragStart.current;
-    const effective = resistDrag(delta, width);
-    mobileStripRef.current.style.transform = `translate3d(${-active * width + effective}px, 0, 0)`;
-  };
-
-  const onMobilePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (mobileDragStart.current === null) return;
-    const delta = e.clientX - mobileDragStart.current;
-    mobileDragStart.current = null;
-
-    const width = mobileContainerRef.current?.getBoundingClientRect().width ?? 300;
-    const threshold = width * MOBILE_SWIPE_RATIO;
-
-    let next = active;
-    if (Math.abs(delta) > threshold) {
-      next = Math.max(0, Math.min(images.length - 1, active + (delta < 0 ? 1 : -1)));
-    }
-
-    setMobileDragging(false);
-    if (next !== active) {
-      setActive(next);
-    } else if (mobileStripRef.current) {
-      // No advance — snap back to current slide with transition
-      mobileStripRef.current.style.transform = `translate3d(${-active * width}px, 0, 0)`;
-    }
-  };
-
-  const cancelMobileDrag = () => {
-    if (mobileDragStart.current === null) return;
-    mobileDragStart.current = null;
-    setMobileDragging(false);
-    // useEffect will re-sync transform to current active
-    if (mobileStripRef.current && mobileContainerRef.current) {
-      const width = mobileContainerRef.current.getBoundingClientRect().width;
-      mobileStripRef.current.style.transform = `translate3d(${-active * width}px, 0, 0)`;
-    }
+  const handleIndicatorClick = (i: number) => {
+    const isMobile =
+      typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
+    if (isMobile) scrollMobileTo(i, true);
+    else setActive(i);
   };
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* ── Mobile carousel (drag-to-slide, Instagram-style) ── */}
+      {/* ── Mobile carousel (native CSS scroll-snap for Instagram-grade fluidity) ── */}
       <div
-        ref={mobileContainerRef}
-        className="md:hidden absolute inset-0 overflow-hidden touch-pan-y select-none"
-        onPointerDown={onMobilePointerDown}
-        onPointerMove={onMobilePointerMove}
-        onPointerUp={onMobilePointerUp}
-        onPointerCancel={cancelMobileDrag}
+        ref={mobileScrollRef}
+        className="md:hidden absolute inset-0 flex overflow-x-auto overflow-y-hidden no-scrollbar snap-x snap-mandatory overscroll-x-contain"
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
-        <div
-          ref={mobileStripRef}
-          className={`flex h-full w-full will-change-transform ${
-            mobileDragging ? "" : "transition-transform duration-[400ms] ease-out"
-          }`}
-        >
-          {images.map((img, i) => (
-            <div key={img.src} className="relative shrink-0 w-full h-full">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                priority={i === 0}
-                sizes="100vw"
-                draggable={false}
-                className="object-cover pointer-events-none"
-              />
-            </div>
-          ))}
-        </div>
+        {images.map((img, i) => (
+          <div key={img.src} className="relative shrink-0 w-full h-full snap-start snap-always">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              draggable={false}
+              className="object-cover pointer-events-none"
+            />
+          </div>
+        ))}
       </div>
 
-      {/* ── Desktop crossfade (click zones + hover chevrons) ── */}
+      {/* ── Desktop crossfade (click zones + prev/next arrows) ── */}
       <div
         className="hidden md:block group absolute inset-0 overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing"
         onPointerDown={onDesktopPointerDown}
@@ -211,7 +164,6 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
           </div>
         ))}
 
-        {/* Prev/next arrow buttons — always visible, subtle by default, prominent on hover */}
         {images.length > 1 && (
           <>
             <button
@@ -259,7 +211,7 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
               key={i}
               type="button"
               aria-label={`Slide ${i + 1}`}
-              onClick={() => setActive(i)}
+              onClick={() => handleIndicatorClick(i)}
               className={`h-[2px] transition-all duration-500 ${
                 i === active ? "w-10 bg-accent" : "w-5 bg-cream/35 hover:bg-cream/65"
               }`}
