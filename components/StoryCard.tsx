@@ -30,7 +30,8 @@ export default function StoryCard({
         sizes="(max-width: 768px) 100vw, 33vw"
         className="object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/40 to-bg/10 transition-opacity duration-500 group-hover:opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-t from-bg/95 via-bg/65 to-bg/25" />
+      <div className="absolute inset-0 bg-bg/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 translate-y-0 transition-transform duration-500 group-hover:-translate-y-1">
         <p className="font-serif italic text-cream/85 text-[18px] md:text-[22px] transition-colors duration-500 group-hover:text-accent">
           {eyebrow}
