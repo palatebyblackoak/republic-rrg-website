@@ -197,7 +197,13 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
 
       {/* ── Shared overlays ── */}
       <div className="absolute inset-0 pointer-events-none bg-bg/20" />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-bg/10 via-bg/10 to-bg/85" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,0) 35%, rgba(10,10,10,0.45) 60%, rgba(10,10,10,0.85) 85%, rgba(10,10,10,0.95) 100%)",
+        }}
+      />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
