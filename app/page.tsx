@@ -296,10 +296,10 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
+          <FadeIn>
+            <StarDivider variant="dark" className="mb-10 md:mb-14" />
+          </FadeIn>
           <div className="max-w-md md:max-w-lg mx-auto md:mx-0 md:ml-auto">
-            <FadeIn>
-              <StarDivider variant="dark" className="mb-10 md:mb-12" />
-            </FadeIn>
             <FadeIn>
               <div className="bg-surface/95 backdrop-blur-sm border-t-[3px] border-accent p-8 sm:p-10 md:p-12">
                 <p className="text-[10px] md:text-[11px] uppercase tracking-widest-3 text-accent font-medium">

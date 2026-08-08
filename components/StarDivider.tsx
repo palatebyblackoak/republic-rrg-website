@@ -4,7 +4,8 @@ type Props = {
 };
 
 export default function StarDivider({ variant = "dark", className = "" }: Props) {
-  const ruleColor = variant === "dark" ? "bg-cream/20" : "bg-ink/15";
+  const ruleColor = variant === "dark" ? "bg-cream/25" : "bg-ink/15";
+  const starColor = variant === "dark" ? "text-cream/85" : "text-accent";
 
   return (
     <div
@@ -14,7 +15,7 @@ export default function StarDivider({ variant = "dark", className = "" }: Props)
       <div className={`h-px ${ruleColor} w-20 sm:w-28 md:w-40`} />
       <svg
         viewBox="0 0 24 24"
-        className="w-5 h-5 md:w-6 md:h-6 text-accent shrink-0"
+        className={`w-5 h-5 md:w-6 md:h-6 ${starColor} shrink-0`}
         fill="currentColor"
         aria-hidden
       >
