@@ -25,12 +25,15 @@ export default function HeroSlideshow({ images, intervalMs = 6500 }: Props) {
   const startAutoplay = () => {
     if (timerRef.current) clearInterval(timerRef.current);
     if (images.length <= 1) return;
-    // Only autoplay on desktop — mobile carousel is user-driven, Instagram-style
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches) return;
-    timerRef.current = setInterval(
-      () => setActive((i) => (i + 1) % images.length),
-      intervalMs
-    );
+    timerRef.current = setInterval(() => {
+      const isMobile =
+        typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
+      setActive((i) => {
+        const next = (i + 1) % images.length;
+        if (isMobile) scrollMobileTo(next, true);
+        return next;
+      });
+    }, intervalMs);
   };
 
   useEffect(() => {
