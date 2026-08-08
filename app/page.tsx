@@ -8,6 +8,7 @@ import FadeIn from "@/components/FadeIn";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import StoryCard from "@/components/StoryCard";
 import FoodMarquee from "@/components/FoodMarquee";
+import StarDivider from "@/components/StarDivider";
 import { ArrowRight } from "@/components/Icons";
 
 const heroSlides = [
@@ -169,6 +170,9 @@ export default function HomePage() {
       {/* THE STORY */}
       <section className="bg-parchment py-20 md:py-32">
         <div className="max-w-[1400px] mx-auto px-6">
+          <FadeIn>
+            <StarDivider variant="light" className="mb-14 md:mb-20" />
+          </FadeIn>
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <FadeIn className="text-center md:text-left">
               <h2 className="font-serif leading-[0.95]">
@@ -293,6 +297,9 @@ export default function HomePage() {
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
           <div className="max-w-md md:max-w-lg mx-auto md:mx-0 md:ml-auto">
+            <FadeIn>
+              <StarDivider variant="dark" className="mb-10 md:mb-12" />
+            </FadeIn>
             <FadeIn>
               <div className="bg-surface/95 backdrop-blur-sm border-t-[3px] border-accent p-8 sm:p-10 md:p-12">
                 <p className="text-[10px] md:text-[11px] uppercase tracking-widest-3 text-accent font-medium">
