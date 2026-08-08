@@ -83,30 +83,29 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-8">
-            <Link href="/menu" className="group inline-flex flex-col items-center">
-              <span
-                className="text-[14px] md:text-[16px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
-                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
-              >
-                See the Menu
-              </span>
-              <span className="mt-2.5 block h-[1.5px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
-            </Link>
+          <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-7">
             <a
               href={site.reservation}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex flex-col items-center"
+              className="group inline-flex items-center border border-cream/45 hover:border-accent px-7 md:px-9 py-3.5 md:py-4 transition-colors duration-500"
             >
               <span
-                className="text-[14px] md:text-[16px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                className="text-[13px] md:text-[15px] uppercase tracking-[0.25em] text-cream group-hover:text-accent transition-colors duration-500"
                 style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
               >
-                Reserve a Table
+                Reserve the Evening
+              </span>
+            </a>
+            <Link href="/menu" className="group inline-flex flex-col items-center">
+              <span
+                className="text-[13px] md:text-[15px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent"
+                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
+              >
+                Explore the Menu
               </span>
               <span className="mt-2.5 block h-[1.5px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
-            </a>
+            </Link>
           </div>
           <p
             className="text-[10px] uppercase tracking-[0.2em] text-cream/60"
