@@ -71,16 +71,16 @@ export default function HomePage() {
         <HeroSlideshow images={heroSlides} />
         <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center">
           <div
-            className="relative w-32 md:w-40 aspect-square"
-            style={{ filter: "drop-shadow(0 2px 18px rgba(0,0,0,0.55))" }}
+            className="relative w-28 md:w-36 aspect-square"
+            style={{ filter: "drop-shadow(0 2px 14px rgba(0,0,0,0.35))" }}
           >
             <Image
-              src="/images/logo-seal-white.png"
+              src="/images/logo-footer.png"
               alt="Republic of the Rio Grande"
               fill
               priority
-              sizes="(max-width: 768px) 128px, 160px"
-              className="object-contain"
+              sizes="(max-width: 768px) 112px, 144px"
+              className="object-cover object-top"
             />
           </div>
 
