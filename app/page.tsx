@@ -68,7 +68,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-20 md:pb-24">
         <HeroSlideshow images={heroSlides} />
-        <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center gap-6 md:gap-8">
+        <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center">
           <div
             className="relative w-28 md:w-36 aspect-square"
             style={{ filter: "drop-shadow(0 2px 14px rgba(0,0,0,0.35))" }}
@@ -83,15 +83,15 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-7">
+          <div className="mt-4 md:mt-5 flex flex-col sm:flex-row items-center gap-5 sm:gap-7">
             <a
               href={site.reservation}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center border border-cream/45 hover:border-accent px-7 md:px-9 py-3.5 md:py-4 transition-colors duration-500"
+              className="group inline-flex items-center border border-cream/45 hover:border-accent px-7 md:px-9 py-3.5 md:py-4 transition-colors duration-[800ms] ease-out"
             >
               <span
-                className="text-[13px] md:text-[15px] uppercase tracking-[0.25em] text-cream group-hover:text-accent transition-colors duration-500"
+                className="text-[13px] md:text-[15px] uppercase tracking-[0.25em] text-cream group-hover:text-accent transition-colors duration-[800ms] ease-out"
                 style={{ textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}
               >
                 Reserve the Evening
@@ -108,7 +108,7 @@ export default function HomePage() {
             </Link>
           </div>
           <p
-            className="text-[10px] uppercase tracking-[0.2em] text-cream/60"
+            className="mt-10 md:mt-14 text-[10px] uppercase tracking-[0.2em] text-cream/60"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.65)" }}
           >
             Open Mon–Sat · Closed Sunday
@@ -116,7 +116,7 @@ export default function HomePage() {
           <a
             href="#explore"
             aria-label="Scroll to explore"
-            className="scroll-cue group mt-3 md:mt-4 inline-flex items-center justify-center w-8 h-8 text-cream/70 hover:text-accent transition-colors"
+            className="scroll-cue group mt-8 md:mt-10 inline-flex items-center justify-center w-8 h-8 text-cream/70 hover:text-accent transition-colors"
             style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.75))" }}
           >
             <svg
