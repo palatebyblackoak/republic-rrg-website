@@ -70,30 +70,18 @@ export default function HomePage() {
       <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-20 md:pb-24">
         <HeroSlideshow images={heroSlides} />
         <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center">
-          <div className="flex flex-col items-center">
-            <svg
-              viewBox="0 0 24 24"
-              className="w-7 h-7 md:w-9 md:h-9 text-accent"
-              fill="currentColor"
-              aria-hidden
-              style={{ filter: "drop-shadow(0 2px 12px rgba(0,0,0,0.55))" }}
-            >
-              <path d="M12 1 L14.6 8.9 L23 8.9 L16.2 13.8 L18.8 21.7 L12 16.8 L5.2 21.7 L7.8 13.8 L1 8.9 L9.4 8.9 Z" />
-            </svg>
-            <h1
-              className="mt-5 md:mt-6 font-serif text-cream uppercase text-[22px] sm:text-[26px] md:text-[32px] tracking-[0.15em] leading-[1.15]"
-              style={{ textShadow: "0 2px 14px rgba(0,0,0,0.6)" }}
-            >
-              Republic of the
-              <br />
-              Rio Grande
-            </h1>
-            <p
-              className="mt-3 md:mt-4 font-serif italic text-cream/85 text-[15px] md:text-[17px]"
-              style={{ textShadow: "0 1px 10px rgba(0,0,0,0.65)" }}
-            >
-              Grill &amp; Cantina
-            </p>
+          <div
+            className="relative w-28 md:w-36 aspect-square"
+            style={{ filter: "drop-shadow(0 2px 14px rgba(0,0,0,0.35))" }}
+          >
+            <Image
+              src="/images/logo-footer.png"
+              alt="Republic of the Rio Grande"
+              fill
+              priority
+              sizes="(max-width: 768px) 112px, 144px"
+              className="object-cover object-top"
+            />
           </div>
 
           <div className="mt-4 md:mt-5 flex flex-col sm:flex-row items-center gap-5 sm:gap-7">
