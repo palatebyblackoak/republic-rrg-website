@@ -292,14 +292,14 @@ export default function HomePage() {
             className="object-cover"
           />
           <div className="absolute inset-0 bg-bg/65 md:bg-bg/55" />
-          <div className="absolute inset-0 bg-gradient-to-r from-bg/70 via-bg/30 to-bg/50 md:from-transparent md:via-bg/20 md:to-bg/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg/60 via-bg/20 to-bg/60" />
         </div>
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
           <FadeIn>
             <StarDivider variant="dark" className="mb-10 md:mb-14" />
           </FadeIn>
-          <div className="max-w-md md:max-w-lg mx-auto md:mx-0 md:ml-auto">
+          <div className="max-w-md md:max-w-lg mx-auto">
             <FadeIn>
               <div className="bg-surface/95 backdrop-blur-sm border-t-[3px] border-accent p-8 sm:p-10 md:p-12">
                 <p className="text-[10px] md:text-[11px] uppercase tracking-widest-3 text-accent font-medium">
