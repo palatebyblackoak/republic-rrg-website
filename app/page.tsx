@@ -107,16 +107,10 @@ export default function HomePage() {
               <span className="mt-2.5 block h-[1.5px] w-10 bg-cream/50 group-hover:w-full group-hover:bg-accent transition-all duration-500" />
             </Link>
           </div>
-          <p
-            className="mt-10 md:mt-14 text-[10px] uppercase tracking-[0.2em] text-cream/60"
-            style={{ textShadow: "0 1px 6px rgba(0,0,0,0.65)" }}
-          >
-            Open Mon–Sat · Closed Sunday
-          </p>
           <a
             href="#explore"
             aria-label="Scroll to explore"
-            className="scroll-cue group mt-8 md:mt-10 inline-flex items-center justify-center w-8 h-8 text-cream/70 hover:text-accent transition-colors"
+            className="scroll-cue group mt-12 md:mt-16 inline-flex items-center justify-center w-8 h-8 text-cream/70 hover:text-accent transition-colors"
             style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.75))" }}
           >
             <svg
