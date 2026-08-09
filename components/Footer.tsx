@@ -42,13 +42,6 @@ export default function Footer() {
             height={500}
             className="w-40 md:w-48 h-auto"
           />
-          <p className="font-serif italic text-[18px] text-muted mt-5">
-            Grill &amp; Cantina
-          </p>
-          <div className="mt-4 space-y-1 text-[10px] uppercase tracking-widest-2 text-muted leading-relaxed">
-            <p>Brick Oven · Steaks</p>
-            <p>Seafood · Cantina</p>
-          </div>
         </div>
 
         <div>
