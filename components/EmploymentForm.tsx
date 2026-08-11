@@ -3,6 +3,7 @@
 import { useState } from "react";
 import SectionLabel from "./SectionLabel";
 import { site } from "@/lib/site";
+import { submitForm } from "@/lib/submitForm";
 
 type FormState = {
   firstName: string;
@@ -22,6 +23,8 @@ const labelCls = "text-[11px] uppercase tracking-widest-2 text-muted";
 
 export default function EmploymentForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<FormState>({
     firstName: "",
     lastName: "",
@@ -43,28 +46,21 @@ export default function EmploymentForm() {
     form.email.trim() !== "" &&
     form.phone.trim() !== "";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!canSubmit) return;
-
-    const subject = `Employment Application — ${form.firstName} ${form.lastName}`;
-    const body = [
-      `Name: ${form.firstName} ${form.lastName}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone}`,
-      `Position: ${form.position || "—"}`,
-      "",
-      `Address: ${form.address}`,
-      `City: ${form.city}`,
-      `State: ${form.state}`,
-      `Zip: ${form.zip}`,
-    ].join("\n");
-
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    setSubmitted(true);
+    if (!canSubmit || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      await submitForm("employment", form);
+      setSubmitted(true);
+    } catch {
+      setError(
+        `Something went wrong sending your application. Please email us directly at ${site.email}.`
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   if (submitted) {
@@ -75,8 +71,8 @@ export default function EmploymentForm() {
           Thank you, {form.firstName}.
         </h3>
         <p className="mt-6 text-muted text-[15px] leading-[1.8] max-w-md mx-auto">
-          Your application is on its way. Our team will be in touch shortly. If
-          your mail app didn&apos;t open, email us directly at{" "}
+          Your application has been received. Our team will be in touch shortly.
+          For anything urgent, reach us at{" "}
           <a
             href={`mailto:${site.email}`}
             className="text-accent hover:text-accent-hover"
@@ -190,16 +186,22 @@ export default function EmploymentForm() {
         </label>
       </div>
 
+      {error && (
+        <p className="mt-8 text-[13px] text-accent" role="alert">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
-        disabled={!canSubmit}
+        disabled={!canSubmit || sending}
         className={`mt-10 w-full md:w-auto inline-block uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors ${
-          canSubmit
+          canSubmit && !sending
             ? "bg-accent hover:bg-accent-hover text-white"
             : "bg-divider text-muted cursor-not-allowed"
         }`}
       >
-        Submit Application
+        {sending ? "Sending…" : "Submit Application"}
       </button>
     </form>
   );

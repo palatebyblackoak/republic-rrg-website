@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import SectionLabel from "./SectionLabel";
+import { site } from "@/lib/site";
+import { submitForm } from "@/lib/submitForm";
 
 type Occasion =
   | "Catering"
@@ -42,6 +44,8 @@ const labelCls = "text-[11px] uppercase tracking-widest-2 text-muted";
 export default function PrivateEventsWizard() {
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<FormState>({
     occasion: "",
     date: "",
@@ -75,11 +79,21 @@ export default function PrivateEventsWizard() {
       form.lastName.trim() !== "" &&
       form.email.trim() !== "");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!canAdvance) return;
-    // TODO: wire submission destination (email, Formspree, or API route)
-    setSubmitted(true);
+    if (!canAdvance || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      await submitForm("events", form);
+      setSubmitted(true);
+    } catch {
+      setError(
+        `Something went wrong sending your request. Please email us directly at ${site.email}.`
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   if (submitted) {
@@ -347,13 +361,19 @@ export default function PrivateEventsWizard() {
         ) : (
           <button
             type="submit"
-            disabled={!canAdvance}
+            disabled={!canAdvance || sending}
             className="bg-accent hover:bg-accent-hover disabled:bg-divider disabled:text-muted text-white uppercase tracking-[0.15em] text-[12px] px-8 py-3 transition-colors"
           >
-            Send Request
+            {sending ? "Sending…" : "Send Request"}
           </button>
         )}
       </div>
+
+      {error && (
+        <p className="mt-6 text-[13px] text-accent" role="alert">
+          {error}
+        </p>
+      )}
     </form>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import SectionLabel from "./SectionLabel";
 import { site } from "@/lib/site";
+import { submitForm } from "@/lib/submitForm";
 
 type FormState = {
   name: string;
@@ -18,6 +19,8 @@ const labelCls = "text-[11px] uppercase tracking-widest-2 text-muted";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -34,27 +37,21 @@ export default function ContactForm() {
     form.email.trim() !== "" &&
     form.message.trim() !== "";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!canSubmit) return;
-
-    const subject = form.subject.trim()
-      ? `Website inquiry — ${form.subject}`
-      : `Website inquiry from ${form.name}`;
-
-    const body = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Phone: ${form.phone || "—"}`,
-      "",
-      form.message,
-    ].join("\n");
-
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    setSubmitted(true);
+    if (!canSubmit || sending) return;
+    setSending(true);
+    setError(null);
+    try {
+      await submitForm("contact", form);
+      setSubmitted(true);
+    } catch {
+      setError(
+        `Something went wrong sending your message. Please email us directly at ${site.email}.`
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   if (submitted) {
@@ -65,8 +62,8 @@ export default function ContactForm() {
           Thank you, {form.name}.
         </h3>
         <p className="mt-6 text-muted text-[15px] leading-[1.8] max-w-md mx-auto">
-          Your message is on its way. We&apos;ll be in touch shortly. If your
-          mail app didn&apos;t open, email us directly at{" "}
+          Your message has been received. We&apos;ll be in touch shortly. For
+          anything urgent, reach us at{" "}
           <a
             href={`mailto:${site.email}`}
             className="text-accent hover:text-accent-hover"
@@ -143,16 +140,22 @@ export default function ContactForm() {
         </label>
       </div>
 
+      {error && (
+        <p className="mt-8 text-[13px] text-accent" role="alert">
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
-        disabled={!canSubmit}
+        disabled={!canSubmit || sending}
         className={`mt-10 w-full md:w-auto inline-block uppercase tracking-[0.15em] text-[13px] px-9 py-4 transition-colors ${
-          canSubmit
+          canSubmit && !sending
             ? "bg-accent hover:bg-accent-hover text-white"
             : "bg-divider text-muted cursor-not-allowed"
         }`}
       >
-        Send Message
+        {sending ? "Sending…" : "Send Message"}
       </button>
     </form>
   );
