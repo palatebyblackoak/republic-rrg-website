@@ -267,9 +267,9 @@ export default function HomePage() {
               finds its <span className="text-accent">rhythm.</span>
             </h2>
             <p className="mt-5 md:mt-8 text-cream/85 text-[15px] sm:text-[16px] md:text-[18px] leading-[1.75] max-w-lg drop-shadow-[0_1px_10px_rgba(0,0,0,0.8)]">
-              Tequila-forward cocktails, house-made mixers, and the flavors of
-              the Rio Grande — pomegranate, chile, pineapple, citrus. A cantina
-              built for the way McAllen celebrates. Come thirsty. Stay a while.
+              The classics and our signatures. Wine, whiskey, cold beer.
+              House mixers with the flavors of the Rio Grande. A room made
+              for the way McAllen celebrates. Come thirsty. Stay a while.
             </p>
             <Link href="/reservations" className="group inline-flex flex-col items-start mt-7 md:mt-10">
               <span className="text-[12px] md:text-[13px] uppercase tracking-[0.25em] text-cream transition-colors group-hover:text-accent">
