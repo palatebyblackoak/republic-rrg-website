@@ -69,6 +69,18 @@ body {
   background-size: 640px 640px, 260px 260px;
 }
 
+.drop-cap::first-letter {
+  font-family: var(--font-serif), "Playfair Display", Georgia, serif;
+  font-size: 4.6em;
+  line-height: 0.82;
+  float: left;
+  padding-right: 0.14em;
+  padding-top: 0.06em;
+  color: inherit;
+}
+.drop-cap-ink::first-letter { color: #1a1512; }
+.drop-cap-cream::first-letter { color: #f5f0e6; }
+
 .flag-sway {
   transform-origin: 15% 50%;
   animation: flagSway 4.5s ease-in-out infinite;

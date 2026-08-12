@@ -53,24 +53,25 @@ export default function AboutPage() {
       <section className="bg-bg border-t border-divider py-16 md:py-24">
         <div className="max-w-[1100px] mx-auto px-6">
           <FadeIn>
-            <div className="max-w-3xl mx-auto flex items-center justify-center gap-3 md:gap-6 mb-12 md:mb-16">
-              <div className="flex-1 h-px bg-divider" />
-              <h2 className="text-cream text-[11px] md:text-[13px] uppercase tracking-[0.2em] md:tracking-[0.25em] font-medium whitespace-nowrap">
-                Republic of the Rio Grande · 1840
+            <div className="flex flex-col items-center mb-14 md:mb-20">
+              <h2 className="font-serif text-cream text-[96px] md:text-[160px] leading-none tracking-tight">
+                1840
               </h2>
-              <div className="flex-1 h-px bg-divider" />
+              <p className="mt-4 md:mt-5 text-muted text-[10px] md:text-[12px] uppercase tracking-[0.35em]">
+                Republic of the Rio Grande
+              </p>
             </div>
           </FadeIn>
           <FadeIn>
-            <div className="grid gap-x-14 md:grid-cols-2 gap-y-5 text-muted text-[15px] md:text-[16px] leading-[1.8]">
-              <p>
+            <div className="max-w-2xl mx-auto space-y-6 text-muted text-[15px] md:text-[17px] leading-[1.8]">
+              <p className="drop-cap drop-cap-cream">
                 On January 7, 1840, a constitutional convention along the Rio
                 Grande declared an independent republic. Laredo was named the
                 capital. Antonio Canales led the army. Jesús Cárdenas of Reynosa
                 was chosen president.
               </p>
               <p>
-                Their cause was federalism — a rebellion against the centralist
+                Their cause was federalism, a rebellion against the centralist
                 government in Mexico City. Their front stretched from Saltillo
                 to the Nueces. Battles followed all summer along the river,
                 villages taken and retaken.
@@ -81,7 +82,7 @@ export default function AboutPage() {
               </p>
               <p>
                 One hundred and fifty-eight years later, in 1998, the name came
-                back — to a table on 10th Street in McAllen.
+                back to a table on 10th Street in McAllen.
               </p>
             </div>
           </FadeIn>
@@ -111,28 +112,18 @@ export default function AboutPage() {
       <section className="bg-parchment py-20 md:py-32">
         <div className="max-w-[1100px] mx-auto px-6">
           <FadeIn>
-            <div className="relative w-16 md:w-20 aspect-square mx-auto mb-8 md:mb-10">
-              <Image
-                src={img.rrgSeal}
-                alt=""
-                fill
-                sizes="(max-width: 768px) 64px, 80px"
-                className="object-contain opacity-80"
-              />
-            </div>
-          </FadeIn>
-          <FadeIn delay={80}>
-            <div className="max-w-3xl mx-auto flex items-center justify-center gap-4 md:gap-6 mb-12 md:mb-16">
-              <div className="flex-1 h-px bg-ink/15" />
-              <h2 className="text-ink text-[12px] md:text-[13px] uppercase tracking-[0.25em] font-medium whitespace-nowrap">
-                Grill &amp; Cantina · 1998
+            <div className="flex flex-col items-center mb-14 md:mb-20">
+              <h2 className="font-serif text-ink text-[96px] md:text-[160px] leading-none tracking-tight">
+                1998
               </h2>
-              <div className="flex-1 h-px bg-ink/15" />
+              <p className="mt-4 md:mt-5 text-ink-muted text-[10px] md:text-[12px] uppercase tracking-[0.35em]">
+                Grill &amp; Cantina
+              </p>
             </div>
           </FadeIn>
-          <FadeIn delay={160}>
-            <div className="max-w-2xl mx-auto space-y-5 text-ink-muted text-[15px] md:text-[16px] leading-[1.8] text-center">
-              <p>
+          <FadeIn delay={120}>
+            <div className="max-w-2xl mx-auto space-y-6 text-ink-muted text-[15px] md:text-[17px] leading-[1.8]">
+              <p className="drop-cap drop-cap-ink">
                 Republic of the Rio Grande Grill &amp; Cantina opened in 1998
                 on 10th Street in McAllen. Fire-crafted cooking, Texas and
                 Latin traditions, a covered patio worth returning to.
