@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { img } from "@/lib/images";
 import FadeIn from "@/components/FadeIn";
+import AnimatedYear from "@/components/AnimatedYear";
 
 export const metadata: Metadata = {
   title: "About · Republic of the Rio Grande",
@@ -52,16 +53,16 @@ export default function AboutPage() {
       {/* NAMESAKE — 1840 */}
       <section className="bg-bg border-t border-divider py-16 md:py-24">
         <div className="max-w-[1100px] mx-auto px-6">
-          <FadeIn>
-            <div className="flex flex-col items-center mb-14 md:mb-20">
-              <h2 className="font-serif text-cream text-[96px] md:text-[160px] leading-none tracking-tight">
-                1840
-              </h2>
+          <div className="flex flex-col items-center mb-14 md:mb-20">
+            <h2 className="font-serif text-cream text-[96px] md:text-[160px] leading-none tracking-tight">
+              <AnimatedYear value="1840" />
+            </h2>
+            <FadeIn delay={520}>
               <p className="mt-4 md:mt-5 text-muted text-[10px] md:text-[12px] uppercase tracking-[0.35em]">
                 Republic of the Rio Grande
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
           <FadeIn>
             <div className="max-w-2xl mx-auto space-y-6 text-muted text-[15px] md:text-[17px] leading-[1.8]">
               <p className="drop-cap drop-cap-cream">
@@ -108,19 +109,34 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* TRANSITION — fire as through-line */}
+      <section className="bg-bg">
+        <FadeIn>
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+            <Image
+              src={img.pizzaBrickOven}
+              alt="Wood-fired oven at Republic of the Rio Grande"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        </FadeIn>
+      </section>
+
       {/* RESTAURANT — 1998 */}
       <section className="bg-parchment py-20 md:py-32">
         <div className="max-w-[1100px] mx-auto px-6">
-          <FadeIn>
-            <div className="flex flex-col items-center mb-14 md:mb-20">
-              <h2 className="font-serif text-ink text-[96px] md:text-[160px] leading-none tracking-tight">
-                1998
-              </h2>
+          <div className="flex flex-col items-center mb-14 md:mb-20">
+            <h2 className="font-serif text-ink text-[96px] md:text-[160px] leading-none tracking-tight">
+              <AnimatedYear value="1998" />
+            </h2>
+            <FadeIn delay={520}>
               <p className="mt-4 md:mt-5 text-ink-muted text-[10px] md:text-[12px] uppercase tracking-[0.35em]">
                 Grill &amp; Cantina
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
           <FadeIn delay={120}>
             <div className="max-w-2xl mx-auto space-y-6 text-ink-muted text-[15px] md:text-[17px] leading-[1.8]">
               <p className="drop-cap drop-cap-ink">
