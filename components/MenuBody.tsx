@@ -181,38 +181,19 @@ export default function MenuBody() {
               </div>
             )}
 
-            <div className={`${nextSection ? "mt-14 md:mt-20" : "mt-14 md:mt-20"} pt-10 md:pt-14 border-t border-divider`}>
-              <div className="flex flex-col items-center text-center max-w-xl mx-auto">
-                <span className="text-[11px] uppercase tracking-widest-2 text-muted">
-                  Beyond the table
+            <div className="mt-24 md:mt-36 flex flex-col items-center text-center">
+              <p className="font-serif text-cream text-[20px] md:text-[24px] leading-[1.5] max-w-md">
+                Host with us, or let us cater to you.
+              </p>
+              <Link
+                href="/events"
+                className={`group mt-6 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.15em] text-muted hover:text-accent transition-colors ${focusRing}`}
+              >
+                <span>Inquire</span>
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">
+                  &rarr;
                 </span>
-                <h3 className="mt-3 font-serif text-cream text-[22px] md:text-[28px] leading-tight">
-                  Private events and catering.
-                </h3>
-                <p className="mt-3 text-muted text-[14px] leading-[1.7]">
-                  Host with us for birthdays, rehearsals, and corporate dinners, or let us cater your next gathering off-site.
-                </p>
-                <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-5">
-                  <Link
-                    href="/events"
-                    className={`group inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.15em] text-cream border border-divider hover:border-accent hover:text-accent px-5 py-3 transition-colors ${focusRing}`}
-                  >
-                    Plan an event
-                    <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-                      &rarr;
-                    </span>
-                  </Link>
-                  <Link
-                    href="/events"
-                    className={`group inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.15em] text-cream border border-divider hover:border-accent hover:text-accent px-5 py-3 transition-colors ${focusRing}`}
-                  >
-                    Catering inquiries
-                    <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-                      &rarr;
-                    </span>
-                  </Link>
-                </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
