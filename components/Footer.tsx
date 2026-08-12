@@ -121,26 +121,28 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-divider py-6 flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-6 max-w-[1400px] mx-auto px-6">
-        <p className="text-[11px] uppercase tracking-widest-2 text-muted text-center md:text-left">
-          © 2026 Republic of the Rio Grande · McAllen, Texas · All Rights Reserved
-        </p>
-        <a
-          href="https://palatebyblackoak.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[10px] uppercase tracking-widest-2 text-muted hover:text-cream transition-colors"
-          aria-label="Design by Palate"
-        >
-          <span>Design by</span>
-          <Image
-            src="/images/palate-logo.png"
-            alt="Palate"
-            width={2000}
-            height={759}
-            className="w-16 h-auto opacity-80"
-          />
-        </a>
+      <div className="bg-parchment">
+        <div className="py-6 flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-6 max-w-[1400px] mx-auto px-6">
+          <p className="text-[11px] uppercase tracking-widest-2 text-ink-muted text-center md:text-left">
+            © 2026 Republic of the Rio Grande · McAllen, Texas · All Rights Reserved
+          </p>
+          <a
+            href="https://palatebyblackoak.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[10px] uppercase tracking-widest-2 text-ink-muted hover:text-ink transition-colors"
+            aria-label="Design by Palate"
+          >
+            <span>Design by</span>
+            <Image
+              src="/images/palate-logo.png"
+              alt="Palate"
+              width={2000}
+              height={759}
+              className="w-16 h-auto invert opacity-80"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );
