@@ -8,7 +8,7 @@ import AnimatedYear from "@/components/AnimatedYear";
 export const metadata: Metadata = {
   title: "About · Republic of the Rio Grande",
   description:
-    "The name comes from a 283-day republic declared along the Rio Grande in 1840. The restaurant carries that name forward — McAllen, since 1998.",
+    "The name comes from a 283-day republic declared along the Rio Grande in 1840. The restaurant carries that name forward. McAllen, since 1998.",
 };
 
 export default function AboutPage() {

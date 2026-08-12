@@ -44,7 +44,7 @@ export default function ReservationsPage() {
           <div className="bg-surface p-10 sm:p-14 md:p-16 flex flex-col">
             <SectionLabel label="Call to Reserve" />
             <p className="text-muted text-[16px] leading-[1.8] max-w-md">
-              Prefer to speak with us directly? Give us a call — especially
+              Prefer to speak with us directly? Give us a call, especially
               recommended for Friday and Saturday.
             </p>
             <p className="mt-8 font-serif text-cream text-[28px] sm:text-[36px]">

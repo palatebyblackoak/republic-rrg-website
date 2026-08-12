@@ -7,7 +7,7 @@ import { ArrowRight } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Gift Cards · Republic of the Rio Grande",
   description:
-    "Give the gift of Republic — brick oven, steaks, cocktails on the patio. Digital or physical, in any amount.",
+    "Give the gift of Republic. Brick oven, steaks, cocktails on the patio. Digital or physical, in any amount.",
 };
 
 const heroTriptych = [
@@ -54,7 +54,7 @@ export default function GiftCardsPage() {
           </h1>
           <p className="mt-6 md:mt-8 text-muted font-light text-[15px] sm:text-[16px] md:text-[18px] max-w-xl leading-[1.7]">
             Brick-oven dinners, cocktails in the cantina, celebrations worth
-            remembering. Digital or physical, in any amount — redeemable on
+            remembering. Digital or physical, in any amount, redeemable on
             their next visit.
           </p>
           <a

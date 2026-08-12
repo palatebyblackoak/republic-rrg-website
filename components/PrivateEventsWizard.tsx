@@ -155,7 +155,7 @@ export default function PrivateEventsWizard() {
             What can we help with?
           </h3>
           <p className="mt-3 text-muted text-[14px]">
-            Choose one — we'll ask a few tailored questions next.
+            Choose one. We'll ask a few tailored questions next.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-3">
             {OCCASIONS.map((o) => {
@@ -185,7 +185,7 @@ export default function PrivateEventsWizard() {
             When, and how many?
           </h3>
           <p className="mt-3 text-muted text-[14px]">
-            An estimate is fine — we'll confirm details together.
+            An estimate is fine. We'll confirm details together.
           </p>
           <div className="mt-8 grid md:grid-cols-2 gap-6">
             <label className="block">

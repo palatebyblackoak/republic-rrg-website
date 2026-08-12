@@ -10,9 +10,9 @@ export const site = {
   email: "republicmanagement1411@gmail.com",
   established: "1998",
   hours: [
-    { day: "Mon – Wed", time: "11AM – 11PM" },
-    { day: "Thursday", time: "11AM – 12AM" },
-    { day: "Fri – Sat", time: "11AM – 1AM" },
+    { day: "Mon to Wed", time: "11AM to 11PM" },
+    { day: "Thursday", time: "11AM to 12AM" },
+    { day: "Fri to Sat", time: "11AM to 1AM" },
     { day: "Sunday", time: "Closed" },
   ],
   reservation:

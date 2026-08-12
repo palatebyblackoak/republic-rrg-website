@@ -8,7 +8,7 @@ import EmploymentForm from "@/components/EmploymentForm";
 export const metadata: Metadata = {
   title: "Employment · Republic of the Rio Grande",
   description:
-    "Join the Republic of the Rio Grande team in McAllen, TX. We're always hiring — servers, cooks, bar, and more.",
+    "Join the Republic of the Rio Grande team in McAllen, TX. We're always hiring. Servers, cooks, bar, and more.",
 };
 
 export default function EmploymentPage() {
@@ -16,7 +16,7 @@ export default function EmploymentPage() {
     <>
       <PageHero
         headline="Join the Republic Team."
-        subhead="We're always hiring — servers, cooks, bar, and more."
+        subhead="We're always hiring. Servers, cooks, bar, and more."
         image={img.patioLights}
         overlay={0.75}
       />
@@ -30,7 +30,7 @@ export default function EmploymentPage() {
             </h2>
             <p className="mt-8 text-ink-muted text-[16px] leading-[1.8]">
               Complete the form and one of our team members will be in touch
-              shortly. Bring the energy — we&apos;ll bring the training.
+              shortly. Bring the energy. We&apos;ll bring the training.
             </p>
             <p className="mt-6 text-ink-muted text-[14px]">
               Prefer to email us directly?{" "}

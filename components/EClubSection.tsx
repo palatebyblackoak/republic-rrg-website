@@ -52,7 +52,7 @@ export default function EClubSection() {
 
         {submitted ? (
           <p className="mt-10 text-accent text-[14px] uppercase tracking-widest-2">
-            Thanks — welcome to the Republic.
+            Thanks. Welcome to the Republic.
           </p>
         ) : (
           <form
@@ -70,7 +70,7 @@ export default function EClubSection() {
             />
             <button
               type="submit"
-              className="bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] px-8 py-4 transition-colors"
+              className="w-full sm:w-auto bg-accent hover:bg-accent-hover text-white uppercase tracking-[0.15em] text-[12px] px-8 py-4 transition-colors"
             >
               Join Now
             </button>

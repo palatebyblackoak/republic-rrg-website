@@ -26,11 +26,11 @@ export default function EventsPage() {
           <div className="-mx-6 md:mx-0 px-6 md:px-10 py-12 md:py-14 bg-parchment">
             <SectionLabel label="Private Dining & Catering" />
             <h2 className="font-serif text-ink text-[28px] sm:text-[36px] md:text-[42px] leading-tight">
-              Host with us — or let us cater to you.
+              Host with us, or let us cater to you.
             </h2>
             <p className="mt-8 text-ink-muted text-[16px] leading-[1.8]">
               Private dining for birthdays, anniversaries, corporate dinners,
-              and rehearsal dinners — plus off-site catering for events of any
+              and rehearsal dinners, plus off-site catering for events of any
               size. Tell us a little about yours and our team will follow up.
             </p>
             <p className="mt-6 text-ink-muted text-[14px]">
