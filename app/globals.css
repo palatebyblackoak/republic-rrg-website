@@ -71,12 +71,20 @@ body {
 
 .drop-cap::first-letter {
   font-family: var(--font-serif), "Playfair Display", Georgia, serif;
-  font-size: 4.6em;
-  line-height: 0.82;
+  font-size: 3.4em;
+  line-height: 0.86;
   float: left;
-  padding-right: 0.14em;
-  padding-top: 0.06em;
+  padding-right: 0.12em;
+  padding-top: 0.08em;
   color: inherit;
+}
+@media (min-width: 768px) {
+  .drop-cap::first-letter {
+    font-size: 4.6em;
+    line-height: 0.82;
+    padding-right: 0.14em;
+    padding-top: 0.06em;
+  }
 }
 .drop-cap-ink::first-letter { color: #1a1512; }
 .drop-cap-cream::first-letter { color: #f5f0e6; }

@@ -282,7 +282,7 @@ export default function HomePage() {
       </section>
 
       {/* RESERVATION CTA */}
-      <section className="relative min-h-[560px] md:min-h-[720px] flex items-center py-20 md:py-28 overflow-hidden">
+      <section className="relative min-h-[440px] md:min-h-[720px] flex items-center py-16 md:py-28 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={img.patioLights}

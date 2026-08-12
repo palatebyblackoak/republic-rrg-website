@@ -87,13 +87,13 @@ export default function ContactPage() {
                 <p className="text-[11px] uppercase tracking-widest-2 text-muted mb-3">
                   Follow
                 </p>
-                <div className="flex items-center gap-5 text-cream">
+                <div className="-ml-2 flex items-center gap-1 text-cream">
                   <a
                     href={site.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
-                    className="hover:text-accent transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 hover:text-accent transition-colors"
                   >
                     <FacebookIcon className="w-5 h-5" />
                   </a>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="hover:text-accent transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 hover:text-accent transition-colors"
                   >
                     <InstagramIcon className="w-5 h-5" />
                   </a>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter"
-                    className="hover:text-accent transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 hover:text-accent transition-colors"
                   >
                     <TwitterIcon className="w-5 h-5" />
                   </a>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="TripAdvisor"
-                    className="hover:text-accent transition-colors"
+                    className="inline-flex items-center justify-center w-11 h-11 hover:text-accent transition-colors"
                   >
                     <TripAdvisorIcon className="w-5 h-5" />
                   </a>

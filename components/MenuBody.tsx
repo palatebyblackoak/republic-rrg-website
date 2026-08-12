@@ -187,7 +187,7 @@ export default function MenuBody() {
               </p>
               <Link
                 href="/events"
-                className={`group mt-6 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.15em] text-muted hover:text-accent transition-colors ${focusRing}`}
+                className={`group mt-4 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.15em] text-muted hover:text-accent transition-colors min-h-[44px] px-4 py-3 -mx-4 ${focusRing}`}
               >
                 <span>Inquire</span>
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">
