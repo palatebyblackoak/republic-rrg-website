@@ -7,7 +7,7 @@ export const site = {
   addressLine2: "McAllen, TX 78501",
   phone: "(956) 994-8385",
   phoneHref: "tel:+19569948385",
-  email: "republicmanagement1411@gmail.com",
+  email: "info@therepublicmcallen.com",
   established: "1998",
   hours: [
     { day: "Mon to Wed", time: "11AM to 11PM" },
