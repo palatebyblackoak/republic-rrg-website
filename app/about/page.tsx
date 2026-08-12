@@ -34,6 +34,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ATMOSPHERIC BREAK */}
+      <section className="bg-parchment">
+        <FadeIn>
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+            <Image
+              src={img.patioNight}
+              alt="Republic of the Rio Grande patio at night, firepit glowing"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        </FadeIn>
+      </section>
+
       {/* NAMESAKE — 1840 */}
       <section className="bg-bg border-t border-divider py-16 md:py-24">
         <div className="max-w-[1100px] mx-auto px-6">
@@ -132,9 +147,48 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ROOM + FIRE — paired */}
+      <section className="bg-bg py-16 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-4 md:gap-6">
+          <FadeIn>
+            <div className="relative aspect-[4/5]">
+              <Image
+                src={img.patioLights}
+                alt="Patio lights at Republic of the Rio Grande"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
+          <FadeIn delay={120}>
+            <div className="relative aspect-[4/5] md:mt-16">
+              <Image
+                src={img.filetTexas}
+                alt="Fire-crafted filet plated at Republic of the Rio Grande"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* CLOSE */}
-      <section className="bg-bg border-t border-divider py-16 md:py-24">
-        <div className="max-w-xl mx-auto px-6 text-center flex flex-col items-center">
+      <section className="bg-bg border-t border-divider">
+        <FadeIn>
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+            <Image
+              src={img.heroPatio}
+              alt="Republic of the Rio Grande — a table waiting"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        </FadeIn>
+        <div className="max-w-xl mx-auto px-6 py-16 md:py-24 text-center flex flex-col items-center">
           <FadeIn className="flex flex-col items-center">
             <p className="font-serif italic text-cream text-[24px] md:text-[32px] leading-tight">
               Come find your seat.
