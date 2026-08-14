@@ -70,21 +70,7 @@ export default function HomePage() {
       <section className="relative h-[100svh] min-h-[560px] md:min-h-[640px] flex items-end justify-center overflow-hidden pb-20 md:pb-24">
         <HeroSlideshow images={heroSlides} />
         <div className="relative z-10 text-center px-6 w-full max-w-md flex flex-col items-center">
-          <div
-            className="relative w-24 md:w-32 aspect-[300/525]"
-            style={{ filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.5))" }}
-          >
-            <Image
-              src="/images/logo-hero-stamp.png"
-              alt="Republic of the Rio Grande — Revolución!"
-              fill
-              priority
-              sizes="(max-width: 768px) 96px, 128px"
-              className="object-contain"
-            />
-          </div>
-
-          <div className="mt-4 md:mt-5 flex flex-col sm:flex-row items-center gap-5 sm:gap-7">
+          <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-7">
             <a
               href={site.reservation}
               target="_blank"
