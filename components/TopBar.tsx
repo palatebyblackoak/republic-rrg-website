@@ -19,7 +19,7 @@ export default function TopBar() {
         </a>
       </div>
 
-      {/* Desktop: address left, quick links + eClub right */}
+      {/* Desktop: address left, quick links right */}
       <div className="hidden md:flex max-w-[1400px] mx-auto px-6 h-9 items-center justify-between">
         <div className="flex items-baseline gap-2 text-[12px]">
           <span className="font-serif italic text-accent">Visit us at</span>
@@ -49,12 +49,6 @@ export default function TopBar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/#eclub"
-            className="bg-accent hover:bg-accent-hover text-white px-3 py-1 uppercase tracking-widest-2 text-[10px] transition-colors"
-          >
-            Join eClub
-          </Link>
         </div>
       </div>
     </div>

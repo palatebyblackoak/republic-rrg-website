@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { img } from "@/lib/images";
-import EClubSection from "@/components/EClubSection";
 import SectionLabel from "@/components/SectionLabel";
 import FadeIn from "@/components/FadeIn";
 import HeroSlideshow from "@/components/HeroSlideshow";
@@ -322,8 +321,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <EClubSection />
     </>
   );
 }
