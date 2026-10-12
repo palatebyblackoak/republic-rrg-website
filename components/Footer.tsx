@@ -130,15 +130,15 @@ export default function Footer() {
             href="https://palatemarketing.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 text-[10px] uppercase tracking-widest-2 text-ink-muted hover:text-ink transition-colors min-h-12"
+            className="group inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest-2 text-ink-muted hover:text-ink transition-colors min-h-12"
           >
             <span className="text-xs normal-case tracking-normal">Designed by</span>
             <Image
               src="/palate-wordmark-ink.png"
               alt="Palate"
-              width={118}
-              height={48}
-              className="mt-1 h-[22px] w-auto opacity-70 transition-opacity group-hover:opacity-100"
+              width={158}
+              height={64}
+              className="h-7 w-auto opacity-70 transition-opacity group-hover:opacity-100"
             />
             <span className="sr-only"> (opens in a new tab)</span>
           </a>
