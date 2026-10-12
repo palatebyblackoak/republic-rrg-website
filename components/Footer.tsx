@@ -127,20 +127,20 @@ export default function Footer() {
             © 2026 Republic of the Rio Grande · McAllen, Texas · All Rights Reserved
           </p>
           <a
-            href="https://palatebyblackoak.com"
+            href="https://palatemarketing.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-[10px] uppercase tracking-widest-2 text-ink-muted hover:text-ink transition-colors"
-            aria-label="Design by Palate"
+            className="group inline-flex items-center gap-2.5 text-[10px] uppercase tracking-widest-2 text-ink-muted hover:text-ink transition-colors min-h-12"
           >
-            <span>Design by</span>
+            <span>Designed by</span>
             <Image
-              src="/images/palate-logo.png"
+              src="/palate-wordmark-ink.png"
               alt="Palate"
-              width={2000}
-              height={759}
-              className="w-16 h-auto invert opacity-80"
+              width={98}
+              height={40}
+              className="mt-[3px] h-4 w-auto opacity-70 transition-opacity group-hover:opacity-100"
             />
+            <span className="sr-only"> (opens in a new tab)</span>
           </a>
         </div>
       </div>
